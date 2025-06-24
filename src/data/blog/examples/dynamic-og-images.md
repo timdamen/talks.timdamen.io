@@ -2,17 +2,18 @@
 author: Sat Naing
 pubDatetime: 2022-12-28T04:59:04.866Z
 modDatetime: 2025-03-12T13:39:20.763Z
-title: Dynamic OG image generation in AstroPaper blog posts
-slug: dynamic-og-image-generation-in-astropaper-blog-posts
+title: Dynamic OG image generation in AstroPaper blog presentations
+slug: dynamic-og-image-generation-in-astropaper-blog-presentations
 featured: false
-draft: false
+ogImage: ../../../assets/images/forrest-gump-quote.png
+draft: true
 tags:
   - docs
   - release
-description: New feature in AstroPaper v1.4.0, introducing dynamic OG image generation for blog posts.
+description: New feature in AstroPaper v1.4.0, introducing dynamic OG image generation for blog presentations.
 ---
 
-New feature in AstroPaper v1.4.0, introducing dynamic OG image generation for blog posts.
+New feature in AstroPaper v1.4.0, introducing dynamic OG image generation for blog presentations.
 
 ## Table of contents
 
@@ -28,11 +29,11 @@ AstroPaper already provided a way to add an OG image to a blog post. The author 
 
 ## Dynamic OG Image
 
-Generating a dynamic OG image for each post allows the author to avoid specifying an OG image for every single blog post. Besides, this will prevent the fallback OG image from being identical to all blog posts.
+Generating a dynamic OG image for each post allows the author to avoid specifying an OG image for every single blog post. Besides, this will prevent the fallback OG image from being identical to all blog presentations.
 
 In AstroPaper v1.4.0, Vercel's [Satori](https://github.com/vercel/satori) package is used for dynamic OG image generation.
 
-Dynamic OG images will be generated at build time for blog posts that
+Dynamic OG images will be generated at build time for blog presentations that
 
 - don't include OG image in the frontmatter
 - are not marked as draft.
@@ -81,7 +82,7 @@ async function loadGoogleFonts(
 
 ## Trade-off
 
-While this is a nice feature to have, there's a trade-off. Each OG image takes roughly one second to generate. This might not be noticeable at first, but as the number of blog posts grows, you might want to disable this feature. Since every OG image takes time to generate, having many of them will increase the build time linearly.
+While this is a nice feature to have, there's a trade-off. Each OG image takes roughly one second to generate. This might not be noticeable at first, but as the number of blog presentations grows, you might want to disable this feature. Since every OG image takes time to generate, having many of them will increase the build time linearly.
 
 For example: If one OG image takes one second to generate, then 60 images will take around one minute, and 600 images will take approximately 10 minutes. This can significantly impact build times as your content scales.
 

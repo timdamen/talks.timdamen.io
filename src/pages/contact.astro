@@ -1,0 +1,56 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Header from "@/components/Header.astro";
+import Footer from "@/components/Footer.astro";
+import { SITE } from "@/config";
+import Breadcrumb from "@/components/Breadcrumb.astro";
+---
+
+<Layout title={`Speaking | ${SITE.title}`}>
+  <Header />
+  <Breadcrumb />
+  <main
+    id="main-content"
+    class="prose dark:prose-invert mx-auto w-full max-w-5xl"
+  >
+  <section class="relative lg:flex">
+    <div class="lg:w-[55%]">
+      <h1 class="mb-4 inline-block text-4xl font-bold sm:mb-8 sm:text-5xl">
+        Contact
+      </h1>
+      <p class="font-semibold">
+          I’m always open for a conversation, be it for questions, event speaking invitations, or
+          feedback on my work. Here’s how you can connect with me.
+      </p>
+    </div>
+  </section>
+
+  <section>
+    <div class="prose w-[575px] max-w-full mx-0 pb-8 pt-8 dark:prose-invert xl:col-span-2">
+        <h2 id="what-i-talk-about">Preferred Contact Method</h2>
+        <p>
+          For the quickest and most detailed reponse, drop me a line at{' '}
+          <a href={`mailto:hello@timdamen.io`}>hello@timdamen.io</a>, Or directly plan a
+          meeting with me via <a href="https://cal.com/timdamen">cal.com/timdamen</a>.
+        </p>
+        <h2>Social Media</h2>
+        <ul>
+          <li>
+            <a href="https://twitter.com/timdamen_io" rel="noopener noreferrer" target="_blank">
+              @timdamen_io on X
+            </a>
+          </li>
+          <li>
+            <a href="https://www.linkedin.com/in/tim-damen-20a1b4106" rel="noopener noreferrer" target="_blank">
+              Tim Damen on LinkedIn
+            </a>
+          </li>
+        </ul>
+        <p>Looking forward to hearing from you! ❤️</p>
+    </div>
+    
+  </section>
+  </main>
+
+  <Footer />
+</Layout>

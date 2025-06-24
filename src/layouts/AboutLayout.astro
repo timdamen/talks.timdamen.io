@@ -4,6 +4,12 @@ import Footer from "@/components/Footer.astro";
 import Breadcrumb from "@/components/Breadcrumb.astro";
 import Layout from "./Layout.astro";
 import { SITE } from "@/config";
+import Socials from "@/components/Socials.astro";
+import IconRss from "@/assets/icons/IconRss.svg";
+import { SOCIALS } from "@/constants";
+import Hr from "@/components/Hr.astro";
+import { TabItem } from "@astrojs/starlight/components";
+import Tabs from "@/components/Tabs.astro";
 
 export interface Props {
   frontmatter: {
@@ -19,9 +25,246 @@ const { frontmatter } = Astro.props;
   <Header />
   <Breadcrumb />
   <main id="main-content">
-    <section id="about" class="app-prose mb-28 max-w-app prose-img:border-0">
+    <section id="hero" class="pb-6">
+      <h1 class="mb-4 inline-block text-4xl font-bold sm:mb-8 sm:text-5xl">
+        Tim Damen
+      </h1>
+      <a
+        target="_blank"
+        href="/rss.xml"
+        class="inline-block"
+        aria-label="rss feed"
+        title="RSS Feed"
+      >
+        <IconRss
+          width={20}
+          height={20}
+          class="scale-125 stroke-accent stroke-3 rtl:-rotate-90"
+        />
+        <span class="sr-only">RSS Feed</span>
+      </a>
+
+      <div
+        class="mt-4 flex flex-col items-center gap-6 sm:flex-row sm:items-start"
+      >
+        <img
+          src="/assets/stage2.webp"
+          alt="Tim Damen speaking on stage with microphone attached to his ear"
+          class="w-full max-w-xs rounded-lg shadow-lg sm:w-72 sm:max-w-none"
+        />
+        <div>
+          <p class="max-w-2xl">
+            Tim Damen is frontend developer, web accessibility specialist, and
+            engineering manager from Amsterdam the Netherlands 🇳🇱. He is
+            passionate about HTML, CSS, Javascript, DX, web standards,
+            accessibility, and developing robust web apps. Tim Damen has over a
+            decade of experience in the field and has spoken at various
+            conferences and meetups. He also hosts a podcast about digital
+            accessibility called <a
+              href="https://focusring.io/podcast-focustrap"
+              class="underline decoration-dashed underline-offset-4 hover:text-accent"
+              >focustrap</a
+            >.
+          </p>
+          <br />
+          <p>
+            On this website you will find all of Tim's talks with slides,
+            videos, and other resources.
+          </p>
+
+          {
+            // only display if at least one social link is enabled
+            SOCIALS.length > 0 && (
+              <div class="mt-4 flex flex-col sm:flex-row sm:items-center">
+                <div class="me-2 mb-1 whitespace-nowrap sm:mb-0">
+                  Social Links:
+                </div>
+                <Socials centered />
+              </div>
+            )
+          }
+        </div>
+      </div>
+    </section>
+
+    <Hr />
+
+    <section class="pt-6 pb-6">
+      <h2 class="mb-6 text-3xl font-semibold tracking-wide">Speakers info</h2>
+      <h3 class="mb-3 text-2xl font-semibold tracking-wide">Short biography</h3>
+      <Tabs syncKey="bio">
+        <TabItem label="Text">
+          <p>
+            Driven by the mission to make people's lives easier, Tim Damen
+            actively advocates for and builds a web that serves everyone
+            equally. Tim is a frontend developer, web accessibility specialist,
+            and engineering manager from Amsterdam, the Netherlands 🇳🇱. With
+            over a decade of experience—primarily at major financial
+            institutions—Tim has spoken at various conferences and meetups. He
+            also hosts "<a
+              href="https://focusring.io/podcast-focustrap"
+              target="_blank"
+              rel="noopener"
+              class="underline decoration-dashed underline-offset-4 hover:text-accent"
+              >focustrap</a
+            >," a podcast about digital accessibility.
+          </p>
+        </TabItem>
+        <TabItem label="HTML">
+          <pre
+            class="prose w-full prose-invert"
+            data-language="html"><code><div class="ec-line"><div class="code"><span style="--1:#8844AE"><span style="--0:#7FDBCA">&lt;</span><span style="--0:#CAECE6">p</span><span style="--0:#7FDBCA">&gt;</span></span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#D6DEEB;--1:#403F53">  </span></span><span style="--0:#D6DEEB;--1:#403F53">Driven by the mission to make people's lives easier, Tim Damen actively</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#D6DEEB;--1:#403F53">  </span></span><span style="--0:#D6DEEB;--1:#403F53">advocates for and builds a web that serves everyone equally. Tim is a frontend</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#D6DEEB;--1:#403F53">  </span></span><span style="--0:#D6DEEB;--1:#403F53">developer, web accessibility specialist, and engineering manager from</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#D6DEEB;--1:#403F53">  </span></span><span style="--0:#D6DEEB;--1:#403F53">Amsterdam, the Netherlands 🇳🇱. With over a decade of experience—primarily at</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#D6DEEB;--1:#403F53">  </span></span><span style="--0:#D6DEEB;--1:#403F53">major financial institutions—Tim has spoken at various conferences and</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#D6DEEB;--1:#403F53">  </span></span><span style="--0:#D6DEEB;--1:#403F53">meetups. He also hosts "</span><span style="--1:#8844AE"><span style="--0:#7FDBCA">&lt;</span><span style="--0:#CAECE6">a</span></span></div></div><div class="ec-line"><div class="code"><span class="indent">    </span><span style="--0:#C5E478;--1:#3B61B0">target</span><span style="--0:#7FDBCA;--1:#8844AE">=</span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#ECC48D;--1:#984E4D">_blank</span><span style="--0:#D9F5DD;--1:#111111">"</span></div></div><div class="ec-line"><div class="code"><span class="indent">    </span><span style="--0:#C5E478;--1:#3B61B0">rel</span><span style="--0:#7FDBCA;--1:#8844AE">=</span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#ECC48D;--1:#984E4D">noopener</span><span style="--0:#D9F5DD;--1:#111111">"</span></div></div><div class="ec-line"><div class="code"><span class="indent">    </span><span style="--0:#C5E478;--1:#3B61B0">href</span><span style="--0:#7FDBCA;--1:#8844AE">=</span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#ECC48D;--1:#984E4D">https://focusring.io/podcast-focustrap</span><span style="--0:#D9F5DD;--1:#111111">"</span></div></div><div class="ec-line"><div class="code"><span class="indent" /></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#7FDBCA;--1:#8844AE">    </span></span><span style="--0:#7FDBCA;--1:#8844AE">&gt;</span><span style="--0:#D6DEEB;--1:#403F53">focustrap</span><span style="--1:#8844AE"><span style="--0:#7FDBCA">&lt;/</span><span style="--0:#CAECE6">a</span><span style="--0:#7FDBCA">&gt;</span></span><span style="--0:#D6DEEB;--1:#403F53">," a podcast about digital accessibility.</span></div></div><div class="ec-line"><div class="code"><span style="--1:#8844AE"><span style="--0:#7FDBCA">&lt;/</span><span style="--0:#CAECE6">p</span><span style="--0:#7FDBCA">&gt;</span></span></div></div></div></code></pre>
+        </TabItem>
+        <TabItem label="Markdown"
+          ><p>
+            Driven by the mission to make people's lives easier, Tim Damen
+            actively advocates for and builds a web that serves everyone
+            equally. Tim is a frontend developer, web accessibility specialist,
+            and engineering manager from Amsterdam, the Netherlands 🇳🇱. With
+            over a decade of experience—primarily at major financial
+            institutions—Tim has spoken at various conferences and meetups. He
+            also hosts "[focustrap](https://focusring.io/podcast-focustrap)," a
+            podcast about digital accessibility.
+          </p></TabItem
+        >
+      </Tabs>
+
+      <h3 class="mt-8 mb-3 text-2xl font-semibold tracking-wide">
+        Long biography
+      </h3>
+      <Tabs syncKey="bio">
+        <TabItem label="Text">
+          <p>
+            Tim Damen is a frontend developer, web accessibility specialist, and
+            engineering manager based in Amsterdam, the Netherlands 🇳🇱. Driven
+            by the mission to make people's lives easier, he actively advocates
+            for and builds a web that serves everyone equally.
+          </p><br />
+          <p>
+            With over a decade of experience in the field—primarily working with
+            major financial institutions—Tim specializes in JavaScript, HTML,
+            CSS, developer experience (DX), web standards, accessibility, and
+            developing robust web applications. His expertise spans both the
+            technical and strategic aspects of creating inclusive digital web
+            apps.
+          </p><br />
+          <p>
+            A recognized voice in the web development community, having spoken
+            at various conferences and meetups where he shares his insights on
+            building accessible, user-centered web solutions. He also hosts "<a
+              href="https://focusring.io/podcast-focustrap"
+              target="_blank"
+              rel="noopener"
+              class="underline decoration-dashed underline-offset-4 hover:text-accent"
+              >focustrap</a
+            >," a podcast dedicated to digital accessibility, where he explores
+            the latest trends, challenges, and best practices in making the web
+            more inclusive.
+          </p>
+        </TabItem>
+        <TabItem label="HTML">
+          <pre
+            data-language="html"><code><div class="ec-line"><div class="code"><span style="--1:#8844AE"><span style="--0:#7FDBCA">&lt;</span><span style="--0:#CAECE6">p</span><span style="--0:#7FDBCA">&gt;</span></span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#D6DEEB;--1:#403F53">  </span></span><span style="--0:#D6DEEB;--1:#403F53">Tim Damen is a frontend developer, web accessibility specialist, and</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#D6DEEB;--1:#403F53">  </span></span><span style="--0:#D6DEEB;--1:#403F53">engineering manager based in Amsterdam, the Netherlands 🇳🇱. Driven</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#D6DEEB;--1:#403F53">  </span></span><span style="--0:#D6DEEB;--1:#403F53">by the mission to make people's lives easier, he actively advocates</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#D6DEEB;--1:#403F53">  </span></span><span style="--0:#D6DEEB;--1:#403F53">for and builds a web that serves everyone equally.</span></div></div><div class="ec-line"><div class="code"><span style="--1:#8844AE"><span style="--0:#7FDBCA">&lt;/</span><span style="--0:#CAECE6">p</span><span style="--0:#7FDBCA">&gt;</span></span></div></div><div class="ec-line"><div class="code"><span style="--1:#8844AE"><span style="--0:#7FDBCA">&lt;</span><span style="--0:#CAECE6">p</span><span style="--0:#7FDBCA">&gt;</span></span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#D6DEEB;--1:#403F53">  </span></span><span style="--0:#D6DEEB;--1:#403F53">With over a decade of experience in the field—primarily working with</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#D6DEEB;--1:#403F53">  </span></span><span style="--0:#D6DEEB;--1:#403F53">major financial institutions—Tim specializes in JavaScript, HTML,</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#D6DEEB;--1:#403F53">  </span></span><span style="--0:#D6DEEB;--1:#403F53">CSS, developer experience (DX), web standards, accessibility, and</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#D6DEEB;--1:#403F53">  </span></span><span style="--0:#D6DEEB;--1:#403F53">developing robust web applications. His expertise spans both the</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#D6DEEB;--1:#403F53">  </span></span><span style="--0:#D6DEEB;--1:#403F53">technical and strategic aspects of creating inclusive digital web</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#D6DEEB;--1:#403F53">  </span></span><span style="--0:#D6DEEB;--1:#403F53">apps.</span></div></div><div class="ec-line"><div class="code"><span style="--1:#8844AE"><span style="--0:#7FDBCA">&lt;/</span><span style="--0:#CAECE6">p</span><span style="--0:#7FDBCA">&gt;</span></span></div></div><div class="ec-line"><div class="code"><span style="--1:#8844AE"><span style="--0:#7FDBCA">&lt;</span><span style="--0:#CAECE6">p</span><span style="--0:#7FDBCA">&gt;</span></span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#D6DEEB;--1:#403F53">  </span></span><span style="--0:#D6DEEB;--1:#403F53">A recognized voice in the web development community, having spoken</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#D6DEEB;--1:#403F53">  </span></span><span style="--0:#D6DEEB;--1:#403F53">at various conferences and meetups where he shares his insights on</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#D6DEEB;--1:#403F53">  </span></span><span style="--0:#D6DEEB;--1:#403F53">building accessible, user-centered web solutions. He also hosts "</span><span style="--1:#8844AE"><span style="--0:#7FDBCA">&lt;</span><span style="--0:#CAECE6">a</span></span></div></div><div class="ec-line"><div class="code"><span class="indent">    </span><span style="--0:#C5E478;--1:#3B61B0">target</span><span style="--0:#7FDBCA;--1:#8844AE">=</span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#ECC48D;--1:#984E4D">_blank</span><span style="--0:#D9F5DD;--1:#111111">"</span></div></div><div class="ec-line"><div class="code"><span class="indent">    </span><span style="--0:#C5E478;--1:#3B61B0">rel</span><span style="--0:#7FDBCA;--1:#8844AE">=</span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#ECC48D;--1:#984E4D">noopener</span><span style="--0:#D9F5DD;--1:#111111">"</span></div></div><div class="ec-line"><div class="code"><span class="indent">    </span><span style="--0:#C5E478;--1:#3B61B0">href</span><span style="--0:#7FDBCA;--1:#8844AE">=</span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#ECC48D;--1:#984E4D">https://focusring.io/podcast-focustrap</span><span style="--0:#D9F5DD;--1:#111111">"</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#7FDBCA;--1:#8844AE">    </span></span><span style="--0:#7FDBCA;--1:#8844AE">&gt;</span><span style="--0:#D6DEEB;--1:#403F53">focustrap</span><span style="--1:#8844AE"><span style="--0:#7FDBCA">&lt;/</span><span style="--0:#CAECE6">a</span></span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#7FDBCA;--1:#8844AE">  </span></span><span style="--0:#7FDBCA;--1:#8844AE">&gt;</span><span style="--0:#D6DEEB;--1:#403F53">," a podcast dedicated to digital accessibility, where he explores</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#D6DEEB;--1:#403F53">  </span></span><span style="--0:#D6DEEB;--1:#403F53">the latest trends, challenges, and best practices in making the web</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#D6DEEB;--1:#403F53">  </span></span><span style="--0:#D6DEEB;--1:#403F53">more inclusive.</span></div></div><div class="ec-line"><div class="code"><span style="--1:#8844AE"><span style="--0:#7FDBCA">&lt;/</span><span style="--0:#CAECE6">p</span><span style="--0:#7FDBCA">&gt;</span></span></div></div></code></pre>
+        </TabItem>
+        <TabItem label="Markdown">
+          <p>
+            Tim Damen is a frontend developer, web accessibility specialist, and
+            engineering manager based in Amsterdam, the Netherlands 🇳🇱. Driven
+            by the mission to make people's lives easier, he actively advocates
+            for and builds a web that serves everyone equally.
+            <br /><br />
+            With over a decade of experience in the field—primarily working with
+            major financial institutions—Tim specializes in JavaScript, HTML, CSS,
+            developer experience (DX), web standards, accessibility, and developing
+            robust web applications. His expertise spans both the technical and strategic
+            aspects of creating inclusive digital web apps.
+            <br /><br />
+            A recognized voice in the web development community, having spoken at
+            various conferences and meetups where he shares his insights on building
+            accessible, user-centered web solutions. He also hosts "[focustrap](https://focusring.io/podcast-focustrap),"
+            a podcast dedicated to digital accessibility, where he explores the latest
+            trends, challenges, and best practices in making the web more inclusive.
+          </p>
+        </TabItem>
+      </Tabs>
+    </section>
+
+    <Hr />
+
+    <section class="pt-6 pb-6 text-center">
+      <h2 class="mb-2 text-3xl font-semibold tracking-wide">Photos of Tim</h2>
+      <p class="mb-6">
+        Feel free to use these photos for any event-related materials. Click on the images to open them in a new tab for high-resolution downloads.
+      </p>
+      <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3">
+        <a
+          href="/assets/stage1.webp"
+          target="_blank"
+          rel="noopener"
+          aria-label="open image 1 in new tab"
+        >
+          <img
+            src="/assets/stage1.webp"
+            alt="Tim Damen speaking on stage with microphone attached to his ear"
+            class="rounded-lg shadow-lg"
+          />
+        </a>
+
+        <a
+          href="/assets/stage2.webp"
+          target="_blank"
+          rel="noopener"
+          aria-label="open image 2 in new tab"
+        >
+          <img
+            src="/assets/stage2.webp"
+            alt="Tim Damen speaking on stage with microphone attached to his ear"
+            class="rounded-lg shadow-lg"
+          />
+        </a>
+
+        <a
+          href="/assets/speak.webp"
+          target="_blank"
+          rel="noopener"
+          aria-label="open image 3 in new tab"
+        >
+          <img
+            src="/assets/speak.webp"
+            alt="Tim Damen speaking on stage with microphone attached to his ear"
+            class="rounded-lg shadow-lg"
+          />
+        </a>
+        <a
+          href="/assets/Tim-2.jpeg"
+          target="_blank"
+          rel="noopener"
+          aria-label="open image 4 in new tab"
+        >
+          <img
+            src="/assets/Tim-2.jpeg"
+            alt="Tim Damen speaking on stage with microphone attached to his ear"
+            class="rounded-lg shadow-lg"
+          />
+        </a>
+        <a
+          href="/assets/Tim-1.jpeg"
+          target="_blank"
+          rel="noopener"
+          aria-label="open image 5 in new tab"
+        >
+          <img
+            src="/assets/Tim-1.jpeg"
+            alt="Tim Damen speaking on stage with microphone attached to his ear"
+            class="rounded-lg shadow-lg"
+          />
+        </a>
+      </div>
+
+      <!-- <section id="about" class="app-prose mb-28 max-w-5xl prose-img:border-0">
       <h1 class="text-2xl tracking-wider sm:text-3xl">{frontmatter.title}</h1>
       <slot />
+    </section> -->
     </section>
   </main>
   <Footer />

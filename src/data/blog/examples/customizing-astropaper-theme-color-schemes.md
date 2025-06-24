@@ -4,7 +4,8 @@ pubDatetime: 2022-09-25T15:20:35Z
 modDatetime: 2025-06-13T16:46:34.155Z
 title: Customizing AstroPaper theme color schemes
 featured: false
-draft: false
+draft: true
+ogImage: ../../../assets/images/forrest-gump-quote.png
 tags:
   - color-schemes
   - docs
@@ -62,6 +63,46 @@ const currentTheme = localStorage.getItem("theme");
 
 // ...
 ```
+
+Tim Damen is a frontend developer, web accessibility specialist, and engineering manager based in Amsterdam, the Netherlands 🇳🇱. Driven by the mission to make people's lives easier, he actively advocates for and builds a web that serves everyone equally.
+
+With over a decade of experience in the field—primarily working with major financial institutions—Tim specializes in JavaScript, HTML, CSS, developer experience (DX), web standards, accessibility, and developing robust web applications. His expertise spans both the technical and strategic aspects of creating inclusive digital web apps.
+
+A recognized voice in the web development community, having spoken at various conferences and meetups where he shares his insights on building accessible, user-centered web solutions. He also hosts "[focustrap](https://focusring.io/podcast-focustrap)," a podcast dedicated to digital accessibility, where he explores the latest trends, challenges, and best practices in making the web more inclusive.
+
+```html
+<p>
+  Tim Damen is a frontend developer, web accessibility specialist, and
+  engineering manager based in Amsterdam, the Netherlands 🇳🇱. Driven
+  by the mission to make people's lives easier, he actively advocates
+  for and builds a web that serves everyone equally.
+</p>
+<p>
+  With over a decade of experience in the field—primarily working with
+  major financial institutions—Tim specializes in JavaScript, HTML,
+  CSS, developer experience (DX), web standards, accessibility, and
+  developing robust web applications. His expertise spans both the
+  technical and strategic aspects of creating inclusive digital web
+  apps.
+</p>
+<p>
+  A recognized voice in the web development community, having spoken
+  at various conferences and meetups where he shares his insights on
+  building accessible, user-centered web solutions. He also hosts "<a
+    target="_blank"
+    rel="noopener"
+    href="https://focusring.io/podcast-focustrap"
+    >focustrap</a
+  >," a podcast dedicated to digital accessibility, where he explores
+  the latest trends, challenges, and best practices in making the web
+  more inclusive.
+</p>
+```
+
+```html
+Driven by the mission to make people's lives easier, Tim Damen actively advocates for and builds a web that serves everyone equally. Tim is a frontend developer, web accessibility specialist, and engineering manager from Amsterdam, the Netherlands 🇳🇱. With over a decade of experience—primarily at major financial institutions—Tim has spoken at various conferences and meetups. He also hosts "[focustrap](https://focusring.io/podcast-focustrap)," a podcast about digital accessibility.
+```
+
 
 The **primaryColorScheme** variable can hold two values\_ `"light"`, `"dark"`. You can leave the empty string (default) if you don't want to specify the primary color scheme.
 
@@ -132,4 +173,4 @@ html[data-theme="light"] {
 /* ... */
 ```
 
-> Check out some [predefined color schemes](https://astro-paper.pages.dev/posts/predefined-color-schemes/) AstroPaper has already crafted for you.
+> Check out some [predefined color schemes](https://astro-paper.pages.dev/presentations/predefined-color-schemes/) AstroPaper has already crafted for you.

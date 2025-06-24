@@ -17,10 +17,10 @@ import { SITE } from "@/config";
 
 export interface Props {
   post: CollectionEntry<"blog">;
-  posts: CollectionEntry<"blog">[];
+  presentations: CollectionEntry<"blog">[];
 }
 
-const { post, posts } = Astro.props;
+const { post, presentations } = Astro.props;
 
 const {
   title,
@@ -67,19 +67,19 @@ const layoutProps = {
   scrollSmooth: true,
 };
 
-/* ========== Prev/Next Posts ========== */
+/* ========== Prev/Next Presentations ========== */
 
-const allPosts = posts.map(({ data: { title }, id, filePath }) => ({
+const allPresentations = presentations.map(({ data: { title }, id, filePath }) => ({
   id,
   title,
   filePath,
 }));
 
-const currentPostIndex = allPosts.findIndex(a => a.id === post.id);
+const currentPostIndex = allPresentations.findIndex(a => a.id === post.id);
 
-const prevPost = currentPostIndex !== 0 ? allPosts[currentPostIndex - 1] : null;
+const prevPost = currentPostIndex !== 0 ? allPresentations[currentPostIndex - 1] : null;
 const nextPost =
-  currentPostIndex !== allPosts.length ? allPosts[currentPostIndex + 1] : null;
+  currentPostIndex !== allPresentations.length ? allPresentations[currentPostIndex + 1] : null;
 ---
 
 <Layout {...layoutProps}>
@@ -88,7 +88,7 @@ const nextPost =
   <main
     id="main-content"
     class:list={[
-      "mx-auto w-full max-w-app px-4 pb-12",
+      "mx-auto w-full max-w-5xl px-4 pb-12",
       { "mt-8": !SITE.showBackButton },
     ]}
     data-pagefind-body
@@ -105,7 +105,7 @@ const nextPost =
     </div>
     <article
       id="article"
-      class="app-prose mx-auto mt-8 max-w-app prose-pre:bg-(--shiki-light-bg) dark:prose-pre:bg-(--shiki-dark-bg)"
+      class="app-prose mx-auto mt-8 max-w-5xl prose-pre:bg-(--shiki-light-bg) dark:prose-pre:bg-(--shiki-dark-bg)"
     >
       <Content />
     </article>

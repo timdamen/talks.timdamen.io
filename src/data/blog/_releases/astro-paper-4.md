@@ -8,6 +8,7 @@ ogImage: ../../../assets/images/AstroPaper-v4.png
 tags:
   - release
 description: "AstroPaper v4: ensuring a smoother and more feature-rich blogging experience."
+draft: true
 ---
 
 Hello everyone! Wishing you a happy New Year 🎉 and all the best for 2024! We're excited to announce the release of AstroPaper v4, a significant update that introduces a range of new features, improvements, and bug fixes to elevate your blogging experience. A big thank you to all the contributors for their valuable input and efforts in making version 4 possible!
@@ -48,7 +49,7 @@ If you're upgrading AstroPaper from v3 to v4, make sure to replace `postSlug` in
 
 ### Add code-snippets for content creation [#206](https://github.com/satnaing/astro-paper/pull/206)
 
-AstroPaper now includes VSCode snippets for new blog posts, eliminating the need for manual copy/pasting of the frontmatter and content structure (table of contents, heading, excerpt, etc.).
+AstroPaper now includes VSCode snippets for new blog presentations, eliminating the need for manual copy/pasting of the frontmatter and content structure (table of contents, heading, excerpt, etc.).
 
 Read more about VSCode Snippets [here](https://code.visualstudio.com/docs/editor/userdefinedsnippets#:~:text=In%20Visual%20Studio%20Code%2C%20snippets,Snippet%20in%20the%20Command%20Palette).
 
@@ -56,13 +57,13 @@ Read more about VSCode Snippets [here](https://code.visualstudio.com/docs/editor
   <source src="https://github.com/satnaing/astro-paper/assets/53733092/136f1903-bade-40a2-b6bb-285a3c726350" type="video/mp4">
 </video>
 
-### Add Modified Datetime in Blog Posts [#195](https://github.com/satnaing/astro-paper/pull/195)
+### Add Modified Datetime in Blog Presentations [#195](https://github.com/satnaing/astro-paper/pull/195)
 
-Keep readers informed about the latest updates by displaying the modified datetime in blog posts. This not only instills user trust in the freshness of the articles but also contributes to improved SEO for the blog.
+Keep readers informed about the latest updates by displaying the modified datetime in blog presentations. This not only instills user trust in the freshness of the articles but also contributes to improved SEO for the blog.
 
 ![Last Modified Date feature in AstroPaper](https://github.com/satnaing/astro-paper/assets/53733092/cc89585e-148e-444d-9da1-0d496e867175)
 
-You can add a `modDatetime` to your blog post if you've made modifications. Now, the sorting behavior of the posts is slightly different. All posts are sorted by both `pubDatetime` and `modDatetime`. If a post has both a `pubDatetime` and `modDatetime`, its sorting position will be determined by the `modDatetime`. If not, only `pubDatetime` will be considered to determine the post's sorting order.
+You can add a `modDatetime` to your blog post if you've made modifications. Now, the sorting behavior of the presentations is slightly different. All presentations are sorted by both `pubDatetime` and `modDatetime`. If a post has both a `pubDatetime` and `modDatetime`, its sorting position will be determined by the `modDatetime`. If not, only `pubDatetime` will be considered to determine the post's sorting order.
 
 ### Implement Back-to-Top Button [#188](https://github.com/satnaing/astro-paper/pull/188)
 
@@ -70,9 +71,9 @@ Enhance user navigation on your blog detail post with the newly implemented back
 
 ![Back to top button in AstroPaper](https://github.com/satnaing/astro-paper/assets/53733092/79854957-7877-4f19-936e-ad994b772074)
 
-### Add Pagination in Tag Posts [#201](https://github.com/satnaing/astro-paper/pull/201)
+### Add Pagination in Tag Presentations [#201](https://github.com/satnaing/astro-paper/pull/201)
 
-Improve content organization and navigation with the addition of pagination in tag posts, making it easier for users to explore related content. This ensures that if a tag has many posts, readers won't be overwhelmed by all the tag-related posts.
+Improve content organization and navigation with the addition of pagination in tag presentations, making it easier for users to explore related content. This ensures that if a tag has many presentations, readers won't be overwhelmed by all the tag-related presentations.
 
 <video autoplay loop="loop" muted="muted" plays-inline="true" class="border border-skin-line">
   <source src="https://github.com/satnaing/astro-paper/assets/53733092/9bad87f5-dcf5-4b79-b67a-d6c7244cd616" type="video/mp4">

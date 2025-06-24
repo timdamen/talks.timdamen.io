@@ -2,25 +2,24 @@
 title: Making forms accessible
 author: Tim Damen
 pubDatetime: 2023-10-26T19:00:00Z
-conference: AstroConf
+conference: ABN AMRO x Passionate People Meetup
 conferenceDate: 2023-10-26T19:00:00Z
 conferenceVenue: Head Office ABN ARMO
 conferenceLocation: Amsterdam, Netherlands
 conferenceLatLong: 52.3676,4.9041
 conferenceUrl: https://www.meetup.com/frontend-developer-meetup-amsterdam/events/294224306/
-conferenceLogo: https://secure.meetupstatic.com/photos/event/5/3/e/3/highres_516141475.webp?w=750
-conferenceVideo: https://www.youtube.com/watch?v=example-video-id
+conferenceLogo: ../../assets/images/abn-pp.png
 conferenceSlides: https://example.com/slides.pdf
+ogImage: ../../assets/images/abn-pp.png
 slug: making-forms-accessible
-featured: false
-draft: true
+featured: true
+draft: false
 tags:
-  - TypeScript
-  - Astro
+  - Accessibility
+  - Meetup
+  - In Person
 description:
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-  incididunt ut labore et dolore magna aliqua. Praesent elementum facilisis leo vel
-  fringilla est
+  Learn how to make web forms accessible to all users by considering factors such as proper label placement, appropriate input types, and ARIA role usage. With practical tips and real-life examples, you can create fully functional and inclusive online forms that work for everyone.
 ---
 
 Users cannot see this post because it is in draft.

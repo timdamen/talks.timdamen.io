@@ -34,11 +34,29 @@ html[data-theme="dark"] {
     scrollbar-width: auto;
     scrollbar-color: var(--color-muted) transparent;
   }
+  :focus {
+    outline: 0.5rem double black !important;
+    box-shadow: 0 0 0 0.45rem white !important;
+    border-radius: 0.225rem !important;
+  }
+  canvas:focus-visible {
+    border: 4px dashed var(--color-accent);
+} 
+.maplibregl-popup-close-button {
+    @apply text-black;
+    font-size: 30px;
+    margin-right: 0.5rem;
+  }
+  .maplibregl-popup-content {
+    padding-top: 2rem !important;
+  }
   html {
     @apply overflow-y-scroll scroll-smooth;
   }
   body {
-    @apply flex min-h-svh flex-col bg-background font-mono text-foreground selection:bg-accent/75 selection:text-background;
+    @apply flex min-h-svh flex-col bg-background text-foreground selection:bg-accent/75 selection:text-background;
+    font-family: "Inter", sans-serif;
+    font-size: 110%;
   }
   a,
   button {
@@ -50,12 +68,8 @@ html[data-theme="dark"] {
   }
   section,
   footer {
-    @apply mx-auto max-w-app px-4;
+    @apply mx-auto max-w-5xl px-4;
   }
-}
-
-@utility max-w-app {
-  @apply max-w-3xl;
 }
 
 .active-nav {

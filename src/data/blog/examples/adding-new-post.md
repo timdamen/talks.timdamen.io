@@ -2,18 +2,19 @@
 author: Sat Naing
 pubDatetime: 2022-09-23T15:22:00Z
 modDatetime: 2025-06-13T16:52:45.934Z
-title: Adding new posts in AstroPaper theme
-slug: adding-new-posts-in-astropaper-theme
-featured: true
-draft: false
+title: Adding new presentations in AstroPaper theme
+slug: adding-new-presentations-in-astropaper-theme
+featured: false
+draft: true
+ogImage: ../../../assets/images/forrest-gump-quote.png
 tags:
   - docs
 description:
-  Some rules & recommendations for creating or adding new posts using AstroPaper
+  Some rules & recommendations for creating or adding new presentations using AstroPaper
   theme.
 ---
 
-Here are some rules/recommendations, tips & ticks for creating new posts in AstroPaper blog theme.
+Here are some rules/recommendations, tips & ticks for creating new presentations in AstroPaper blog theme.
 
 <figure>
   <img
@@ -31,21 +32,21 @@ Here are some rules/recommendations, tips & ticks for creating new posts in Astr
 
 To write a new blog post, create a markdown file inside the `src/data/blog/` directory.
 
-> Prior to AstroPaper v5.1.0, all blog posts had to be in `src/data/blog/`, meaning you couldn't organize them into subdirectories.
+> Prior to AstroPaper v5.1.0, all blog presentations had to be in `src/data/blog/`, meaning you couldn't organize them into subdirectories.
 
-Starting from AstroPaper v5.1.0, you can now organize blog posts into subdirectories, making it easier to manage your content.
+Starting from AstroPaper v5.1.0, you can now organize blog presentations into subdirectories, making it easier to manage your content.
 
-For example, if you want to group posts under `2025`, you can place them in `src/data/blog/2025/`. This also affects the post URL, so `src/data/blog/2025/example-post.md` will be available at `/posts/2025/example-post`.
+For example, if you want to group presentations under `2025`, you can place them in `src/data/blog/2025/`. This also affects the post URL, so `src/data/blog/2025/example-post.md` will be available at `/presentations/2025/example-post`.
 
 If you don’t want subdirectories to affect the post URL, just prefix the folder name with an underscore `_`.
 
 ```bash
 # Example: blog post structure and URLs
-src/data/blog/very-first-post.md          -> mysite.com/posts/very-first-post
-src/data/blog/2025/example-post.md        -> mysite.com/posts/2025/example-post
-src/data/blog/_2026/another-post.md       -> mysite.com/posts/another-post
-src/data/blog/docs/_legacy/how-to.md      -> mysite.com/posts/docs/how-to
-src/data/blog/Example Dir/Dummy Post.md   -> mysite.com/posts/example-dir/dummy-post
+src/data/blog/very-first-post.md          -> mysite.com/presentations/very-first-post
+src/data/blog/2025/example-post.md        -> mysite.com/presentations/2025/example-post
+src/data/blog/_2026/another-post.md       -> mysite.com/presentations/another-post
+src/data/blog/docs/_legacy/how-to.md      -> mysite.com/presentations/docs/how-to
+src/data/blog/Example Dir/Dummy Post.md   -> mysite.com/presentations/example-dir/dummy-post
 ```
 
 > 💡 Tip: You can override a blog post’s slug in the frontmatter as well. See the next section for more details.
@@ -78,9 +79,9 @@ Here is the list of frontmatter property for each post.
 
 Only `title`, `description` and `pubDatetime` fields in frontmatter must be specified.
 
-Title and description (excerpt) are important for search engine optimization (SEO) and thus AstroPaper encourages to include these in blog posts.
+Title and description (excerpt) are important for search engine optimization (SEO) and thus AstroPaper encourages to include these in blog presentations.
 
-`slug` is the unique identifier of the url. Thus, `slug` must be unique and different from other posts. The whitespace of `slug` should to be separated with `-` or `_` but `-` is recommended. Slug is automatically generated using the blog post file name. However, you can define your `slug` as a frontmatter in your blog post.
+`slug` is the unique identifier of the url. Thus, `slug` must be unique and different from other presentations. The whitespace of `slug` should to be separated with `-` or `_` but `-` is recommended. Slug is automatically generated using the blog post file name. However, you can define your `slug` as a frontmatter in your blog post.
 
 For example, if the blog file name is `adding-new-post.md` and you don't specify the slug in your frontmatter, Astro will automatically create a slug for the blog post using the file name. Thus, the slug will be `adding-new-post`. But if you specify the `slug` in the frontmatter, this will override the default slug. You can read more about this in [Astro Docs](https://docs.astro.build/en/guides/content-collections/#defining-custom-slugs).
 
@@ -133,7 +134,7 @@ For instance, if you want to place your table of contents just under the intro p
 # frontmatter
 ---
 
-Here are some recommendations, tips & ticks for creating new posts in AstroPaper blog theme.
+Here are some recommendations, tips & ticks for creating new presentations in AstroPaper blog theme.
 
 <!-- [!code ++] -->
 ## Table of contents
@@ -144,7 +145,7 @@ Here are some recommendations, tips & ticks for creating new posts in AstroPaper
 
 ## Headings
 
-There's one thing to note about headings. The AstroPaper blog posts use title (title in the frontmatter) as the main heading of the post. Therefore, the rest of the heading in the post should be using h2 \~ h6.
+There's one thing to note about headings. The AstroPaper blog presentations use title (title in the frontmatter) as the main heading of the post. Therefore, the rest of the heading in the post should be using h2 \~ h6.
 
 This rule is not mandatory, but highly recommended for visual, accessibility and SEO purposes.
 
@@ -246,4 +247,4 @@ My recommendation for image compression sites.
 
 The default OG image will be placed if a post does not specify the OG image. Though not required, OG image related to the post should be specify in the frontmatter. The recommended size for OG image is **_1200 X 640_** px.
 
-> Since AstroPaper v1.4.0, OG images will be generated automatically if not specified. Check out [the announcement](https://astro-paper.pages.dev/posts/dynamic-og-image-generation-in-astropaper-blog-posts/).
+> Since AstroPaper v1.4.0, OG images will be generated automatically if not specified. Check out [the announcement](https://astro-paper.pages.dev/presentations/dynamic-og-image-generation-in-astropaper-blog-presentations/).

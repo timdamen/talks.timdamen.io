@@ -2,11 +2,12 @@
 pubDatetime: 2025-03-08T08:18:19.693Z
 title: AstroPaper 5.0
 slug: astro-paper-v5
-featured: true
+featured: false
 ogImage: ../../../assets/images/AstroPaper-v5.png
 tags:
   - release
 description: "AstroPaper v5: keep the clean look, updates under the hood."
+draft: true
 ---
 
 At last, the long-awaited AstroPaper v5 is finally here. AstroPaper v5 keeps the same minimal & clean look, but comes with significant updates under the hood.
@@ -81,7 +82,7 @@ The project structure has been reorganized. The `src/config.ts` file now only co
 
 ## Other notable changes
 
-- The blog posts directory has been updated from `src/content/blog/` to `src/data/blog/`.
+- The blog presentations directory has been updated from `src/content/blog/` to `src/data/blog/`.
 - Conllection definitions file (`src/content/config.ts`) is now replaced with `src/content.config.ts`.
 - Various dependencies have been upgraded for improved performance and security.
 - Removed `IBM Plex Mono` font and switched to the default system mono font.

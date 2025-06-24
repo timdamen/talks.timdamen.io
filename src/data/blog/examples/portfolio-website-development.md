@@ -4,7 +4,7 @@ author: Sat Naing
 pubDatetime: 2022-03-25T16:55:12.000+00:00
 slug: how-do-i-develop-my-portfolio-and-blog
 featured: false
-draft: false
+draft: true
 tags:
   - NextJS
   - TailwindCSS
@@ -16,7 +16,7 @@ description:
 timezone: "Asia/Yangon"
 ---
 
-> This article is originally from my [blog post](https://satnaing.dev/blog/posts/how-do-i-develop-my-portfolio-and-blog). I put this article to demonstrate how you can write blog posts/articles using AstroPaper theme.
+> This article is originally from my [blog post](https://satnaing.dev/blog/presentations/how-do-i-develop-my-portfolio-and-blog). I put this article to demonstrate how you can write blog presentations/articles using AstroPaper theme.
 
 My experience about developing my first portfolio website and a blog using NextJS and a headless CMS.
 
@@ -36,7 +36,7 @@ For the front-end, I wanted to use [React](https://reactjs.org/ "React Official 
 
 For styling, I use [TailwindCSS](https://tailwindcss.com/ "Tailwind CSS Official Website"). This is because I love developer experience that Tailwind gives and it has a lot of flexibilities compared to other component UI libraries like MUI or React Bootstrap.
 
-All contents of this project reside within the GitHub repository. All my blog posts (including this one) are written in Markdown file format since I'm very used to with this. But to write Markdown along with its frontmatter effortlessly, I use [Forestry](https://forestry.io/ "Forestry Official Website") headless CMS. It is a git-based CMS that can serve Markdown and other contents. Because of this, I can write my contents either using Markdown or wysiwyg editor. Besides, writing frontmatters with this is a breeze.
+All contents of this project reside within the GitHub repository. All my blog presentations (including this one) are written in Markdown file format since I'm very used to with this. But to write Markdown along with its frontmatter effortlessly, I use [Forestry](https://forestry.io/ "Forestry Official Website") headless CMS. It is a git-based CMS that can serve Markdown and other contents. Because of this, I can write my contents either using Markdown or wysiwyg editor. Besides, writing frontmatters with this is a breeze.
 
 Images and assets are uploaded and stored in [Cloudinary](https://cloudinary.com/ "Cloudinary Official Website"). I connect Cloudinary via Forestry and manage them directly in the dashboard.
 

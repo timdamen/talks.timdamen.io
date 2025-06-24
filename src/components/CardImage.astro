@@ -1,0 +1,55 @@
+---
+import { slugifyStr } from "@/utils/slugify";
+import type { CollectionEntry } from "astro:content";
+import { getPath } from "@/utils/getPath";
+import Datetime from "./Datetime.astro";
+
+export interface Props extends CollectionEntry<"blog"> {
+  variant?: "h2" | "h3";
+  largeImage?: boolean;
+}
+
+const { variant = "h2", largeImage = false, data, id, filePath } = Astro.props;
+
+const { title, description, pubDatetime, modDatetime, timezone, ogImage } = data;
+
+const headerProps = {
+  style: { viewTransitionName: slugifyStr(title) },
+  class: "text-lg font-medium decoration-dashed hover:underline",
+};
+---
+
+<div class="my-3">
+  {ogImage && largeImage && (
+    <img
+      src={ogImage.src}
+      alt={`Thumbnail for ${title}`}
+      class="mb-2 w-full rounded object-cover border-accent border-2"
+    />
+  )}
+    {ogImage && !largeImage && (
+    <img
+      src={ogImage.src}
+      alt={`Thumbnail for ${title}`}
+      class="mb-2 md:h-40 w-full rounded object-cover border-accent border-2"
+    />
+  )}
+  <a
+    href={getPath(id, filePath)}
+    class="inline-block text-lg font-medium text-accent decoration-dashed underline-offset-4 focus-visible:no-underline focus-visible:underline-offset-0"
+  >
+    {
+      variant === "h2" ? (
+        <h2 {...headerProps}>{title}</h2>
+      ) : (
+        <h3 {...headerProps}>{title}</h3>
+      )
+    }
+  </a>
+  <Datetime {pubDatetime} {modDatetime} {timezone} />
+  {
+    largeImage && (
+      <p>{description}</p>
+    )
+  }
+</div>

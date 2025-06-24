@@ -8,6 +8,7 @@ ogImage: https://user-images.githubusercontent.com/53733092/215771435-25408246-2
 tags:
   - release
 description: AstroPaper with the enhancements of Astro v2. Type-safe markdown contents, bug fixes and better dev experience etc.
+draft: true
 ---
 
 Astro 2.0 has been released with some cool features, breaking changes, DX improvements, better error overlay and so on. AstroPaper takes advantage of those cool features, especially Content Collections API.
@@ -26,7 +27,7 @@ Frontmatter of AstroPaper 2.0 markdown contents are now type-safe thanks to Astr
 
 ### New Home for Blog contents
 
-All the blog posts were moved from `src/contents` to `src/content/blog` directory.
+All the blog presentations were moved from `src/contents` to `src/content/blog` directory.
 
 ### New Fetch API
 
@@ -71,7 +72,7 @@ export const blogSchema = z.object({
 
 ### New Predefined Dark Color Scheme
 
-AstroPaper v2 has a new dark color scheme (high contrast & low contrast) which is based on Astro's dark logo. Check out [this link](https://astro-paper.pages.dev/posts/predefined-color-schemes#astro-dark) for more info.
+AstroPaper v2 has a new dark color scheme (high contrast & low contrast) which is based on Astro's dark logo. Check out [this link](https://astro-paper.pages.dev/presentations/predefined-color-schemes#astro-dark) for more info.
 
 ![New Predefined Dark Color Scheme](https://user-images.githubusercontent.com/53733092/215680520-59427bb0-f4cb-48c0-bccc-f182a428d72d.svg)
 
@@ -81,11 +82,11 @@ AstroPaper 2.0 includes automatic class sorting with [TailwindCSS Prettier plugi
 
 ### Updated Docs & README
 
-All the [#docs](https://astro-paper.pages.dev/tags/docs/) blog posts and [README](https://github.com/satnaing/astro-paper#readme) are updated for this AstroPaper v2.
+All the [#docs](https://astro-paper.pages.dev/tags/docs/) blog presentations and [README](https://github.com/satnaing/astro-paper#readme) are updated for this AstroPaper v2.
 
 ## Bug Fixes
 
 - fix broken tags in the Blog Post page
 - in a tag page, the last part of the breadcrumb is now updated to lower-case for consistency
-- exclude draft posts in a tag page
+- exclude draft presentations in a tag page
 - fix 'onChange value not updating issue' after a page reload

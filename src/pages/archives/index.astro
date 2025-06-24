@@ -5,7 +5,7 @@ import Layout from "@/layouts/Layout.astro";
 import Header from "@/components/Header.astro";
 import Footer from "@/components/Footer.astro";
 import Card from "@/components/Card.astro";
-import getPostsByGroupCondition from "@/utils/getPostsByGroupCondition";
+import getPresentationsByGroupCondition from "@/utils/getPresentationsByGroupCondition";
 import { SITE } from "@/config";
 
 // Redirect to 404 page if `showArchives` config is false
@@ -13,7 +13,7 @@ if (!SITE.showArchives) {
   return Astro.redirect("/404");
 }
 
-const posts = await getCollection("blog", ({ data }) => !data.draft);
+const presentations = await getCollection("blog", ({ data }) => !data.draft);
 
 const months = [
   "January",
@@ -36,7 +36,7 @@ const months = [
   <Main pageTitle="Archives" pageDesc="All the articles I've archived.">
     {
       Object.entries(
-        getPostsByGroupCondition(posts, post =>
+        getPresentationsByGroupCondition(presentations, post =>
           post.data.pubDatetime.getFullYear()
         )
       )
@@ -46,7 +46,7 @@ const months = [
             <span class="text-2xl font-bold">{year}</span>
             <sup class="text-sm">{yearGroup.length}</sup>
             {Object.entries(
-              getPostsByGroupCondition(
+              getPresentationsByGroupCondition(
                 yearGroup,
                 post => post.data.pubDatetime.getMonth() + 1
               )

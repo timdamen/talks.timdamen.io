@@ -5,7 +5,8 @@ modDatetime: 2024-01-04T09:09:06Z
 title: Predefined color schemes
 slug: predefined-color-schemes
 featured: false
-draft: false
+draft: true
+ogImage: ../../../assets/images/forrest-gump-quote.png
 tags:
   - color-schemes
 description:
@@ -15,7 +16,7 @@ description:
 
 I've crafted some predefined color schemes for this AstroPaper blog theme. You can replace these color schemes with the original ones.
 
-If you don't know how you can configure color schemes, check [this blog post](https://astro-paper.pages.dev/posts/customizing-astropaper-theme-color-schemes/).
+If you don't know how you can configure color schemes, check [this blog post](https://astro-paper.pages.dev/presentations/customizing-astropaper-theme-color-schemes/).
 
 ## Table of contents
 
@@ -51,6 +52,22 @@ html[data-theme="light"] {
   --muted: #bbc789;
   --border: #7cadff;
 }
+```
+
+```html
+<p>
+  Driven by the mission to make people's lives easier, Tim Damen actively
+  advocates for and builds a web that serves everyone equally. Tim is a frontend
+  developer, web accessibility specialist, and engineering manager from
+  Amsterdam, the Netherlands 🇳🇱. With over a decade of experience—primarily at
+  major financial institutions—Tim has spoken at various conferences and
+  meetups. He also hosts "<a
+    target="_blank"
+    rel="noopener"
+    href="https://focusring.io/podcast-focustrap"
+    class="underline decoration-dashed underline-offset-4 hover:text-accent"
+    >focustrap</a>," a podcast about digital accessibility.
+</p>
 ```
 
 ### Pinky light

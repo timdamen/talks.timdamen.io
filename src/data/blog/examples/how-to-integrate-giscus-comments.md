@@ -5,7 +5,9 @@ modDatetime: 2025-03-12T12:28:53Z
 title: How to integrate Giscus comments into AstroPaper
 slug: how-to-integrate-giscus-comments
 featured: false
-draft: false
+draft: true
+conference: NDC Oslo
+ogImage: ../../../assets/images/forrest-gump-quote.png
 tags:
   - astro
   - blog
@@ -75,7 +77,7 @@ You should now have a script tag that looks like this:
 ></script>
 ```
 
-Simply add that to the source code of the site. Most likely, if you're using _AstroPaper_ and want to enable comments on posts, navigate to `PostDetails.astro` and paste it into the desired location where you want the comments to appear, perhaps underneath the `Share this post on:` buttons.
+Simply add that to the source code of the site. Most likely, if you're using _AstroPaper_ and want to enable comments on presentations, navigate to `PostDetails.astro` and paste it into the desired location where you want the comments to appear, perhaps underneath the `Share this post on:` buttons.
 
 ```astro file=src/layouts/PostDetails.astro
 <Layout {...layoutProps}>

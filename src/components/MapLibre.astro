@@ -1,0 +1,69 @@
+---
+export interface Props {
+  latitude: number;
+  longitude: number;
+  zoom: number;
+  mapstyle: string;
+  container: string;
+
+  /** If `false`, the map will not respond to interaction.  This is a static map built with the full web map rendering API. */
+  interactive?: boolean;
+  containerstyle?: string;
+}
+
+const {
+  latitude,
+  longitude,
+  zoom,
+  mapstyle,
+  container,
+  interactive,
+  containerstyle = "height: 61.8vh",
+} = Astro.props;
+---
+
+<maplibre-map
+  data-latitude={latitude}
+  data-longitude={longitude}
+  data-zoom={zoom}
+  data-mapstyle={mapstyle}
+  data-container={container}
+  data-interactive={interactive}
+  data-containerstyle={containerstyle}
+>
+  <div id={container} style={containerstyle}></div>
+
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/maplibre-gl/dist/maplibre-gl.css"
+  />
+  {
+    /* Astro specific way to pull in MapLibre, `is:inline`:  https://docs.astro.build/en/reference/directives-reference/#isinline */
+  }
+  <script is:inline src="https://unpkg.com/maplibre-gl/dist/maplibre-gl.js"
+  ></script>
+  <script>
+    import { Marker, Popup } from "maplibre-gl";
+
+    class MapLibreMap extends HTMLElement {
+      constructor() {
+        super();
+
+        let map = new maplibregl.Map({
+          container: this.dataset.container,
+          interactive: JSON.parse(this.dataset.interactive),
+          center: [this.dataset.longitude, this.dataset.latitude],
+          zoom: this.dataset.zoom,
+          style: this.dataset.mapstyle,
+        });
+
+        let marker = new Marker()
+          .setLngLat([30.5, 50.5])
+          .setPopup(new Popup().setHTML("<h1 style='color:black;'>Hello World!</h1>"))
+          .addTo(map);
+      }
+    }
+
+    window.customElements.define("maplibre-map", MapLibreMap);
+  </script></maplibre-map
+>

@@ -33,7 +33,7 @@ const isActive = (path: string) => {
   </a>
   <div
     id="nav-container"
-    class="mx-auto flex max-w-app flex-col items-center justify-between sm:flex-row"
+    class="mx-auto flex max-w-5xl flex-col items-center justify-between sm:flex-row"
   >
     <div
       id="top-nav-wrap"
@@ -69,18 +69,23 @@ const isActive = (path: string) => {
           ]}
         >
           <li class="col-span-2">
-            <a href="/posts" class:list={{ "active-nav": isActive("/posts") }}>
-              Posts
+            <a href="/presentations" class:list={{ "active-nav": isActive("/presentations") }}>
+              Presentations
             </a>
           </li>
-          <li class="col-span-2">
+          <!-- <li class="col-span-2">
             <a href="/tags" class:list={{ "active-nav": isActive("/tags") }}>
               Tags
             </a>
-          </li>
+          </li> -->
           <li class="col-span-2">
             <a href="/about" class:list={{ "active-nav": isActive("/about") }}>
               About
+            </a>
+          </li>
+          <li class="col-span-2">
+            <a href="/contact" class:list={{ "active-nav": isActive("/contact") }}>
+              Contact
             </a>
           </li>
           {

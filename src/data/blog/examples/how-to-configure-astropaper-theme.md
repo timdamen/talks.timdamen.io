@@ -4,8 +4,9 @@ pubDatetime: 2022-09-23T04:58:53Z
 modDatetime: 2025-03-20T03:15:57.792Z
 title: How to configure AstroPaper theme
 slug: how-to-configure-astropaper-theme
-featured: true
-draft: false
+featured: false
+draft: true
+ogImage: ../../../assets/images/forrest-gump-quote.png
 tags:
   - configuration
   - docs
@@ -59,27 +60,27 @@ Here are SITE configuration options
 | `title`               | Your site name                                                                                                                                                                                                                                                                                                                                                                                                                    |
 | `ogImage`             | Your default OG image for the site. Useful for social media sharing. OG images can be an external image URL or they can be placed under `/public` directory.                                                                                                                                                                                                                                                                      |
 | `lightAndDarkMode`    | Enable or disable `light & dark mode` for the website. If disabled, primary color scheme will be used. This option is enabled by default.                                                                                                                                                                                                                                                                                         |
-| `postPerIndex`        | The number of posts to be displayed at the home page under `Recent` section.                                                                                                                                                                                                                                                                                                                                                      |
-| `postPerPage`         | You can specify how many posts will be displayed in each posts page. (eg: if you set `SITE.postPerPage` to 3, each page will only show 3 posts per page)                                                                                                                                                                                                                                                                          |
-| `scheduledPostMargin` | In Production mode, posts with a future `pubDatetime` will not be visible. However, if a post's `pubDatetime` is within the next 15 minutes, it will be visible. You can set `scheduledPostMargin` if you don't like the default 15 minutes margin.                                                                                                                                                                               |
+| `postPerIndex`        | The number of presentations to be displayed at the home page under `Recent` section.                                                                                                                                                                                                                                                                                                                                                      |
+| `postPerPage`         | You can specify how many presentations will be displayed in each presentations page. (eg: if you set `SITE.postPerPage` to 3, each page will only show 3 presentations per page)                                                                                                                                                                                                                                                                          |
+| `scheduledPostMargin` | In Production mode, presentations with a future `pubDatetime` will not be visible. However, if a post's `pubDatetime` is within the next 15 minutes, it will be visible. You can set `scheduledPostMargin` if you don't like the default 15 minutes margin.                                                                                                                                                                               |
 | `showArchives`        | Determines whether to display the `Archives` menu (positioned between the `About` and `Search` menus) and its corresponding page on the site. This option is set to `true` by default.                                                                                                                                                                                                                                            |
 | `showBackButton`      | Determines whether to display the `Go back` button in each blog post.                                                                                                                                                                                                                                                                                                                                                             |
 | `editPost`            | This option allows users to suggest changes to a blog post by providing an edit link under blog post titles. This feature can be disabled by setting `SITE.editPost.enabled` to `false`.                                                                                                                                                                                                                                          |
-| `dynamicOgImage`      | This option controls whether to [generate dynamic og-image](https://astro-paper.pages.dev/posts/dynamic-og-image-generation-in-astropaper-blog-posts/) if no `ogImage` is specified in the blog post frontmatter. If you have many blog posts, you might want to disable this feature. See the [trade-off](https://astro-paper.pages.dev/posts/dynamic-og-image-generation-in-astropaper-blog-posts/#trade-off) for more details. |
+| `dynamicOgImage`      | This option controls whether to [generate dynamic og-image](https://astro-paper.pages.dev/presentations/dynamic-og-image-generation-in-astropaper-blog-presentations/) if no `ogImage` is specified in the blog post frontmatter. If you have many blog presentations, you might want to disable this feature. See the [trade-off](https://astro-paper.pages.dev/presentations/dynamic-og-image-generation-in-astropaper-blog-presentations/#trade-off) for more details. |
 | `dir`                 | Specifies the text direction of the entire blog. Used as [HTML dir attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes/dir) in `<html dir="ltr">`. Supported values: `ltr` \| `rtl` \| `auto`                                                                                                                                                                                                |
 | `lang`                | Used as HTML ISO Language code in `<html lang"en">`. Default is `en`.                                                                                                                                                                                                                                                                                                                                                             |
 | `timezone`            | This option allows you to specify your timezone using the [IANA format](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones). Setting this ensures consistent timestamps across your localhost and deployed site, eliminating time differences.                                                                                                                                                                          |
 
 ## Update layout width
 
-The default `max-width` for the entire blog is `768px` (`max-w-3xl`). If you'd like to change it, you can easily update the `max-w-app` utility in your `global.css`. For instance:
+The default `max-width` for the entire blog is `768px` (`max-w-3xl`). If you'd like to change it, you can easily update the `max-w-5xl` utility in your `global.css`. For instance:
 
 ```css file=src/styles/global.css
-@utility max-w-app {
+@utility max-w-5xl {
   /* [!code --:1] */
   @apply max-w-3xl;
   /* [!code ++:1] */
-  @apply max-w-4xl xl:max-w-5xl;
+  @apply max-w-5xl xl:max-w-5xl;
 }
 ```
 
@@ -197,4 +198,4 @@ You can configure share links in `SHARE_LINKS` object inside `src/constants.ts`.
 
 ## Conclusion
 
-This is the brief specification of how you can customize this theme. You can customize more if you know some coding. For customizing styles, please read [this article](https://astro-paper.pages.dev/posts/customizing-astropaper-theme-color-schemes/). Thanks for reading.✌🏻
+This is the brief specification of how you can customize this theme. You can customize more if you know some coding. For customizing styles, please read [this article](https://astro-paper.pages.dev/presentations/customizing-astropaper-theme-color-schemes/). Thanks for reading.✌🏻

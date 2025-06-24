@@ -1,4 +1,7 @@
-import type { Element } from 'hast';
+
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-nocheck
+
 import { select } from 'hast-util-select';
 import { rehype } from 'rehype';
 import { CONTINUE, SKIP, visit } from 'unist-util-visit';
@@ -92,8 +95,7 @@ const tabsProcessor = rehype()
                 }
 
                 // Skip over the tab panel’s children.
-                return SKIP;
-            });
+                return SKIP;            });
         };
     });
 

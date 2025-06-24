@@ -22,14 +22,14 @@ const headerProps = {
 <div class="my-3">
   {ogImage && largeImage && (
     <img
-      src={ogImage.src}
+      src={typeof ogImage === "string" ? ogImage : ogImage.src}
       alt={`Thumbnail for ${title}`}
       class="mb-2 w-full rounded object-cover border-accent border-2"
     />
   )}
     {ogImage && !largeImage && (
     <img
-      src={ogImage.src}
+      src={typeof ogImage === "string" ? ogImage : ogImage.src}
       alt={`Thumbnail for ${title}`}
       class="mb-2 md:h-40 w-full rounded object-cover border-accent border-2"
     />

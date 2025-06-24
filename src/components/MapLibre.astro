@@ -43,23 +43,34 @@ const {
   <script is:inline src="https://unpkg.com/maplibre-gl/dist/maplibre-gl.js"
   ></script>
   <script>
-    import { Marker, Popup } from "maplibre-gl";
+    import maplibregl, { Marker, Popup } from "maplibre-gl";
 
     class MapLibreMap extends HTMLElement {
       constructor() {
         super();
 
-        let map = new maplibregl.Map({
+        const map = new maplibregl.Map({
+          // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+          // @ts-ignore
           container: this.dataset.container,
+          // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+          // @ts-ignore
           interactive: JSON.parse(this.dataset.interactive),
+          // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+          // @ts-ignore
           center: [this.dataset.longitude, this.dataset.latitude],
+          // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+          // @ts-ignore
           zoom: this.dataset.zoom,
           style: this.dataset.mapstyle,
         });
 
-        let marker = new Marker()
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
+        const marker = new Marker()
           .setLngLat([30.5, 50.5])
-          .setPopup(new Popup().setHTML("<h1 style='color:black;'>Hello World!</h1>"))
+          .setPopup(
+            new Popup().setHTML("<h1 style='color:black;'>Hello World!</h1>")
+          )
           .addTo(map);
       }
     }

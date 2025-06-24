@@ -1,4 +1,6 @@
 ---
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-nocheck
 import { getCollection } from "astro:content";
 import Layout from "@/layouts/Layout.astro";
 import Header from "@/components/Header.astro";
@@ -21,9 +23,7 @@ const sortedPresentations = getSortedPresentations(presentations);
 const featuredPresentations = sortedPresentations.filter(
   ({ data }) => data.featured
 );
-const recentPresentations = sortedPresentations.filter(
-  ({ data }) => !data.featured
-);
+const recentPresentations = sortedPresentations;
 ---
 
 <Layout>

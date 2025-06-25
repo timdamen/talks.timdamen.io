@@ -5,7 +5,11 @@ export interface Props {
   zoom: number;
   mapstyle: string;
   container: string;
-
+  conferences: {
+    latitude: number;
+    longitude: number;
+    popupContent: string;
+  }[];
   /** If `false`, the map will not respond to interaction.  This is a static map built with the full web map rendering API. */
   interactive?: boolean;
   containerstyle?: string;
@@ -18,6 +22,7 @@ const {
   mapstyle,
   container,
   interactive,
+  conferences,
   containerstyle = "height: 61.8vh",
 } = Astro.props;
 ---
@@ -30,6 +35,7 @@ const {
   data-container={container}
   data-interactive={interactive}
   data-containerstyle={containerstyle}
+  data-conferences={JSON.stringify(conferences)}
 >
   <div id={container} style={containerstyle}></div>
 
@@ -65,13 +71,36 @@ const {
           style: this.dataset.mapstyle,
         });
 
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
-        const marker = new Marker()
-          .setLngLat([30.5, 50.5])
-          .setPopup(
-            new Popup().setHTML("<h1 style='color:black;'>Hello World!</h1>")
+        // const markers: { lngLat: [number, number]; popupContent: string }[] = [
+        //   {
+        //     lngLat: [30.5, 50.5],
+        //     popupContent: "<span style='color:black;'>Hello World!</span>",
+        //   },
+        //   {
+        //     lngLat: [33.6, 50.6],
+        //     popupContent: "<span style='color:black;'>Hello World 2!</span>",
+        //   },
+        // ];
+        const conferences = JSON.parse(
+          this.dataset.conferences || "[]"
+        ) as {
+          latitude: number;
+          longitude: number;
+          popupContent: string;
+        }[];
+
+        conferences.forEach(({ latitude, longitude, popupContent }) => {
+          new Marker(
+            {
+              color: "red",
+              scale: 0.9, // Adjust the scale as needed
+            }
           )
-          .addTo(map);
+            .setLngLat([longitude, latitude])
+            
+            .setPopup(new Popup().setHTML(`<span style="color:black;">${popupContent}</span>`))
+            .addTo(map);
+        });
       }
     }
 

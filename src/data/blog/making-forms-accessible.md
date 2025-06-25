@@ -1,18 +1,19 @@
 ---
-title: Making forms accessible
-author: Tim Damen
+title: 'Making forms accessible'
+author: 'Tim Damen'
 pubDatetime: 2023-10-26T19:00:00Z
 conference: ABN AMRO x Passionate People Meetup
 conferenceDate: 2023-10-26T19:00:00Z
 conferenceVenue: Head Office ABN ARMO
 conferenceLocation: Amsterdam, Netherlands
-conferenceLatLong: 52.3676,4.9041
+conferenceLat: 52.3676
+conferenceLong: 4.9041
 conferenceUrl: https://www.meetup.com/frontend-developer-meetup-amsterdam/events/294224306/
 conferenceLogo: ../../assets/images/abn-pp.png
 conferenceSlides: https://example.com/slides.pdf
 ogImage: ../../assets/images/abn-pp.png
 slug: making-forms-accessible
-featured: true
+featured: false
 draft: false
 tags:
   - Accessibility

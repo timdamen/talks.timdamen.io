@@ -10,6 +10,8 @@ import { SOCIALS } from "@/constants";
 import Hr from "@/components/Hr.astro";
 import { TabItem } from "@astrojs/starlight/components";
 import Tabs from "@/components/Tabs.astro";
+import myImage from "../assets/images/NDC-oslo-1.jpg";
+import Image from "astro/components/Image.astro";
 
 export interface Props {
   frontmatter: {
@@ -65,11 +67,6 @@ const { frontmatter } = Astro.props;
               class="underline decoration-dashed underline-offset-4 hover:text-accent"
               >focustrap</a
             >.
-          </p>
-          <br />
-          <p>
-            On this website you will find all of Tim's talks with slides,
-            videos, and other resources.
           </p>
 
           {
@@ -256,6 +253,18 @@ const { frontmatter } = Astro.props;
           <img
             src="/assets/Tim-1.jpeg"
             alt="Tim Damen speaking on stage with microphone attached to his ear"
+            class="rounded-lg shadow-lg"
+          />
+        </a>
+        <a
+          href="/assets/NDC-oslo-1.jpg"
+          target="_blank"
+          rel="noopener"
+          aria-label="open image 5 in new tab"
+        >
+          <Image
+            src={myImage}
+            alt="Tim Damen speaking on stage at NDC Oslo"
             class="rounded-lg shadow-lg"
           />
         </a>

@@ -14,6 +14,7 @@ import { slugifyStr } from "@/utils/slugify";
 import IconChevronLeft from "@/assets/icons/IconChevronLeft.svg";
 import IconChevronRight from "@/assets/icons/IconChevronRight.svg";
 import { SITE } from "@/config";
+import PDFCarousel from "@/components/PDFCarousel.astro";
 
 export interface Props {
   post: CollectionEntry<"blog">;
@@ -33,6 +34,7 @@ const {
   timezone,
   tags,
   hideEditPost,
+  conferenceSlides,
 } = post.data;
 
 const { Content } = await render(post);
@@ -69,17 +71,22 @@ const layoutProps = {
 
 /* ========== Prev/Next Presentations ========== */
 
-const allPresentations = presentations.map(({ data: { title }, id, filePath }) => ({
-  id,
-  title,
-  filePath,
-}));
+const allPresentations = presentations.map(
+  ({ data: { title }, id, filePath }) => ({
+    id,
+    title,
+    filePath,
+  })
+);
 
 const currentPostIndex = allPresentations.findIndex(a => a.id === post.id);
 
-const prevPost = currentPostIndex !== 0 ? allPresentations[currentPostIndex - 1] : null;
+const prevPost =
+  currentPostIndex !== 0 ? allPresentations[currentPostIndex - 1] : null;
 const nextPost =
-  currentPostIndex !== allPresentations.length ? allPresentations[currentPostIndex + 1] : null;
+  currentPostIndex !== allPresentations.length
+    ? allPresentations[currentPostIndex + 1]
+    : null;
 ---
 
 <Layout {...layoutProps}>
@@ -94,7 +101,7 @@ const nextPost =
     data-pagefind-body
   >
     <h1
-      transition:name={slugifyStr(title)}
+      transition:name={slugifyStr(title)+pubDatetime}
       class="inline-block text-2xl font-bold text-accent sm:text-3xl"
     >
       {title}
@@ -107,6 +114,16 @@ const nextPost =
       id="article"
       class="app-prose mx-auto mt-8 max-w-5xl prose-pre:bg-(--shiki-light-bg) dark:prose-pre:bg-(--shiki-dark-bg)"
     >
+      {
+        conferenceSlides && (
+          <PDFCarousel
+            pdfUrl={conferenceSlides}
+            width={850}
+            height={480}
+          />
+        )
+      }
+
       <Content />
     </article>
 

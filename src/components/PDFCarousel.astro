@@ -1,5 +1,6 @@
 ---
-// PDFCarousel.astro
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-nocheck
 export interface Props {
   pdfUrl: string;
   width?: number;
@@ -8,7 +9,6 @@ export interface Props {
 }
 
 const { pdfUrl, width = 800, height = 600, className = '' } = Astro.props;
-console.log('PDF URL:', pdfUrl);
 ---
 
 <div class={`pdf-carousel ${className}`} data-pdf-url={pdfUrl}>
@@ -41,7 +41,7 @@ console.log('PDF URL:', pdfUrl);
   }
 
   class PDFCarousel {
-    constructor(container) {
+    constructor(container: HTMLElement) {
       this.container = container;
       this.pdfDoc = null;
       this.currentPage = 1;

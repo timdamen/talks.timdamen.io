@@ -71,16 +71,14 @@ const {
           style: this.dataset.mapstyle,
         });
 
-        // const markers: { lngLat: [number, number]; popupContent: string }[] = [
-        //   {
-        //     lngLat: [30.5, 50.5],
-        //     popupContent: "<span style='color:black;'>Hello World!</span>",
-        //   },
-        //   {
-        //     lngLat: [33.6, 50.6],
-        //     popupContent: "<span style='color:black;'>Hello World 2!</span>",
-        //   },
-        // ];
+        map.scrollZoom.disable(); // Disable scroll zoom for better UX
+        map.addControl(new maplibregl.NavigationControl(
+          {
+            showCompass: false, // Hide compass
+            showZoom: true, // Show zoom controls
+          }
+        ), "top-right");
+        map.addControl(new maplibregl.FullscreenControl(), "top-right");
         const conferences = JSON.parse(
           this.dataset.conferences || "[]"
         ) as {

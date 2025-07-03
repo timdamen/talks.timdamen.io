@@ -1,12 +1,12 @@
 export const SITE = {
-  website: "https://astro-paper.pages.dev/", // replace this with your deployed domain
-  author: "Sat Naing",
+  website: "https://talks.timdamen.io", // replace this with your deployed domain
+  author: "Tim Damen",
   profile: "https://satnaing.dev/",
-  desc: "A minimal, responsive and SEO-friendly Astro blog theme.",
+  desc: "Here you will find all of Tim's talks with slides, videos, and other resources.",
   title: "TD Talks",
-  ogImage: "astropaper-og.jpg",
+  ogImage: "stage2.webp",
   lightAndDarkMode: true,
-  postPerIndex: 6,
+  postPerIndex: 10,
   postPerPage: 999,
   scheduledPostMargin: 15 * 60 * 1000, // 15 minutes
   showArchives: false,

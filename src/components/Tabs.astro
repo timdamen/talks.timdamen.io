@@ -133,12 +133,21 @@ if (isSynced) {
 
 		}
 
-
+		html[data-theme="dark"] .tablist-wrapper ~ :global([role='tabpanel']) {
+			padding: 0.7rem 0.7rem;
+			margin: 0.3rem 0;
+			background-color: rgb(62, 62, 62);
+			border-radius: 5px;
+			/* overflow-x: auto;
+			overflow-y: hidden;
+			white-space: nowrap; */
+		}
 		.tablist-wrapper ~ :global([role='tabpanel']) {
 			padding: 0.7rem 0.7rem;
 			margin: 0.3rem 0;
-			background-color: rgb(75, 75, 75);
+			background-color: rgb(112, 110, 110);
 			border-radius: 5px;
+			color: white;
 			/* overflow-x: auto;
 			overflow-y: hidden;
 			white-space: nowrap; */

@@ -49,7 +49,11 @@ const { frontmatter } = Astro.props;
       <div
         class="mt-4 flex flex-col items-center gap-6 sm:flex-row sm:items-start"
       >
-        <img
+        <Image 
+          width={300}
+          height={300}
+          loading="lazy"
+          decoding="async"
           src="/assets/stage2.webp"
           alt="Tim Damen speaking on stage with microphone attached to his ear"
           class="w-full max-w-xs rounded-lg shadow-lg sm:w-72 sm:max-w-none"
@@ -89,7 +93,7 @@ const { frontmatter } = Astro.props;
     <section class="pt-6 pb-6">
       <h2 class="mb-6 text-3xl font-semibold tracking-wide">Speakers info</h2>
       <h3 class="mb-3 text-2xl font-semibold tracking-wide">Short biography</h3>
-      <Tabs syncKey="bio">
+      <Tabs>
         <TabItem label="Text">
           <p>
             Driven by the mission to make people's lives easier, Tim Damen
@@ -129,7 +133,7 @@ const { frontmatter } = Astro.props;
       <h3 class="mt-8 mb-3 text-2xl font-semibold tracking-wide">
         Long biography
       </h3>
-      <Tabs syncKey="bio">
+      <Tabs>
         <TabItem label="Text">
           <p>
             Tim Damen is a frontend developer, web accessibility specialist, and
@@ -200,7 +204,11 @@ const { frontmatter } = Astro.props;
           rel="noopener"
           aria-label="open image 1 in new tab"
         >
-          <img
+          <Image 
+            width={300}
+            height={300}
+            loading="lazy"
+            decoding="async"
             src="/assets/stage1.webp"
             alt="Tim Damen speaking on stage with microphone attached to his ear"
             class="rounded-lg shadow-lg"
@@ -213,7 +221,11 @@ const { frontmatter } = Astro.props;
           rel="noopener"
           aria-label="open image 2 in new tab"
         >
-          <img
+          <Image 
+            width={300}
+            height={300}
+            loading="lazy"
+            decoding="async"
             src="/assets/stage2.webp"
             alt="Tim Damen speaking on stage with microphone attached to his ear"
             class="rounded-lg shadow-lg"
@@ -226,7 +238,11 @@ const { frontmatter } = Astro.props;
           rel="noopener"
           aria-label="open image 3 in new tab"
         >
-          <img
+          <Image 
+            width={300}
+            height={300}
+            loading="lazy"
+            decoding="async"
             src="/assets/speak.webp"
             alt="Tim Damen speaking on stage with microphone attached to his ear"
             class="rounded-lg shadow-lg"
@@ -238,7 +254,11 @@ const { frontmatter } = Astro.props;
           rel="noopener"
           aria-label="open image 4 in new tab"
         >
-          <img
+          <Image 
+            width={300}
+            height={300}
+            loading="lazy"
+            decoding="async"
             src="/assets/Tim-2.jpeg"
             alt="Tim Damen speaking on stage with microphone attached to his ear"
             class="rounded-lg shadow-lg"
@@ -250,7 +270,11 @@ const { frontmatter } = Astro.props;
           rel="noopener"
           aria-label="open image 5 in new tab"
         >
-          <img
+          <Image 
+            width={300}
+            height={300}
+            loading="lazy"
+            decoding="async"
             src="/assets/Tim-1.jpeg"
             alt="Tim Damen speaking on stage with microphone attached to his ear"
             class="rounded-lg shadow-lg"

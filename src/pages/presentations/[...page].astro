@@ -12,18 +12,67 @@ import { SITE } from "@/config";
 
 export const getStaticPaths = (async ({ paginate }) => {
   const presentations = await getCollection("blog", ({ data }) => !data.draft);
-  return paginate(getSortedPresentations(presentations), { pageSize: SITE.postPerPage });
+  return paginate(getSortedPresentations(presentations), {
+    pageSize: SITE.postPerPage,
+  });
 }) satisfies GetStaticPaths;
+
+const presentations2 = await getCollection("blog", ({ data }) => !data.draft);
+const sortedYears = [
+  ...new Set(
+    presentations2.map(({ data }) => data.conferenceDate?.getFullYear())
+  ),
+].sort((a, b) => b - a);
+const presentationsByYear = sortedYears.reduce(
+  (acc, year) => {
+    acc[year] = presentations2.filter(
+      ({ data }) => data.conferenceDate?.getFullYear() === year
+    );
+    return acc;
+  },
+  {} as Record<number, typeof presentations2>
+);
 
 const { page } = Astro.props;
 ---
 
 <Layout title={`Presentations | ${SITE.title}`}>
   <Header />
-  <Main pageTitle="Presentations" pageDesc="All presentations by Tim Damen">
-    <ul>
-      {page.data.map(data => <Card {...data} />)}
-    </ul>
+  <Main pageTitle="Presentations by Tim Damen">
+    <div class="mb-6 inline-flex rounded-lg bg-muted px-4 py-2">
+      {
+        sortedYears.map((year, index) => (
+          <>
+            <a
+              href={`#${year}`}
+              class="mx-2 inline-block text-xl font-semibold text-accent hover:underline focus-visible:no-underline focus-visible:underline-offset-0"
+              style={{ viewTransitionName: year }}
+              aria-label={`presentations in ${year}`}
+            >
+              {year}
+            </a>
+            {index < sortedYears.length - 1 && (
+              <span class="text-muted-foreground">-</span>
+            )}
+          </>
+        ))
+      }
+    </div>
+
+    {
+      sortedYears.map((year, index) => (
+        <section class="p-0" id={year}>
+          <h2 class="text-3xl font-semibold tracking-wide">{year}</h2>
+          <ul>
+            {presentationsByYear[year].map(data => (
+              <Card {...data} />
+            ))}
+          </ul>
+
+          {index < sortedYears.length - 1 && <hr class="my-6" />}
+        </section>
+      ))
+    }
   </Main>
 
   <Pagination {page} />

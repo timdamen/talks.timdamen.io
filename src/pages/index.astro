@@ -16,6 +16,7 @@ import { SITE } from "@/config";
 import { SOCIALS } from "@/constants";
 import CardImage from "@/components/CardImage.astro";
 import MapLibre from "@/components/MapLibre.astro";
+import Image from "astro/components/Image.astro";
 
 const presentations = await getCollection("blog");
 
@@ -65,8 +66,10 @@ const conferences = recentPresentations
       <div
         class="mt-4 flex flex-col items-center gap-6 sm:flex-row sm:items-start"
       >
-        <img
+        <Image
           src="/assets/stage2.webp"
+          width={400}
+          height={400}
           alt="Tim Damen speaking on stage with microphone attached to his ear"
           class="w-full max-w-xs rounded-lg shadow-lg sm:w-72 sm:max-w-none"
         />
@@ -74,23 +77,25 @@ const conferences = recentPresentations
           <p class="max-w-2xl">
             Tim Damen is frontend developer, web accessibility specialist, and
             engineering manager from Amsterdam the Netherlands 🇳🇱. He is
-            passionate about HTML, CSS, Javascript, DX, web standards, accessibility, and
-            developing robust web apps. Tim Damen has over a decade of
-            experience in the field and has spoken at various conferences and
-            meetups. He also hosts a podcast about digital accessibility called <a
+            passionate about HTML, CSS, Javascript, DX, web standards,
+            accessibility, and developing robust web apps. Tim Damen has over a
+            decade of experience in the field and has spoken at various
+            conferences and meetups. He also hosts a podcast about digital
+            accessibility called <a
               href="https://focusring.io/podcast-focustrap"
               class="underline decoration-dashed underline-offset-4 hover:text-accent"
               >focustrap</a
             >.
           </p>
- <br> 
+          <br />
           <p>
-            On this website you will find all of Tim's talks with slides, videos, and other resources.
+            On this website you will find all of Tim's talks with slides,
+            videos, and other resources.
           </p>
 
           <LinkButton
             href="/about/"
-            class="mt-4 rounded bg-accent/70 px-2 py-1 text-base text-white shadow-black transition-colors hover:text-white hover:shadow dark:shadow-blue-50"
+            class="mt-4 rounded bg-accent px-2 py-1 text-base text-white shadow-black transition-colors hover:text-white hover:shadow dark:shadow-blue-50"
           >
             More about Tim
           </LinkButton>
@@ -142,9 +147,15 @@ const conferences = recentPresentations
     {
       recentPresentations.length > 0 && (
         <section id="recent-presentations" class="pt-12 pb-6">
-          <h2 class="text-3xl font-semibold tracking-wide">
-            Recent Presentations
-          </h2>
+          <div class="mb-4 flex items-center justify-between">
+            <h2 class="text-3xl font-semibold tracking-wide">
+              Recent Presentations
+            </h2>
+            <LinkButton href="/presentations/">
+              All Presentations
+              <IconArrowRight class="inline-block rtl:-rotate-180" />
+            </LinkButton>
+          </div>
           <ul>
             {recentPresentations.map(
               (data, index) =>
@@ -175,7 +186,7 @@ const conferences = recentPresentations
       interactive="true"
       conferences={conferences}
       mapstyle="https://demotiles.maplibre.org/style.json"
-      containerstyle="width:100vw; height: 400px"
+      containerstyle="width:100vw; height: 500px"
     />
   </main>
   <Footer />

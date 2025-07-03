@@ -20,7 +20,7 @@ tags:
   - Conference
   - In Person
 description:
-  Keyboard navigation remains an afterthought for many developers. "Stuck in a Focustrap" explores this essential but frequently neglected side of web accessibility, offering practical techniques and thoughtful approaches to creating inclusive digital experiences
+  Keyboard navigation remains an afterthought for many developers. "Stuck in a Focustrap" explores this essential but frequently neglected side of web accessibility, offering practical techniques and thoughtful approaches to creating inclusive digital experiences.
 ---
 
 Users cannot see this post because it is in draft.

@@ -6,8 +6,6 @@ conference: ABN AMRO x Passionate People Meetup
 conferenceDate: 2023-10-26T19:00:00Z
 conferenceVenue: Head Office ABN ARMO
 conferenceLocation: Amsterdam, Netherlands
-conferenceLat: 52.3676
-conferenceLong: 4.9041
 conferenceUrl: https://www.meetup.com/frontend-developer-meetup-amsterdam/events/294224306/
 conferenceLogo: ../../assets/images/abn-pp.png
 conferenceSlides: https://example.com/slides.pdf

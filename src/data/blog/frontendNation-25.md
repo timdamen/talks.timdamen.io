@@ -9,7 +9,7 @@ conferenceUrl: https://frontendnation.com/
 conferenceLogo: ../../assets/logos/frontendNation.svg
 conferenceSlides: ../../assets/slides/frontendNation-25.pdf
 ogImage: ../../assets/images/fn-25-og.png
-slug: frontend-nation-25-stuck-in-a-focustrap-keyboard-accessibility-focus
+slug: frontend-nation-25-stuck-in-a-focustrap-keyboard-accessibility-focu
 featured: true
 draft: false
 tags:

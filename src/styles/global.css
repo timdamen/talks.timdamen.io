@@ -35,9 +35,9 @@ html[data-theme="dark"] {
     scrollbar-color: var(--color-muted) transparent;
   }
   :focus {
-    outline: 0.5rem double black !important;
-    box-shadow: 0 0 0 0.45rem white !important;
-    border-radius: 0.225rem !important;
+  outline: .375rem double black !important;
+  box-shadow: 0 0 0 .25rem white !important;
+  border-radius: .125rem !important;
   }
   canvas:focus-visible {
     border: 4px dashed var(--color-accent);

@@ -35,8 +35,9 @@ const date = datetime.format("D MMM, YYYY"); // e.g., '22 Mar, 2025'
 
 <div class:list={["flex items-end space-x-0.5", className]}>
   <IconCalendar
+    aria-label="Date"
     class:list={[
-      "inline-block size-6 min-w-[1.375rem] -ml-1",
+      "-ml-1 inline-block size-6 min-w-[1.375rem]",
       { "scale-90": size === "sm" },
     ]}
   />

@@ -11,39 +11,44 @@ export interface Props extends CollectionEntry<"blog"> {
 
 const { variant = "h2", largeImage = false, data, id, filePath } = Astro.props;
 
-const { title, description, pubDatetime, modDatetime, timezone, ogImage } = data;
+const { title, description, pubDatetime, modDatetime, timezone, ogImage } =
+  data;
 
 const headerProps = {
-  style: { viewTransitionName: slugifyStr(title + 'featured') },
+  style: { viewTransitionName: slugifyStr(title + "featured") },
   class: "text-lg font-medium decoration-dashed hover:underline",
 };
 ---
 
 <div class="my-3">
-  {ogImage && largeImage && (
-    <img
-      src={typeof ogImage === "string" ? ogImage : ogImage.src}
-      alt={`Thumbnail for ${title}`}
-      width={642}
-      height={360}
-      loading="lazy"
-      decoding="async"
-      data-href={getPath(id, filePath)}
-      class="mb-2 w-full rounded object-cover border-accent border-2 cursor-pointer"
-    />
-  )}
-    {ogImage && !largeImage && (
-    <img
-      src={typeof ogImage === "string" ? ogImage : ogImage.src}
-      alt={`Thumbnail for ${title}`}
-      width={320}
-      height={172}
-      loading="lazy"
-      decoding="async"
-      data-href={getPath(id, filePath)}
-      class="mb-2 md:h-44 w-full rounded object-cover border-accent border-2 cursor-pointer"
-    />
-  )}
+  {
+    ogImage && largeImage && (
+      <img
+        src={typeof ogImage === "string" ? ogImage : ogImage.src}
+        alt={`Thumbnail for ${title}`}
+        width={642}
+        height={360}
+        loading="lazy"
+        decoding="async"
+        data-href={getPath(id, filePath)}
+        class="mb-2 w-full cursor-pointer rounded border-2 border-accent object-cover"
+      />
+    )
+  }
+  {
+    ogImage && !largeImage && (
+      <img
+        src={typeof ogImage === "string" ? ogImage : ogImage.src}
+        alt={`Thumbnail for ${title}`}
+        width={320}
+        height={172}
+        loading="lazy"
+        decoding="async"
+        data-href={getPath(id, filePath)}
+        class="mb-2 w-full cursor-pointer rounded border-2 border-accent object-cover md:h-44"
+      />
+    )
+  }
   <a
     href={getPath(id, filePath)}
     class="inline-block text-lg font-medium text-accent decoration-dashed underline-offset-4 focus-visible:no-underline focus-visible:underline-offset-0"
@@ -56,28 +61,24 @@ const headerProps = {
       )
     }
   </a>
-  <div class="flex flex-col md:flex-row mb-2 items-start sm:items-center">
-    <span class="mr-3 text-sm italic mb-1 sm:mb-0">
-      @ {data.conference}
+  <div class="mb-2 flex flex-col items-start md:flex-row md:items-center">
+    <span class="mr-3 mb-1 text-sm italic sm:mb-0">
+      <span aria-label="at">@</span>
+      {data.conference}
     </span>
-      <Datetime {pubDatetime} {modDatetime} {timezone} />
+    <Datetime {pubDatetime} {modDatetime} {timezone} />
   </div>
-    {
-    largeImage && (
-      <p class="text-base">{description}</p>
-    )
-  }
-
+  {largeImage && <p class="text-base">{description}</p>}
 </div>
 
 <script>
-  import { navigate } from 'astro:transitions/client';
+  import { navigate } from "astro:transitions/client";
 
-  document.addEventListener('astro:page-load', () => {
+  document.addEventListener("astro:page-load", () => {
     // Ensure all images with data-href are clickable
-    document.querySelectorAll('img[data-href]').forEach(img => {
-      img.addEventListener('click', () => {
-        const href = img.getAttribute('data-href');
+    document.querySelectorAll("img[data-href]").forEach(img => {
+      img.addEventListener("click", () => {
+        const href = img.getAttribute("data-href");
         if (href) {
           navigate(href);
         }

@@ -38,9 +38,9 @@ const headerProps = {
       )
     }
   </a>
-  <div class="flex flex-col md:flex-row mb-2 items-start sm:items-center">
+  <div class="flex flex-col md:flex-row mb-2 items-start md:items-center">
     <span class="mr-3 text-sm italic mb-1 sm:mb-0">
-      @ {data.conference}
+      <span aria-label="at">@</span> {data.conference}
     </span>
     <Datetime {pubDatetime} {modDatetime} {timezone} />
   </div>

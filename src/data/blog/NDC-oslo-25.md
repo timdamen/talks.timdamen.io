@@ -8,7 +8,7 @@ conferenceVenue: Oslo Spektrum
 conferenceLocation: Oslo, Norway
 conferenceLat: 59.9077630356
 conferenceLong: 10.7527803222
-conferenceUrl: https://ndcoslo.com/
+conferenceURL: https://ndcoslo.com/
 conferenceLogo: ../../assets/logos/ndcOslo.webp
 conferenceSlides: ../../assets/slides/anwb-summit-25.pdf
 ogImage: ../../assets/images/ndc-oslo-25-og.webp

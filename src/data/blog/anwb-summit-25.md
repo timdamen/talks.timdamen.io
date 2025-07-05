@@ -8,7 +8,7 @@ conferenceVenue: Head Office ANWB
 conferenceLocation: Den Haag, Netherlands
 conferenceLat: 52.0963793
 conferenceLong: 4.3277138
-conferenceUrl: https://sites.google.com/view/anwb-frontend-summit
+conferenceURL: https://sites.google.com/view/anwb-frontend-summit
 conferenceLogo: ../../assets/logos/anwb.webp
 conferenceSlides: ../../assets/slides/anwb-summit-25.pdf
 ogImage: ../../assets/images/anwb-summit-25-og.webp

@@ -56,12 +56,18 @@ const headerProps = {
       )
     }
   </a>
-  <Datetime {pubDatetime} {modDatetime} {timezone} />
-  {
+  <div class="flex flex-col md:flex-row mb-2 items-start sm:items-center">
+    <span class="mr-3 text-sm italic mb-1 sm:mb-0">
+      @ {data.conference}
+    </span>
+      <Datetime {pubDatetime} {modDatetime} {timezone} />
+  </div>
+    {
     largeImage && (
-      <p>{description}</p>
+      <p class="text-base">{description}</p>
     )
   }
+
 </div>
 
 <script>

@@ -5,7 +5,7 @@ pubDatetime: 2025-06-04T18:10:00Z
 conference: Frontend Nation
 conferenceDate: 2025-06-04T18:10:00Z
 conferenceLocation: Online
-conferenceUrl: https://frontendnation.com/
+conferenceURL: https://frontendnation.com/
 conferenceLogo: ../../assets/logos/frontendNation.svg
 conferenceSlides: ../../assets/slides/frontendNation-25.pdf
 ogImage: ../../assets/images/fn-25-og.webp

@@ -4,7 +4,7 @@ author: 'Tim Damen'
 pubDatetime: 2024-11-21T15:10:00Z
 conference: JSNation
 conferenceDate: 2024-11-21T15:10:00Z
-conferenceUrl: https://jsnation.us/
+conferenceURL: https://jsnation.us/
 conferenceLogo: ../../assets/logos/JSNation.svg
 conferenceVenue: The Liberty Science Center
 conferenceLocation: New York, USA

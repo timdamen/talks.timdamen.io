@@ -7,6 +7,7 @@ import IconWhatsapp from "@/assets/icons/IconWhatsapp.svg";
 import IconFacebook from "@/assets/icons/IconFacebook.svg";
 import IconTelegram from "@/assets/icons/IconTelegram.svg";
 import IconPinterest from "@/assets/icons/IconPinterest.svg";
+import IconSessionize from "@/assets/icons/IconSessionize.svg";
 import { SITE } from "@/config";
 
 interface Social {
@@ -34,6 +35,12 @@ export const SOCIALS: Social[] = [
     href: "https://www.linkedin.com/in/tim-damen-20a1b4106",
     linkTitle: `${SITE.title} on LinkedIn`,
     icon: IconLinkedin,
+  },
+    {
+    name: "Sessionize",
+    href: "https://sessionize.com/timdamen/",
+    linkTitle: `${SITE.title} on Sessionize`,
+    icon: IconSessionize,
   },
   {
     name: "Mail",

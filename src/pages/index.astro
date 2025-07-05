@@ -19,15 +19,17 @@ import MapLibre from "@/components/MapLibre.astro";
 import Image from "astro/components/Image.astro";
 
 const presentations = await getCollection("blog");
+const presentations2 = await getCollection("blog");
 
 const sortedPresentations = getSortedPresentations(presentations);
+const sortedPresentations2 = getSortedPresentations(presentations2);
 const featuredPresentations = sortedPresentations.filter(
   ({ data }) => data.featured
 );
 const recentPresentations = sortedPresentations;
 
 // get array of all conferences with lat, long, and popupContent from recentPresentations
-const conferences = recentPresentations
+const conferences = sortedPresentations2
   .map(({ data }) => {
     if (data.conferenceLat && data.conferenceLong) {
       return {
@@ -39,6 +41,7 @@ const conferences = recentPresentations
     return null;
   })
   .filter(Boolean);
+
 ---
 
 <Layout>
@@ -68,8 +71,8 @@ const conferences = recentPresentations
       >
         <Image
           src="/assets/stage2.webp"
-          width={400}
-          height={400}
+          width={288}
+          height={216}
           alt="Tim Damen speaking on stage with microphone attached to his ear"
           class="w-full max-w-xs rounded-lg shadow-lg sm:w-72 sm:max-w-none"
         />
@@ -178,6 +181,7 @@ const conferences = recentPresentations
         Talk scratch map
       </h2>
     </section>
+   
     <MapLibre
       container="maplibremap"
       latitude="52.377956"

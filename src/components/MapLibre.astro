@@ -87,6 +87,8 @@ const {
           popupContent: string;
         }[];
 
+        console.log("Conferences data:", conferences);
+
         conferences.forEach(({ latitude, longitude, popupContent }) => {
           new Marker(
             {

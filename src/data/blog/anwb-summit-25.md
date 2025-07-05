@@ -1,9 +1,9 @@
 ---
 title: 'Stuck in a Focustrap: Keyboard Accessibility & Focu'
 author: 'Tim Damen'
-pubDatetime: 2025-10-19T14:20:00Z
+pubDatetime: 2025-06-19T14:20:00Z
 conference: ANWB Frontend Summit
-conferenceDate: 2025-10-19T14:20:00Z
+conferenceDate: 2025-06-19T14:20:00Z
 conferenceVenue: Head Office ANWB
 conferenceLocation: Den Haag, Netherlands
 conferenceLat: 52.0963793
@@ -18,7 +18,7 @@ draft: false
 tags:
   - Accessibility
   - Conference
-  - In Person
+  - InPerson
 description:
   Keyboard navigation remains an afterthought for many developers. "Stuck in a Focustrap" explores this essential but frequently neglected side of web accessibility, offering practical techniques and thoughtful approaches to creating inclusive digital experiences.
 ---

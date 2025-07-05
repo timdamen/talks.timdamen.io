@@ -28,7 +28,8 @@ const headerProps = {
       height={400}
       loading="lazy"
       decoding="async"
-      class="mb-2 w-full rounded object-cover border-accent border-2"
+      data-href={getPath(id, filePath)}
+      class="mb-2 w-full rounded object-cover border-accent border-2 cursor-pointer"
     />
   )}
     {ogImage && !largeImage && (
@@ -39,7 +40,8 @@ const headerProps = {
       height={400}
       loading="lazy"
       decoding="async"
-      class="mb-2 md:h-44 w-full rounded object-cover border-accent border-2"
+      data-href={getPath(id, filePath)}
+      class="mb-2 md:h-44 w-full rounded object-cover border-accent border-2 cursor-pointer"
     />
   )}
   <a
@@ -61,3 +63,19 @@ const headerProps = {
     )
   }
 </div>
+
+<script>
+  import { navigate } from 'astro:transitions/client';
+
+  document.addEventListener('astro:page-load', () => {
+    // Ensure all images with data-href are clickable
+    document.querySelectorAll('img[data-href]').forEach(img => {
+      img.addEventListener('click', () => {
+        const href = img.getAttribute('data-href');
+        if (href) {
+          navigate(href);
+        }
+      });
+    });
+  });
+</script>

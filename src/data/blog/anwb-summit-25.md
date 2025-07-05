@@ -9,9 +9,9 @@ conferenceLocation: Den Haag, Netherlands
 conferenceLat: 52.0963793
 conferenceLong: 4.3277138
 conferenceUrl: https://sites.google.com/view/anwb-frontend-summit
-conferenceLogo: ../../assets/logos/anwb.png
+conferenceLogo: ../../assets/logos/anwb.webp
 conferenceSlides: ../../assets/slides/anwb-summit-25.pdf
-ogImage: ../../assets/images/anwb-summit-25-og.png
+ogImage: ../../assets/images/anwb-summit-25-og.webp
 slug: anwb-summit-25-stuck-in-a-focustrap-keyboard-accessibility-focus
 featured: false
 draft: false

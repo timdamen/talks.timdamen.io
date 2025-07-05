@@ -9,9 +9,9 @@ conferenceLocation: Oslo, Norway
 conferenceLat: 59.9077630356
 conferenceLong: 10.7527803222
 conferenceUrl: https://ndcoslo.com/
-conferenceLogo: ../../assets/logos/ndcOslo.png
+conferenceLogo: ../../assets/logos/ndcOslo.webp
 conferenceSlides: ../../assets/slides/anwb-summit-25.pdf
-ogImage: ../../assets/images/ndc-oslo-25-og.png
+ogImage: ../../assets/images/ndc-oslo-25-og.webp
 slug: ndc-oslo-25-accessibility-feedback-loop-continuous-a11y-improvement-in-your-development-life-cycle
 featured: true
 draft: false

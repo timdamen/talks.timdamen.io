@@ -9,9 +9,9 @@ conferenceLocation: Amsterdam, Netherlands
 conferenceLat: 52.3676
 conferenceLong: 4.9041
 conferenceUrl: https://www.meetup.com/frontend-developer-meetup-amsterdam/events/294224306/
-conferenceLogo: ../../assets/images/abn-pp.png
+conferenceLogo: ../../assets/images/abn-pp.webp
 conferenceSlides: https://example.com/slides.pdf
-ogImage: ../../assets/images/abn-pp.png
+ogImage: ../../assets/images/abn-pp.webp
 slug: making-forms-accessible
 featured: false
 draft: false

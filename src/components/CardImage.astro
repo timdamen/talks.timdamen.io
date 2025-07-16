@@ -1,6 +1,7 @@
 ---
 import { slugifyStr } from "@/utils/slugify";
 import type { CollectionEntry } from "astro:content";
+import Location from "@/assets/icons/IconLocation.svg";
 import { getPath } from "@/utils/getPath";
 import Datetime from "./Datetime.astro";
 
@@ -62,9 +63,11 @@ const headerProps = {
     }
   </a>
   <div class="mb-2 flex flex-col items-start md:flex-row md:items-center">
-    <span class="mr-3 mb-1 text-sm italic sm:mb-0">
-      <span aria-label="at">@</span>
-      {data.conference}
+    <span class="mr-3 mb-1 flex items-center text-sm italic sm:mb-0">
+      <span aria-label="at">
+        <Location width={16} height={16} class="mr-1" />
+      </span>
+      <span>{data.conference}</span>
     </span>
     <Datetime {pubDatetime} {modDatetime} {timezone} />
   </div>

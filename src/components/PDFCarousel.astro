@@ -16,7 +16,7 @@ const { pdfUrl, width = 800, height = 600, className = '' } = Astro.props;
     <canvas id="pdf-canvas" width={width} height={height}></canvas>
     <div class="carousel-controls">
       <button id="prev-btn" class="nav-btn" disabled>
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
           <polyline points="15,18 9,12 15,6"></polyline>
         </svg>
         Previous
@@ -24,7 +24,7 @@ const { pdfUrl, width = 800, height = 600, className = '' } = Astro.props;
       <span id="page-info" class="page-info">Page 1 of 1</span>
       <button id="next-btn" class="nav-btn" disabled>
         Next
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
           <polyline points="9,18 15,12 9,6"></polyline>
         </svg>
       </button>
@@ -264,7 +264,7 @@ const { pdfUrl, width = 800, height = 600, className = '' } = Astro.props;
     align-items: center;
     gap: 8px;
     padding: 12px 24px;
-    background: #007acc;
+    background: #025084;
     color: white;
     border: none;
     border-radius: 6px;
@@ -280,7 +280,7 @@ const { pdfUrl, width = 800, height = 600, className = '' } = Astro.props;
   }
 
   .nav-btn:disabled {
-    background: #ccc;
+    background: #757474;
     cursor: not-allowed;
     transform: none;
   }

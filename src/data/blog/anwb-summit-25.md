@@ -18,13 +18,16 @@ draft: false
 tags:
   - Accessibility
   - Conference
-  - InPerson
+  - In Person
+  - Talk
 description:
   Keyboard navigation remains an afterthought for many developers. "Stuck in a Focustrap" explores this essential but frequently neglected side of web accessibility, offering practical techniques and thoughtful approaches to creating inclusive digital experiences.
 ---
 
-Users cannot see this post because it is in draft.
-
-## Motivation
-
-rec 1
+## Resources
+The following resources were mentioned in the talk, used for research, or are otherwise relevant:
+- [W3C: How People with Disabilities Use the Web "Physical"](https://www.w3.org/WAI/people-use-web/abilities-barriers/physical/)
+- [WCAG 2.2 Understanding Success Criterion 2.4.7: Focus Visible](https://www.w3.org/WAI/WCAG22/Understanding/focus-visible.html)
+- [Post by Sara Soueidan on focus indicators](https://www.sarasoueidan.com/blog/focus-indicators/)
+- [Post by Hidde de Vries on using JavaScript to trap focus in an element](https://hidde.blog/using-javascript-to-trap-focus-in-an-element/)
+- [Post by Erik Kroes on the universal focus state](https://www.erikkroes.nl/blog/the-universal-focus-state/)

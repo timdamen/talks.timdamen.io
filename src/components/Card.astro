@@ -1,7 +1,7 @@
 ---
 import { slugifyStr } from "@/utils/slugify";
 import type { CollectionEntry } from "astro:content";
-import IconConference from "@/assets/icons/IconConference.svg";
+import Location from "@/assets/icons/IconLocation.svg";
 import { getPath } from "@/utils/getPath";
 import Datetime from "./Datetime.astro";
 
@@ -11,13 +11,7 @@ export interface Props extends CollectionEntry<"blog"> {
 
 const { variant = "h2", data, id, filePath } = Astro.props;
 
-const {
-  title,
-  description,
-  pubDatetime,
-  modDatetime,
-  timezone,
-} = data;
+const { title, pubDatetime, modDatetime, timezone } = data;
 
 const headerProps = {
   style: { viewTransitionName: slugifyStr(title) },
@@ -38,9 +32,12 @@ const headerProps = {
       )
     }
   </a>
-  <div class="flex flex-col md:flex-row mb-2 items-start md:items-center">
-    <span class="mr-3 text-sm italic mb-1 sm:mb-0">
-      <span aria-label="at">@</span> {data.conference}
+  <div class="mb-2 flex flex-col items-start md:flex-row md:items-center">
+    <span class="mr-3 mb-1 text-sm italic sm:mb-0 flex items-center">
+      <span aria-label="at">
+        <Location width={16} height={16} class="mr-1" />
+      </span>
+      <span>{data.conference}</span>
     </span>
     <Datetime {pubDatetime} {modDatetime} {timezone} />
   </div>

@@ -35,6 +35,8 @@ const {
   tags,
   hideEditPost,
   conferenceSlides,
+  conferenceVideo,
+  conferenceLocation
 } = post.data;
 
 const { Content } = await render(post);
@@ -102,7 +104,7 @@ const nextPost =
   >
     <h1
       transition:name={slugifyStr(title)}
-      class="inline-block text-2xl font-bold text-accent sm:text-3xl mb-2"
+      class="mb-2 inline-block text-2xl font-bold text-accent sm:text-3xl"
     >
       {title}
     </h1>
@@ -111,9 +113,23 @@ const nextPost =
       <a
         href={post.data.conferenceURL}
         class="underline decoration-dashed underline-offset-5 hover:text-accent"
-      >
-        {post.data.conference}
-      </a>
+        >{post.data.conference}</a
+      ><Datetime
+        {pubDatetime}
+        {modDatetime}
+        {timezone}
+        italic={false}
+        icon={false}
+        size="lg"
+        class="inline"
+      />
+      {
+        conferenceLocation && 
+          conferenceLocation !== "Online" && (
+            <><span>in</span>
+            <span>{conferenceLocation}</span></>
+        )
+      }
       by
       {
         author && (
@@ -126,15 +142,30 @@ const nextPost =
         )
       }
     </div>
-    <Datetime {pubDatetime} {modDatetime} {timezone} size="lg" />
-    <EditPost class="max-sm:hidden" {hideEditPost} {post} />
     <article
       id="article"
       class="app-prose mx-auto mt-8 max-w-5xl prose-pre:bg-(--shiki-light-bg) dark:prose-pre:bg-(--shiki-dark-bg)"
     >
+      <h2 class="text-2xl font-semibold tracking-wide">Slides</h2>
       {
         conferenceSlides && (
           <PDFCarousel pdfUrl={conferenceSlides} width={850} height={480} />
+        )
+      }
+      <h2 class="text-2xl font-semibold tracking-wide">Description</h2>
+      <p class="text-base">{description}</p>
+      {
+        conferenceVideo && (
+          <h2 class="text-2xl font-semibold tracking-wide">Video</h2>
+          <iframe
+            width="560"
+            height="315"
+            src={conferenceVideo}
+            title="YouTube video player"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+          />
         )
       }
 
@@ -161,12 +192,12 @@ const nextPost =
         prevPost && (
           <a
             href={getPath(prevPost.id, prevPost.filePath)}
-            class="flex w-full gap-1 hover:opacity-90"
+            class="flex w-full gap-1"
           >
             <IconChevronLeft class="inline-block flex-none rtl:rotate-180" />
             <div>
-              <span>Previous Post</span>
-              <div class="text-sm text-accent/85">{prevPost.title}</div>
+              <span>Previous Presentation</span>
+              <div class="text-sm text-accent">{prevPost.title}</div>
             </div>
           </a>
         )
@@ -175,11 +206,11 @@ const nextPost =
         nextPost && (
           <a
             href={getPath(nextPost.id, nextPost.filePath)}
-            class="flex w-full justify-end gap-1 text-end hover:opacity-90 sm:col-start-2"
+            class="flex w-full justify-end gap-1 text-end sm:col-start-2"
           >
             <div>
-              <span>Next Post</span>
-              <div class="text-sm text-accent/85">{nextPost.title}</div>
+              <span>Next Presentation</span>
+              <div class="text-sm text-accent">{nextPost.title}</div>
             </div>
             <IconChevronRight class="inline-block flex-none rtl:rotate-180" />
           </a>

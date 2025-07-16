@@ -11,7 +11,7 @@ conferenceVideo: https://www.youtube.com/embed/Ruv9vKGHupA?si=ZoCapjP8Ku1Y3vvs
 conferenceSlides: ../../assets/slides/frontendNation-25.pdf
 ogImage: ../../assets/images/fn-25-og.webp
 slug: frontend-nation-25-stuck-in-a-focustrap-keyboard-accessibility-focu
-featured: true
+featured: false
 draft: false
 tags:
   - Accessibility

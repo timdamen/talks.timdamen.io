@@ -1,5 +1,5 @@
 ---
-title: 'Stuck in a Focustrap: Keyboard Accessibility & Focu'
+title: 'Stuck in a Focustrap: Keyboard Accessibility & Focus'
 author: 'Tim Damen'
 pubDatetime: 2025-06-19T14:20:00Z
 conference: ANWB Frontend Summit

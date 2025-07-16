@@ -2,7 +2,7 @@
 title: 'Scaling Accessibility'
 author: 'Tim Damen'
 pubDatetime: 2024-11-21T15:10:00Z
-conference: JSNation
+conference: JSNation US
 conferenceDate: 2024-11-21T15:10:00Z
 conferenceURL: https://jsnation.us/
 conferenceLogo: ../../assets/logos/JSNation.svg

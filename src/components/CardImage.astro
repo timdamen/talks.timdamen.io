@@ -42,11 +42,11 @@ const headerProps = {
         src={typeof ogImage === "string" ? ogImage : ogImage.src}
         alt={`Thumbnail for ${title}`}
         width={320}
-        height={172}
+        height={220}
         loading="lazy"
         decoding="async"
         data-href={getPath(id, filePath)}
-        class="mb-2 w-full cursor-pointer rounded border-2 border-accent object-cover md:h-44"
+        class="mb-2 w-full cursor-pointer rounded border-2 border-accent object-cover md:h-52"
       />
     )
   }
@@ -64,8 +64,8 @@ const headerProps = {
   </a>
   <div class="mb-2 flex flex-col items-start md:flex-row md:items-center">
     <span class="mr-3 mb-1 flex items-center text-sm italic sm:mb-0">
-      <span aria-label="at">
-        <Location width={16} height={16} class="mr-1" />
+      <span>
+        <Location width={16} height={16} class="mr-1" aria-label="at"/>
       </span>
       <span>{data.conference}</span>
     </span>

@@ -2,7 +2,7 @@
 title: 'Making forms accessible'
 author: 'Tim Damen'
 pubDatetime: 2023-10-26T19:00:00Z
-conference: ABN AMRO x Passionate People Meetup
+conference: ABN AMRO x PP Meetup
 conferenceDate: 2023-10-26T19:00:00Z
 conferenceVenue: Head Office ABN ARMO
 conferenceLocation: Amsterdam, Netherlands

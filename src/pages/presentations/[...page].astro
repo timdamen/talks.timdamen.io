@@ -9,6 +9,7 @@ import Card from "@/components/Card.astro";
 import Pagination from "@/components/Pagination.astro";
 import getSortedPresentations from "@/utils/getSortedPresentations";
 import { SITE } from "@/config";
+import CardImage from "@/components/CardImage.astro";
 
 export const getStaticPaths = (async ({ paginate }) => {
   const presentations = await getCollection("blog", ({ data }) => !data.draft);
@@ -25,9 +26,9 @@ const sortedYears = [
 ].sort((a, b) => b - a);
 const presentationsByYear = sortedYears.reduce(
   (acc, year) => {
-    acc[year] = presentations2.filter(
-      ({ data }) => data.conferenceDate?.getFullYear() === year
-    );
+    acc[year] = presentations2
+      .filter(({ data }) => data.conferenceDate?.getFullYear() === year)
+      .sort((a, b) => new Date(b.data.conferenceDate).getTime() - new Date(a.data.conferenceDate).getTime());
     return acc;
   },
   {} as Record<number, typeof presentations2>
@@ -62,11 +63,11 @@ const { page } = Astro.props;
       sortedYears.map((year, index) => (
         <section class="p-0" id={year}>
           <h2 class="text-3xl font-semibold tracking-wide">{year}</h2>
-          <ul>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-4">
             {presentationsByYear[year].map(data => (
-              <Card {...data} />
+              <CardImage variant="h3" {...data} />
             ))}
-          </ul>
+          </div>
 
           {index < sortedYears.length - 1 && <hr class="my-6" />}
         </section>

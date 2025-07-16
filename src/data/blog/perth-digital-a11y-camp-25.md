@@ -2,11 +2,11 @@
 title: 'Continuous a11y improvements'
 author: 'Tim Damen'
 pubDatetime: 2025-02-18T16:00:00Z
-conference: Perth Web Accessibility Camp 2025
+conference: Perth Web A11y Camp
 conferenceDate: 2025-02-18T16:00:00Z
 conferenceVenue: VisAbility Conference Hall
 conferenceLocation: Victoria Park WA, Australia
-conferenceLat: 31.969
+conferenceLat: -31.969
 conferenceLong: 115.896
 conferenceURL: https://events.humanitix.com/perth-web-accessibility-camp-2025
 conferenceVideo: https://www.youtube.com/embed/Yoq_JPABy5E?si=AuGWSVNJDCKUIywQ

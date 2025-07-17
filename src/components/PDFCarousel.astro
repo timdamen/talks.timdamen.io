@@ -8,23 +8,39 @@ export interface Props {
   className?: string;
 }
 
-const { pdfUrl, width = 800, height = 600, className = '' } = Astro.props;
+const { pdfUrl, width = 800, height = 600, className = "" } = Astro.props;
 ---
 
 <div class={`pdf-carousel ${className}`} data-pdf-url={pdfUrl}>
   <div class="carousel-container">
     <canvas id="pdf-canvas" width={width} height={height}></canvas>
     <div class="carousel-controls">
-      <button id="prev-btn" class="nav-btn" disabled>
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <button id="prev-btn" class="nav-btn bg-accent" disabled>
+        <svg
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          aria-hidden="true"
+        >
           <polyline points="15,18 9,12 15,6"></polyline>
         </svg>
         Previous
       </button>
       <span id="page-info" class="page-info">Page 1 of 1</span>
-      <button id="next-btn" class="nav-btn" disabled>
+      <button id="next-btn" class="nav-btn bg-accent" disabled>
         Next
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+        <svg
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          aria-hidden="true"
+        >
           <polyline points="9,18 15,12 9,6"></polyline>
         </svg>
       </button>
@@ -32,12 +48,16 @@ const { pdfUrl, width = 800, height = 600, className = '' } = Astro.props;
   </div>
 </div>
 
-<script is:inline src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+<script
+  is:inline
+  src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"
+></script>
 
 <script>
   // Set PDF.js worker source
-  if (typeof pdfjsLib !== 'undefined') {
-    pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+  if (typeof pdfjsLib !== "undefined") {
+    pdfjsLib.GlobalWorkerOptions.workerSrc =
+      "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
   }
 
   class PDFCarousel {
@@ -46,26 +66,26 @@ const { pdfUrl, width = 800, height = 600, className = '' } = Astro.props;
       this.pdfDoc = null;
       this.currentPage = 1;
       this.totalPages = 0;
-      this.canvas = container.querySelector('#pdf-canvas');
-      this.ctx = this.canvas.getContext('2d');
-      this.prevBtn = container.querySelector('#prev-btn');
-      this.nextBtn = container.querySelector('#next-btn');
-      this.pageInfo = container.querySelector('#page-info');
-      
+      this.canvas = container.querySelector("#pdf-canvas");
+      this.ctx = this.canvas.getContext("2d");
+      this.prevBtn = container.querySelector("#prev-btn");
+      this.nextBtn = container.querySelector("#next-btn");
+      this.pageInfo = container.querySelector("#page-info");
+
       this.init();
     }
 
     async init() {
       try {
         // Wait for PDF.js to be available
-        if (typeof pdfjsLib === 'undefined') {
-          console.error('PDF.js library not loaded');
+        if (typeof pdfjsLib === "undefined") {
+          console.error("PDF.js library not loaded");
           return;
         }
 
         const pdfUrl = this.container.dataset.pdfUrl;
         if (!pdfUrl) {
-          console.error('PDF URL not provided');
+          console.error("PDF URL not provided");
           return;
         }
 
@@ -73,71 +93,70 @@ const { pdfUrl, width = 800, height = 600, className = '' } = Astro.props;
         const loadingTask = pdfjsLib.getDocument(pdfUrl);
         this.pdfDoc = await loadingTask.promise;
         this.totalPages = this.pdfDoc.numPages;
-        
+
         // Render first page
         await this.renderPage(1);
-        
+
         // Set up event listeners
         this.setupEventListeners();
-        
+
         // Update UI
         this.updateUI();
       } catch (error) {
-        console.error('Error loading PDF:', error);
-        this.showError('Failed to load PDF');
+        console.error("Error loading PDF:", error);
+        this.showError("Failed to load PDF");
       }
     }
 
     setupEventListeners() {
-      this.prevBtn.addEventListener('click', () => this.previousPage());
-      this.nextBtn.addEventListener('click', () => this.nextPage());
-      
+      this.prevBtn.addEventListener("click", () => this.previousPage());
+      this.nextBtn.addEventListener("click", () => this.nextPage());
+
       // Keyboard navigation (only for this instance)
-      this.keydownHandler = (e) => {
-        if (e.key === 'ArrowLeft') this.previousPage();
-        if (e.key === 'ArrowRight') this.nextPage();
+      this.keydownHandler = e => {
+        if (e.key === "ArrowLeft") this.previousPage();
+        if (e.key === "ArrowRight") this.nextPage();
       };
-      document.addEventListener('keydown', this.keydownHandler);
+      document.addEventListener("keydown", this.keydownHandler);
     }
 
     async renderPage(pageNum) {
       try {
         const page = await this.pdfDoc.getPage(pageNum);
         const viewport = page.getViewport({ scale: 1 });
-        
+
         // Calculate scale to fit canvas
         const scaleX = this.canvas.width / viewport.width;
         const scaleY = this.canvas.height / viewport.height;
         const scale = Math.min(scaleX, scaleY);
-        
+
         const scaledViewport = page.getViewport({ scale });
-        
+
         // Center the page on canvas
         const offsetX = (this.canvas.width - scaledViewport.width) / 2;
         const offsetY = (this.canvas.height - scaledViewport.height) / 2;
-        
+
         // Clear canvas
         this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
-        
+
         // Fill background
-        this.ctx.fillStyle = '#ffffff';
+        this.ctx.fillStyle = "#ffffff";
         this.ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
-        
+
         // Save context and translate
         this.ctx.save();
         this.ctx.translate(offsetX, offsetY);
-        
+
         const renderContext = {
           canvasContext: this.ctx,
-          viewport: scaledViewport
+          viewport: scaledViewport,
         };
-        
+
         await page.render(renderContext).promise;
         this.ctx.restore();
-        
       } catch (error) {
-        console.error('Error rendering page:', error);
-        this.showError('Failed to render page');
+        console.error("Error rendering page:", error);
+        this.showError("Failed to render page");
       }
     }
 
@@ -164,53 +183,55 @@ const { pdfUrl, width = 800, height = 600, className = '' } = Astro.props;
     }
 
     showError(message) {
-      this.ctx.fillStyle = '#ff6b6b';
-      this.ctx.font = '20px Arial';
-      this.ctx.textAlign = 'center';
+      this.ctx.fillStyle = "#ff6b6b";
+      this.ctx.font = "20px Arial";
+      this.ctx.textAlign = "center";
       this.ctx.fillText(message, this.canvas.width / 2, this.canvas.height / 2);
     }
 
     // Cleanup method
     destroy() {
       if (this.keydownHandler) {
-        document.removeEventListener('keydown', this.keydownHandler);
+        document.removeEventListener("keydown", this.keydownHandler);
       }
     }
   }
 
   // Initialize PDF carousels
   function initializePDFCarousels() {
-    const carousels = document.querySelectorAll('.pdf-carousel:not([data-initialized])');
-    
+    const carousels = document.querySelectorAll(
+      ".pdf-carousel:not([data-initialized])"
+    );
+
     carousels.forEach(carousel => {
       // Mark as initialized to prevent double initialization
-      carousel.dataset.initialized = 'true';
-      
+      carousel.dataset.initialized = "true";
+
       // Wait for PDF.js to be available
       const tryInitialize = () => {
-        if (typeof pdfjsLib !== 'undefined') {
+        if (typeof pdfjsLib !== "undefined") {
           new PDFCarousel(carousel);
         } else {
           setTimeout(tryInitialize, 100);
         }
       };
-      
+
       tryInitialize();
     });
   }
 
   // Initialize on DOMContentLoaded
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initializePDFCarousels);
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initializePDFCarousels);
   } else {
     initializePDFCarousels();
   }
 
   // Re-initialize after navigation (for SPA-like behavior)
-  document.addEventListener('astro:page-load', initializePDFCarousels);
-  
+  document.addEventListener("astro:page-load", initializePDFCarousels);
+
   // Also try with a slight delay in case astro:page-load isn't available
-  document.addEventListener('astro:after-swap', () => {
+  document.addEventListener("astro:after-swap", () => {
     setTimeout(initializePDFCarousels, 100);
   });
 
@@ -226,13 +247,19 @@ const { pdfUrl, width = 800, height = 600, className = '' } = Astro.props;
 </script>
 
 <style>
+  html[data-theme="dark"] .pdf-carousel {
+    max-width: 100%;
+    margin: 0 auto;
+    background-color: #191e2b;
+    border-radius: 8px;
+    padding: 20px;
+  }
   .pdf-carousel {
     max-width: 100%;
     margin: 0 auto;
-    background: #f5f5f5;
+    background-color: #ebe8e8;
     border-radius: 8px;
     padding: 20px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   }
 
   .carousel-container {
@@ -243,10 +270,15 @@ const { pdfUrl, width = 800, height = 600, className = '' } = Astro.props;
   }
 
   #pdf-canvas {
-    border: 1px solid #ddd;
+    border: 3px solid #676666;
     border-radius: 4px;
-    background: white;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    max-width: 100%;
+    height: auto;
+  }
+
+  html[data-theme="dark"]   #pdf-canvas {
+    border: 3px solid #ddd;
+    border-radius: 4px;
     max-width: 100%;
     height: auto;
   }
@@ -264,7 +296,7 @@ const { pdfUrl, width = 800, height = 600, className = '' } = Astro.props;
     align-items: center;
     gap: 8px;
     padding: 12px 24px;
-    background: #025084;
+
     color: white;
     border: none;
     border-radius: 6px;
@@ -275,14 +307,20 @@ const { pdfUrl, width = 800, height = 600, className = '' } = Astro.props;
   }
 
   .nav-btn:hover:not(:disabled) {
-    background: #005a9e;
     transform: translateY(-1px);
   }
 
   .nav-btn:disabled {
-    background: #757474;
+    background: #676666;
     cursor: not-allowed;
     transform: none;
+    color: white;
+  }
+    html[data-theme="dark"] .nav-btn:disabled {
+    background: #bbbbbb;
+    cursor: not-allowed;
+    transform: none;
+    color: black;
   }
 
   .nav-btn svg {

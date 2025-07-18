@@ -2,7 +2,7 @@ export const SITE = {
   website: "https://talks.timdamen.io", // replace this with your deployed domain
   author: "Tim Damen",
   profile: "https://timdamen.io/",
-  desc: "Here you will find all of Tim's talks with slides, videos, and other resources.",
+  desc: "Here you will find all of Tim Damen's talks with slides, videos, and other resources.",
   title: "TD Talks",
   ogImage: "./assets/stage2.webp",
   lightAndDarkMode: true,

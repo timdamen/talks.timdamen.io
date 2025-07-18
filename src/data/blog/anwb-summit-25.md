@@ -11,6 +11,7 @@ conferenceLong: 4.3277138
 conferenceURL: https://sites.google.com/view/anwb-frontend-summit
 conferenceLogo: ../../assets/logos/anwb.webp
 conferenceSlides: ../../assets/slides/anwb-summit-25.pdf
+googleDrivePresentationsLink: https://drive.google.com/file/d/1l5NEk78p-nkkGfdkg1TsvuT70FcGsYqA/view?usp=sharing
 ogImage: ../../assets/images/anwb-summit-25-og.webp
 slug: anwb-summit-25-stuck-in-a-focustrap-keyboard-accessibility-focus
 featured: false

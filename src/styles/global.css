@@ -31,8 +31,8 @@ html[data-theme="dark"] {
 @layer base {
   * {
     @apply border-border outline-accent/75;
-    scrollbar-width: auto;
-    scrollbar-color: var(--color-muted) transparent;
+    /* scrollbar-width: auto;
+    scrollbar-color: var(--color-muted) transparent; */
   }
   :focus {
   outline: .375rem double black !important;

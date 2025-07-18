@@ -14,6 +14,7 @@ const blog = defineCollection({
       conference: z.string().optional(),
       conferenceDate: z.date().optional(),
       conferenceLocation: z.string().optional(),
+      googleDrivePresentationsLink: z.string().optional(),
       conferenceLat: z.number().optional(),
       conferenceLong: z.number().optional(),
       conferenceVenue: z.string().optional(),

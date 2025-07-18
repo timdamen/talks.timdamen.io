@@ -9,6 +9,7 @@ conferenceURL: https://frontendnation.com/
 conferenceLogo: ../../assets/logos/frontendNation.svg
 conferenceVideo: https://www.youtube.com/embed/Ruv9vKGHupA?si=ZoCapjP8Ku1Y3vvs
 conferenceSlides: ../../assets/slides/frontendNation-25.pdf
+googleDrivePresentationsLink: https://drive.google.com/file/d/1Re88GYNoWjWnNCpnzQk6Fx-X7rIOrAZ_/view?usp=sharing
 ogImage: ../../assets/images/fn-25-og.webp
 slug: frontend-nation-25-stuck-in-a-focustrap-keyboard-accessibility-focu
 featured: false

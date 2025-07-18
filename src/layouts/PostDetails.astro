@@ -13,8 +13,11 @@ import { getPath } from "@/utils/getPath";
 import { slugifyStr } from "@/utils/slugify";
 import IconChevronLeft from "@/assets/icons/IconChevronLeft.svg";
 import IconChevronRight from "@/assets/icons/IconChevronRight.svg";
+import IconLinkOut from "@/assets/icons/IconLinkOut.svg";
+import IconShare from "@/assets/icons/IconShare.svg";
 import { SITE } from "@/config";
 import PDFCarousel from "@/components/PDFCarousel.astro";
+import Image from "astro/components/Image.astro";
 
 export interface Props {
   post: CollectionEntry<"blog">;
@@ -36,7 +39,8 @@ const {
   hideEditPost,
   conferenceSlides,
   conferenceVideo,
-  conferenceLocation
+  conferenceLocation,
+  googleDrivePresentationsLink,
 } = post.data;
 
 const { Content } = await render(post);
@@ -124,10 +128,11 @@ const nextPost =
         class="inline"
       />
       {
-        conferenceLocation && 
-          conferenceLocation !== "Online" && (
-            <><span>in</span>
-            <span>{conferenceLocation}</span></>
+        conferenceLocation && conferenceLocation !== "Online" && (
+          <>
+            <span>in</span>
+            <span>{conferenceLocation}</span>
+          </>
         )
       }
       by
@@ -149,23 +154,64 @@ const nextPost =
       <h2 class="text-2xl font-semibold tracking-wide">Slides</h2>
       {
         conferenceSlides && (
-          <PDFCarousel pdfUrl={conferenceSlides} width={850} height={480} />
+          <>
+            <PDFCarousel pdfUrl={conferenceSlides} width={850} height={480} />
+            <div class="mx-auto md:mt-5 mt-2 px-5 flex max-w-[850px] items-center justify-between md:mt-[-105px]">
+              <div class="mt-1 flex justify-start">
+                <div>
+                  <Image
+                    src="/assets/Tim-1.webp"
+                    width={188}
+                    height={116}
+                    alt="Tim Damen close up photo"
+                    class="size-13 rounded-full shadow-lg my-0 md:my-[2em]"
+                  />
+                </div>
+                <div class="ms-4 flex flex-col justify-center text-sm">
+                  <span class="font-semibold text-foreground">Tim Damen</span>
+                  <a
+                    href="https://twitter.com/timdamen_io"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="mt-0.5"
+                  >
+                    <span>@timdamen_io</span>
+                  </a>
+                </div>
+              </div>
+              <div class="flex justify-end gap-2">
+                <a href="#share" title="Share this presentation">
+                  <IconShare aria-hidden="true" />
+                </a>
+                <a
+                  href={googleDrivePresentationsLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  title="Open in Google Drive"
+                >
+                  <IconLinkOut aria-hidden="true" />
+                </a>
+              </div>
+            </div>
+          </>
         )
       }
       <h2 class="text-2xl font-semibold tracking-wide">Description</h2>
       <p class="text-base">{description}</p>
       {
         conferenceVideo && (
-          <h2 class="text-2xl font-semibold tracking-wide">Video</h2>
-          <iframe
-            width="560"
-            height="315"
-            src={conferenceVideo}
-            title="YouTube video player"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerpolicy="strict-origin-when-cross-origin"
-            allowfullscreen
-          />
+          <>
+            <h2 class="text-2xl font-semibold tracking-wide">Video</h2>
+            <iframe
+              width="560"
+              height="315"
+              src={conferenceVideo}
+              title="YouTube video player"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen
+            />
+          </>
         )
       }
 

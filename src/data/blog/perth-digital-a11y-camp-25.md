@@ -11,6 +11,7 @@ conferenceLong: 115.896
 conferenceURL: https://events.humanitix.com/perth-web-accessibility-camp-2025
 conferenceVideo: https://www.youtube.com/embed/Yoq_JPABy5E?si=AuGWSVNJDCKUIywQ
 conferenceSlides: ../../assets/slides/perth-web-a11y-camp-25.pdf
+googleDrivePresentationsLink: https://drive.google.com/file/d/10gqtrpPnrGJIG50orACBcDakRbfAtBfV/view?usp=sharing
 ogImage: ../../assets/images/perth-web-a11y-camp-og.webp
 slug: perth-web-accessibility-camp-continuous-a11y-improvements
 featured: false

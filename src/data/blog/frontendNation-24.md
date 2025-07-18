@@ -9,6 +9,7 @@ conferenceURL: https://frontendnation.com/
 conferenceLogo: ../../assets/logos/frontendNation.svg
 conferenceVideo: https://www.youtube.com/embed/v7kFtfdoiRs?si=FGpZ5YR6oC5EJccL
 conferenceSlides: ../../assets/slides/fn-24.pdf
+googleDrivePresentationsLink: https://drive.google.com/file/d/1rYW-QeMXI-v5wZ4G0zhfUzOPpf85OTS1/view?usp=sharing
 ogImage: ../../assets/images/fn-24-og.webp
 slug: frontend-nation-24-web-accessibility-in-practice-more-than-just-wcag
 featured: false

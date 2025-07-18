@@ -12,6 +12,7 @@ conferenceLocation: New York, USA
 conferenceLat: 40.703693
 conferenceLong: -74.052315
 conferenceSlides: ../../assets/slides/JSNation-24.pdf
+googleDrivePresentationsLink: https://drive.google.com/file/d/1uMdbiMIE63ggCUQW0ur2gSGiXsMZEcO-/view?usp=sharing
 ogImage: ../../assets/images/JSNation-24-og.webp
 slug: jsnation-24-scaling-accessibility
 featured: true

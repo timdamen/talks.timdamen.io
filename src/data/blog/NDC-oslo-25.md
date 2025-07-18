@@ -11,6 +11,7 @@ conferenceLong: 10.7527803222
 conferenceURL: https://ndcoslo.com/
 conferenceLogo: ../../assets/logos/ndcOslo.webp
 conferenceSlides: ../../assets/slides/NDC-oslo-25.pdf
+googleDrivePresentationsLink: https://drive.google.com/file/d/1XBVo7r13gSQFZxcHvUSSS02yiqrQtph9/view?usp=sharing
 ogImage: ../../assets/images/ndc-oslo-25-og.webp
 slug: ndc-oslo-25-accessibility-feedback-loop-continuous-a11y-improvement-in-your-development-life-cycle
 featured: true

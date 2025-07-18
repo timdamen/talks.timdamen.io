@@ -14,7 +14,7 @@ const { variant = "h2", data, id, filePath } = Astro.props;
 const { title, pubDatetime, modDatetime, timezone } = data;
 
 const headerProps = {
-  style: { viewTransitionName: slugifyStr(title) },
+  style: { viewTransitionName: slugifyStr(id) },
   class: "text-lg font-medium decoration-dashed hover:underline",
 };
 ---

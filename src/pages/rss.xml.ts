@@ -1,6 +1,6 @@
 import rss from "@astrojs/rss";
 import { getCollection } from "astro:content";
-import { getPath } from "@/utils/getPath";
+import { getPath } from "@/utils/getPathBlog";
 import getSortedPresentations from "@/utils/getSortedPresentations";
 import { SITE } from "@/config";
 

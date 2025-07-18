@@ -15,17 +15,20 @@ import IconArrowRight from "@/assets/icons/IconArrowRight.svg";
 import { SITE } from "@/config";
 import { SOCIALS } from "@/constants";
 import CardImage from "@/components/CardImage.astro";
+import CardVideo from "@/components/CardVideo.astro";
 import MapLibre from "@/components/MapLibre.astro";
 import Image from "astro/components/Image.astro";
 
 const presentations = await getCollection("blog");
 const presentations2 = await getCollection("blog");
-
+const videos = await getCollection("videos");
 const sortedPresentations = getSortedPresentations(presentations);
 const sortedPresentations2 = getSortedPresentations(presentations2);
+const sortedVideos = getSortedPresentations(videos);
 const featuredPresentations = sortedPresentations.filter(
   ({ data }) => data.featured
 );
+const featuredVideos = sortedVideos.filter(({ data }) => data.featured);
 const recentPresentations = sortedPresentations;
 
 // get array of all conferences with lat, long, and popupContent from recentPresentations
@@ -41,7 +44,6 @@ const conferences = sortedPresentations2
     return null;
   })
   .filter(Boolean);
-
 ---
 
 <Layout>
@@ -98,7 +100,7 @@ const conferences = sortedPresentations2
 
           <LinkButton
             href="/about/"
-            class="mt-4 rounded bg-accent dark:bg-accent/60 px-2 py-1 text-base text-white shadow-black transition-colors hover:text-white hover:shadow dark:shadow-blue-50"
+            class="mt-4 rounded bg-accent px-2 py-1 text-base text-white shadow-black transition-colors hover:text-white hover:shadow dark:bg-accent/60 dark:shadow-blue-50"
           >
             More about Tim
           </LinkButton>
@@ -154,7 +156,10 @@ const conferences = sortedPresentations2
             <h2 class="text-3xl font-semibold tracking-wide">
               Recent Presentations
             </h2>
-            <LinkButton href="/presentations/" class="text-base !hidden md:inline-flex">
+            <LinkButton
+              href="/presentations/"
+              class="!hidden text-base md:inline-flex"
+            >
               All Presentations
               <IconArrowRight class="inline-block rtl:-rotate-180" />
             </LinkButton>
@@ -176,12 +181,30 @@ const conferences = sortedPresentations2
       </LinkButton>
     </div>
 
+    <Hr />
+
+    <section class="mt-8">
+      <h2 class="pb-6 text-3xl font-semibold tracking-wide">Videos</h2>
+      <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        {featuredVideos.map(data => <CardVideo variant="h3" {...data} />)}
+      </div>
+    </section>
+
+    <div class="mb-8 text-center">
+      <LinkButton href="/videos/" class="text-base">
+        All Videos
+        <IconArrowRight class="inline-block rtl:-rotate-180" />
+      </LinkButton>
+    </div>
+
+    <Hr />
+
     <section class="mt-8">
       <h2 class="pb-6 text-3xl font-semibold tracking-wide">
         Talk scratch map
       </h2>
     </section>
-   
+
     <MapLibre
       container="maplibremap"
       latitude="52.377956"

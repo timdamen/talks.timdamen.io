@@ -9,7 +9,7 @@ import EditPost from "@/components/EditPost.astro";
 import ShareLinks from "@/components/ShareLinks.astro";
 import BackButton from "@/components/BackButton.astro";
 import BackToTopButton from "@/components/BackToTopButton.astro";
-import { getPath } from "@/utils/getPathBlog";
+import { getPath } from "@/utils/getPathVideo";
 import { slugifyStr } from "@/utils/slugify";
 import IconChevronLeft from "@/assets/icons/IconChevronLeft.svg";
 import IconChevronRight from "@/assets/icons/IconChevronRight.svg";
@@ -20,8 +20,8 @@ import PDFCarousel from "@/components/PDFCarousel.astro";
 import Image from "astro/components/Image.astro";
 
 export interface Props {
-  post: CollectionEntry<"blog">;
-  presentations: CollectionEntry<"blog">[];
+  post: CollectionEntry<"videos">;
+  presentations: CollectionEntry<"videos">[];
 }
 
 const { post, presentations } = Astro.props;
@@ -36,8 +36,6 @@ const {
   modDatetime,
   timezone,
   tags,
-  hideEditPost,
-  conferenceSlides,
   conferenceVideo,
   conferenceLocation,
   googleDrivePresentationsLink,
@@ -151,12 +149,21 @@ const nextPost =
       id="article"
       class="app-prose mx-auto mt-8 max-w-6xl prose-pre:bg-(--shiki-light-bg) dark:prose-pre:bg-(--shiki-dark-bg)"
     >
-      <h2 class="text-2xl font-semibold tracking-wide">Slides</h2>
       {
-        conferenceSlides && (
-          <>
-            <PDFCarousel pdfUrl={conferenceSlides} width={850} height={480} />
-            <div class="mx-auto md:mt-5 mt-2 px-5 flex max-w-[850px] items-center justify-between md:mt-[-105px]">
+        conferenceVideo && (
+            <>
+            <h2 class="text-2xl font-semibold tracking-wide">Video</h2>
+            <div class="aspect-video w-full">
+              <iframe
+              class="h-full w-full"
+              src={conferenceVideo}
+              title={`${title} - Video`}
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen
+              />
+            </div>
+                 <div class="mx-auto px-5 flex items-center justify-between">
               <div class="mt-1 flex justify-start">
                 <div>
                   <Image
@@ -196,32 +203,14 @@ const nextPost =
           </>
         )
       }
+
       <h2 class="text-2xl font-semibold tracking-wide">Description</h2>
       <p class="text-base">{description}</p>
-      {
-        conferenceVideo && (
-            <>
-            <h2 class="text-2xl font-semibold tracking-wide">Video</h2>
-            <div class="aspect-video w-full max-w-xl">
-              <iframe
-              class="h-full w-full"
-              src={conferenceVideo}
-              title={`${title} - Video`}
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              referrerpolicy="strict-origin-when-cross-origin"
-              allowfullscreen
-              />
-            </div>
-          </>
-        )
-      }
 
       <Content />
     </article>
 
     <hr class="my-8 border-dashed" />
-
-    <EditPost class="sm:hidden" {hideEditPost} {post} />
 
     <ul class="mt-4 mb-8 sm:my-8">
       {tags.map(tag => <Tag tag={slugifyStr(tag)} tagName={tag} />)}

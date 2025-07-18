@@ -2,14 +2,15 @@
 import { type CollectionEntry, getCollection } from "astro:content";
 import PostDetails from "@/layouts/PostDetails.astro";
 import getSortedPresentations from "@/utils/getSortedPresentations";
-import { getPath } from "@/utils/getPathBlog";
+import { getPath } from "@/utils/getPathVideo";
+import VideoDetails from "@/layouts/VideoDetails.astro";
 
 export interface Props {
-  post: CollectionEntry<"blog">;
+  post: CollectionEntry<"videos">;
 }
 
 export async function getStaticPaths() {
-  const presentations = await getCollection("blog", ({ data }) => !data.draft);
+  const presentations = await getCollection("videos", ({ data }) => !data.draft);
   const postResult = presentations.map(post => ({
     params: { slug: getPath(post.id, post.filePath, false) },
     props: { post },
@@ -20,8 +21,8 @@ export async function getStaticPaths() {
 
 const { post } = Astro.props;
 
-const presentations = await getCollection("blog");
+const presentations = await getCollection("videos");
 const sortedPresentations = getSortedPresentations(presentations);
 ---
 
-<PostDetails post={post} presentations={sortedPresentations} />
+<VideoDetails post={post} presentations={sortedPresentations} />

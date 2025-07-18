@@ -1,0 +1,81 @@
+---
+import type { GetStaticPaths } from "astro";
+import { getCollection } from "astro:content";
+import Main from "@/layouts/Main.astro";
+import Layout from "@/layouts/Layout.astro";
+import Header from "@/components/Header.astro";
+import Footer from "@/components/Footer.astro";
+import Card from "@/components/Card.astro";
+import Pagination from "@/components/Pagination.astro";
+import getSortedPresentations from "@/utils/getSortedPresentations";
+import { SITE } from "@/config";
+import CardImage from "@/components/CardImage.astro";
+
+export const getStaticPaths = (async ({ paginate }) => {
+  const presentations = await getCollection("videos", ({ data }) => !data.draft);
+  return paginate(getSortedPresentations(presentations), {
+    pageSize: SITE.postPerPage,
+  });
+}) satisfies GetStaticPaths;
+
+const presentations2 = await getCollection("videos", ({ data }) => !data.draft);
+const sortedYears = [
+  ...new Set(
+    presentations2.map(({ data }) => data.conferenceDate?.getFullYear())
+  ),
+].sort((a, b) => b - a);
+const presentationsByYear = sortedYears.reduce(
+  (acc, year) => {
+    acc[year] = presentations2
+      .filter(({ data }) => data.conferenceDate?.getFullYear() === year)
+      .sort((a, b) => new Date(b.data.conferenceDate).getTime() - new Date(a.data.conferenceDate).getTime());
+    return acc;
+  },
+  {} as Record<number, typeof presentations2>
+);
+
+const { page } = Astro.props;
+---
+
+<Layout title={`Videos | ${SITE.title}`}>
+  <Header />
+  <Main pageTitle="Recored talks by Tim Damen">
+    <div class="mb-6 inline-flex rounded-lg bg-muted px-4 py-2">
+      {
+        sortedYears.map((year, index) => (
+          <>
+            <a
+              href={`#${year}`}
+              class="mx-2 inline-block text-xl font-semibold text-accent hover:underline focus-visible:no-underline focus-visible:underline-offset-0"
+              aria-label={`presentations in ${year}`}
+            >
+              {year}
+            </a>
+            {index < sortedYears.length - 1 && (
+              <span class="text-muted-foreground">-</span>
+            )}
+          </>
+        ))
+      }
+    </div>
+
+    {
+      sortedYears.map((year, index) => (
+        <section class="p-0" id={year}>
+          <h2 class="text-3xl font-semibold tracking-wide">{year}</h2>
+          <ul class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-4">
+            {presentationsByYear[year].map(data => (
+              <CardImage variant="h3" {...data} video={true} />
+            ))}
+          </ul>
+
+          {index < sortedYears.length - 1 && <hr class="my-6" />}
+        </section>
+      ))
+    }
+  </Main>
+
+  <Pagination {page} />
+
+  <Footer noMarginTop={page.lastPage > 1} />
+</Layout>

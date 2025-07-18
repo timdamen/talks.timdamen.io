@@ -2,8 +2,7 @@
 import { slugifyStr } from "@/utils/slugify";
 import type { CollectionEntry } from "astro:content";
 import Location from "@/assets/icons/IconLocation.svg";
-import { getPath } from "@/utils/getPathBlog";
-import { getPath as getPathVideo } from "@/utils/getPathVideo";
+import { getPath } from "@/utils/getPathVideo";
 import Datetime from "./Datetime.astro";
 
 export interface Props extends CollectionEntry<"blog"> {
@@ -31,36 +30,19 @@ const headerProps = {
 ---
 
 <li class="my-3 list-none">
-  {
-    ogImage && largeImage && (
-      <img
-        src={typeof ogImage === "string" ? ogImage : ogImage.src}
-        alt={`Thumbnail for ${title}`}
-        width={642}
-        height={360}
-        loading="lazy"
-        decoding="async"
-        data-href={video ? getPathVideo(id, filePath) : getPath(id, filePath)}
-        class="mb-2 w-full cursor-pointer rounded border-2 border-accent object-cover aspect-video"
-      />
-    )
-  }
-  {
-    ogImage && !largeImage && (
-      <img
-        src={typeof ogImage === "string" ? ogImage : ogImage.src}
-        alt={`Thumbnail for ${title}`}
-        width={320}
-        height={220}
-        loading="lazy"
-        decoding="async"
-        data-href={video ? getPathVideo(id, filePath) : getPath(id, filePath)}
-        class="mb-2 w-full cursor-pointer rounded border-2 border-accent object-cover aspect-video"
-      />
-    )
-  }
+  <img
+    src={typeof ogImage === "string" ? ogImage : ogImage.src}
+    alt={`Thumbnail for ${title}`}
+    width={320}
+    height={220}
+    loading="lazy"
+    decoding="async"
+    data-href={getPath(id, filePath)}
+    class="mb-2 w-full cursor-pointer rounded border-2 border-accent object-cover aspect-video"
+  />
+
   <a
-    href={video ? getPathVideo(id, filePath) : getPath(id, filePath)}
+    href={getPath(id, filePath)}
     class="inline-block text-lg font-medium text-accent decoration-dashed underline-offset-4 focus-visible:no-underline focus-visible:underline-offset-0"
   >
     {
@@ -72,12 +54,6 @@ const headerProps = {
     }
   </a>
   <div class="mb-2 flex flex-col items-start md:flex-row md:items-center">
-    <span class="mr-3 mb-1 flex items-center text-sm italic sm:mb-0">
-      <span>
-        <Location width={16} height={16} class="mr-1" aria-label="at" />
-      </span>
-      <span>{data.conference}</span>
-    </span>
     <Datetime {pubDatetime} {modDatetime} {timezone} />
   </div>
   {largeImage && <p class="text-base">{description}</p>}

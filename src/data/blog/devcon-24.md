@@ -14,7 +14,7 @@ conferenceSlides: ../../assets/slides/DevCon-24.pdf
 googleDrivePresentationsLink: https://drive.google.com/file/d/1COdVvcIYBvQfN9x1waqWpvrbjnt9XrN6/view?usp=sharing
 ogImage: ../../assets/images/devcon-24-og.webp
 slug: devcon-24-automated-a11y-testing
-featured: true
+featured: false
 draft: false
 tags:
   - Accessibility

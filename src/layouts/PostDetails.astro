@@ -200,17 +200,18 @@ const nextPost =
       <p class="text-base">{description}</p>
       {
         conferenceVideo && (
-          <>
+            <>
             <h2 class="text-2xl font-semibold tracking-wide">Video</h2>
-            <iframe
-              width="560"
-              height="315"
+            <div class="aspect-video w-full">
+              <iframe
+              class="h-full w-full"
               src={conferenceVideo}
-              title="YouTube video player"
+              title={`${title} - Video`}
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               referrerpolicy="strict-origin-when-cross-origin"
               allowfullscreen
-            />
+              />
+            </div>
           </>
         )
       }

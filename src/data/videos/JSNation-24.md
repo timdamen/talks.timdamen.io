@@ -15,7 +15,7 @@ conferenceSlides: ../../assets/slides/JSNation-24.pdf
 googleDrivePresentationsLink: https://drive.google.com/file/d/1uMdbiMIE63ggCUQW0ur2gSGiXsMZEcO-/view?usp=sharing
 ogImage: ../../assets/images/JSNation-24-og.webp
 slug: jsnation-24-scaling-accessibility
-featured: true
+featured: false
 draft: false
 tags:
   - Accessibility

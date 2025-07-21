@@ -1,5 +1,5 @@
 ---
-title: 'Stuck in a Focustrap: Keyboard Accessibility & Focus'
+title: 'The Importance of Soft Skills as a Developer in the age of Al-driven'
 author: 'Tim Damen'
 pubDatetime: 2025-06-19T14:20:00Z
 conference: ANWB Frontend Summit
@@ -10,10 +10,8 @@ conferenceLat: 52.0963793
 conferenceLong: 4.3277138
 conferenceURL: https://sites.google.com/view/anwb-frontend-summit
 conferenceLogo: ../../assets/logos/anwb.webp
-conferenceSlides: ../../assets/slides/anwb-summit-25.pdf
-googleDrivePresentationsLink: https://drive.google.com/file/d/1l5NEk78p-nkkGfdkg1TsvuT70FcGsYqA/view?usp=sharing
-ogImage: ../../assets/images/anwb-summit-25-og.webp
-slug: anwb-summit-25-stuck-in-a-focustrap-keyboard-accessibility-focus
+ogImage: ../../assets/images/anwb-summit-25-og1.webp
+slug: anwb-summit-25-the-importance-of-soft-skills-as-a-developer-in-the-age-of-ai-driven
 featured: false
 draft: false
 tags:
@@ -22,13 +20,10 @@ tags:
   - In Person
   - Talk
 description:
-  Keyboard navigation remains an afterthought for many developers. "Stuck in a Focustrap" explores this essential but frequently neglected side of web accessibility, offering practical techniques and thoughtful approaches to creating inclusive digital experiences.
+  In the age of AI-driven development, soft skills are more important than ever for developers. This talk explores how empathy, communication, and collaboration can enhance your effectiveness as a developer, improve team dynamics, and lead to better user experiences. Learn how to leverage these skills to thrive in a rapidly changing tech landscape.
 ---
 
 ## Resources
 The following resources were mentioned in the talk, used for research, or are otherwise relevant:
-- [W3C: How People with Disabilities Use the Web "Physical"](https://www.w3.org/WAI/people-use-web/abilities-barriers/physical/)
-- [WCAG 2.2 Understanding Success Criterion 2.4.7: Focus Visible](https://www.w3.org/WAI/WCAG22/Understanding/focus-visible.html)
-- [Post by Sara Soueidan on focus indicators](https://www.sarasoueidan.com/blog/focus-indicators/)
-- [Post by Hidde de Vries on using JavaScript to trap focus in an element](https://hidde.blog/using-javascript-to-trap-focus-in-an-element/)
-- [Post by Erik Kroes on the universal focus state](https://www.erikkroes.nl/blog/the-universal-focus-state/)
+- [Programming Skills that AIs Cannot Have & How You Learn Them](https://www.youtube.com/watch?v=iJv25jws7qo)
+- [Beyond Code: The Power of Soft Skills for Software Engineers](https://www.terminal.io/blog/beyond-code-the-power-of-soft-skills-for-software-engineers)

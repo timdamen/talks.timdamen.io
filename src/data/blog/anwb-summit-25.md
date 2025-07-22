@@ -1,5 +1,5 @@
 ---
-title: 'The Importance of Soft Skills as a Developer in the age of Al-driven'
+title: 'The Importance of Soft Skills as a Developer in the age of Al-driven Development'
 author: 'Tim Damen'
 pubDatetime: 2025-06-19T14:20:00Z
 conference: ANWB Frontend Summit
@@ -11,7 +11,7 @@ conferenceLong: 4.3277138
 conferenceURL: https://sites.google.com/view/anwb-frontend-summit
 conferenceLogo: ../../assets/logos/anwb.webp
 ogImage: ../../assets/images/anwb-summit-25-og1.webp
-slug: anwb-summit-25-the-importance-of-soft-skills-as-a-developer-in-the-age-of-ai-driven
+slug: anwb-summit-25-the-importance-of-soft-skills-as-a-developer-in-the-age-of-ai-driven-development
 featured: false
 draft: false
 tags:

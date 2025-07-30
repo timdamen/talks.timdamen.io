@@ -19,14 +19,15 @@ export const getStaticPaths = (async ({ paginate }) => {
 }) satisfies GetStaticPaths;
 
 const presentations2 = await getCollection("blog", ({ data }) => !data.draft);
+const sortedPresentations2 = getSortedPresentations(presentations2);
 const sortedYears = [
   ...new Set(
-    presentations2.map(({ data }) => data.conferenceDate?.getFullYear())
+    sortedPresentations2.map(({ data }) => data.conferenceDate?.getFullYear())
   ),
 ].sort((a, b) => b - a);
 const presentationsByYear = sortedYears.reduce(
   (acc, year) => {
-    acc[year] = presentations2
+    acc[year] = sortedPresentations2
       .filter(({ data }) => data.conferenceDate?.getFullYear() === year)
       .sort((a, b) => new Date(b.data.conferenceDate).getTime() - new Date(a.data.conferenceDate).getTime());
     return acc;

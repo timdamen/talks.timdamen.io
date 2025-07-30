@@ -1,0 +1,73 @@
+---
+import { getCollection } from "astro:content";
+import Main from "@/layouts/Main.astro";
+import Layout from "@/layouts/Layout.astro";
+import Header from "@/components/Header.astro";
+import Footer from "@/components/Footer.astro";
+import Card from "@/components/Card.astro";
+import getSortedPresentations from "@/utils/getSortedPresentations";
+import getUpcommingPresentations from "@/utils/getUpcommingPresentations";
+import { SITE } from "@/config";
+import MapLibre from "@/components/MapLibre.astro";
+import CardImage from "@/components/CardImage.astro";
+
+export const getStaticPaths = (async ({ paginate }) => {
+  const presentations = await getCollection("blog", ({ data }) => !data.draft);
+  return paginate(getUpcommingPresentations(presentations), {
+    pageSize: SITE.postPerPage,
+  });
+}) satisfies GetStaticPaths;
+
+const presentations = await getCollection("blog", ({ data }) => !data.draft);
+const presentations2 = await getCollection("blog", ({ data }) => !data.draft);
+const upcomingPresentations = getUpcommingPresentations(presentations);
+const sortedPresentations2 = getSortedPresentations(presentations2);
+
+// get array of all conferences with lat, long, and popupContent from recentPresentations
+const conferences = upcomingPresentations
+  .map(({ data }) => {
+    if (data.conferenceLat && data.conferenceLong) {
+      return {
+        latitude: data.conferenceLat,
+        longitude: data.conferenceLong,
+        popupContent: `${data.title} @ ${data.conference} (${data.conferenceLocation})`,
+      };
+    }
+    return null;
+  })
+  .filter(Boolean);
+
+const { page } = Astro.props;
+---
+
+<Layout title={`Upcomming talks | ${SITE.title}`}>
+  <Header />
+  <main id="main-content" data-layout="index">
+    <section id="hero" class="pt-8 pb-6">
+      <h1 class="my-4 inline-block text-4xl font-bold sm:my-8 sm:text-5xl">
+      Upcomming talks</h1>
+    <ul>
+      {page.data.map(data => <Card {...data} />)}
+    </ul>
+    </section>
+
+    <section class="mt-8">
+      <h2 class="pb-6 text-3xl font-semibold tracking-wide">
+        Location upcomming talks
+      </h2>
+    </section>
+
+    <MapLibre
+      container="maplibremap"
+      latitude="52.377956"
+      longitude="4.897070"
+      zoom="2"
+      interactive="true"
+      conferences={conferences}
+      mapstyle="https://demotiles.maplibre.org/style.json"
+      containerstyle="width:100vw; height: 500px"
+    />
+  </main>
+
+  <Footer noMarginTop={page.lastPage > 1} />
+</Layout>

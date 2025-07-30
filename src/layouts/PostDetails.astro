@@ -113,7 +113,7 @@ const nextPost =
       {title}
     </h1>
     <div class="mb-1">
-      Presented at
+      {pubDatetime && pubDatetime > new Date() ? "Upcoming at" : "Presented at"}
       <a
         href={post.data.conferenceURL}
         class="underline decoration-dashed underline-offset-5 hover:text-accent"

@@ -10,6 +10,7 @@ import LinkButton from "@/components/LinkButton.astro";
 import Card from "@/components/Card.astro";
 import Hr from "@/components/Hr.astro";
 import getSortedPresentations from "@/utils/getSortedPresentations";
+import getUpcommingPresentations from "@/utils/getUpcommingPresentations";
 import IconRss from "@/assets/icons/IconRss.svg";
 import IconArrowRight from "@/assets/icons/IconArrowRight.svg";
 import { SITE } from "@/config";
@@ -21,6 +22,7 @@ import Image from "astro/components/Image.astro";
 
 const presentations = await getCollection("blog");
 const presentations2 = await getCollection("blog");
+const presentations3 = await getCollection("blog");
 const videos = await getCollection("videos");
 const sortedPresentations = getSortedPresentations(presentations);
 const sortedPresentations2 = getSortedPresentations(presentations2);
@@ -30,6 +32,7 @@ const featuredPresentations = sortedPresentations.filter(
 );
 const featuredVideos = sortedVideos.filter(({ data }) => data.featured);
 const recentPresentations = sortedPresentations;
+const upcomingPresentations = getUpcommingPresentations(presentations3);
 
 // get array of all conferences with lat, long, and popupContent from recentPresentations
 const conferences = sortedPresentations2
@@ -156,13 +159,6 @@ const conferences = sortedPresentations2
             <h2 class="text-3xl font-semibold tracking-wide">
               Recent Presentations
             </h2>
-            <LinkButton
-              href="/presentations/"
-              class="!hidden text-base md:inline-flex"
-            >
-              All Presentations
-              <IconArrowRight class="inline-block rtl:-rotate-180" />
-            </LinkButton>
           </div>
           <ul>
             {recentPresentations.map(
@@ -193,6 +189,33 @@ const conferences = sortedPresentations2
     <div class="mb-8 text-center">
       <LinkButton href="/videos/" class="text-base">
         All Videos
+        <IconArrowRight class="inline-block rtl:-rotate-180" />
+      </LinkButton>
+    </div>
+
+    <Hr />
+
+        {
+      upcomingPresentations.length > 0 && (
+        <section id="recent-presentations" class="pt-12 pb-6">
+          <div class="mb-4 flex items-center justify-between">
+            <h2 class="text-3xl font-semibold tracking-wide">
+              Upcomming Presentations
+            </h2>
+          </div>
+          <ul>
+            {upcomingPresentations.map(
+              (data, index) =>
+                index < SITE.postPerIndex && <Card variant="h3" {...data} />
+            )}
+          </ul>
+        </section>
+      )
+    }
+
+    <div class="mb-8 text-center">
+      <LinkButton href="/upcomming-talks/" class="text-base">
+        All upcomming Presentations
         <IconArrowRight class="inline-block rtl:-rotate-180" />
       </LinkButton>
     </div>

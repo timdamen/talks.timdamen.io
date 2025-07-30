@@ -47,6 +47,21 @@ const conferences = sortedPresentations2
     return null;
   })
   .filter(Boolean);
+
+// also add upcomingPresentations to conferences const
+conferences.push(
+  ...upcomingPresentations.map(({ data }) => {
+    if (data.conferenceLat && data.conferenceLong) {
+      return {
+        latitude: data.conferenceLat,
+        longitude: data.conferenceLong,
+        popupContent: `${data.title} @ ${data.conference} (${data.conferenceLocation})`,
+      };
+    }
+    return null;
+  })
+  .filter(Boolean)
+);
 ---
 
 <Layout>
@@ -195,32 +210,39 @@ const conferences = sortedPresentations2
 
     <Hr />
 
-        {
+    {
       upcomingPresentations.length > 0 && (
-        <section id="recent-presentations" class="pt-12 pb-6">
-          <div class="mb-4 flex items-center justify-between">
-            <h2 class="text-3xl font-semibold tracking-wide">
-              Upcomming Presentations
-            </h2>
+        <>
+          <section id="recent-presentations" class="pt-12 pb-6">
+            <div class="mb-4 flex items-center justify-between">
+              <h2 class="text-3xl font-semibold tracking-wide">
+                Upcomming Talks
+                {upcomingPresentations.length > 0 && (
+                  <span class="-mt-4 -ml-0.5 flex inline-flex size-5 items-center justify-center rounded-full bg-red-600 py-0.5 align-middle text-sm font-bold font-medium text-background dark:bg-red-300">
+                    {upcomingPresentations.length}
+                  </span>
+                )}
+              </h2>
+            </div>
+            <ul>
+              {upcomingPresentations.map(
+                (data, index) =>
+                  index < SITE.postPerIndex && <Card variant="h3" {...data} />
+              )}
+            </ul>
+          </section>
+
+          <div class="mb-8 text-center">
+            <LinkButton href="/upcomming-talks/" class="text-base">
+              All upcomming talks
+              <IconArrowRight class="inline-block rtl:-rotate-180" />
+            </LinkButton>
           </div>
-          <ul>
-            {upcomingPresentations.map(
-              (data, index) =>
-                index < SITE.postPerIndex && <Card variant="h3" {...data} />
-            )}
-          </ul>
-        </section>
+
+          <Hr />
+        </>
       )
     }
-
-    <div class="mb-8 text-center">
-      <LinkButton href="/upcomming-talks/" class="text-base">
-        All upcomming Presentations
-        <IconArrowRight class="inline-block rtl:-rotate-180" />
-      </LinkButton>
-    </div>
-
-    <Hr />
 
     <section class="mt-8">
       <h2 class="pb-6 text-3xl font-semibold tracking-wide">

@@ -38,25 +38,25 @@ const upcommingTalks = getUpcommingPresentations(presentations);
   </a>
   <div
     id="nav-container"
-    class="mx-auto flex max-w-6xl flex-col items-center justify-between sm:flex-row"
+    class="mx-auto flex max-w-6xl flex-col items-center justify-between md:flex-row"
   >
     <div
       id="top-nav-wrap"
-      class="relative flex w-full items-baseline justify-between bg-background p-4 sm:items-center sm:py-6"
+      class="relative flex w-full items-baseline justify-between bg-background p-4 md:items-center md:py-6"
     >
       <a
         href="/"
-        class="absolute py-1 text-xl leading-8 font-semibold whitespace-nowrap sm:static sm:my-auto sm:text-2xl sm:leading-none"
+        class="absolute py-1 text-xl leading-8 font-semibold whitespace-nowrap md:static md:my-auto md:text-2xl md:leading-none"
       >
         {SITE.title}
       </a>
       <nav
         id="nav-menu"
-        class="flex w-full flex-col items-center sm:ms-2 sm:flex-row sm:justify-end sm:space-x-4 sm:py-0"
+        class="flex w-full flex-col items-center md:ms-2 md:flex-row md:justify-end md:space-x-4 md:py-0"
       >
         <button
           id="menu-btn"
-          class="focus-outline self-end p-2 sm:hidden"
+          class="focus-outline self-end p-2 md:hidden"
           aria-label="Open Menu"
           aria-expanded="false"
           aria-controls="menu-items"
@@ -68,21 +68,31 @@ const upcommingTalks = getUpcommingPresentations(presentations);
           id="menu-items"
           class:list={[
             "mt-4 grid w-44 grid-cols-2 place-content-center gap-2",
-            "[&>li>a]:block [&>li>a]:px-4 [&>li>a]:py-3 [&>li>a]:text-center [&>li>a]:font-medium [&>li>a]:hover:text-accent sm:[&>li>a]:px-2 sm:[&>li>a]:py-1",
+            "[&>li>a]:block [&>li>a]:px-4 [&>li>a]:py-3 [&>li>a]:text-center [&>li>a]:font-medium [&>li>a]:hover:text-accent md:[&>li>a]:px-2 md:[&>li>a]:py-1",
             "hidden",
-            "sm:mt-0 sm:flex sm:w-auto sm:gap-x-5 sm:gap-y-0",
+            "md:mt-0 md:flex md:w-auto md:gap-x-5 md:gap-y-0",
           ]}
         >
           <li class="col-span-2">
-            <a href="/upcomming-talks" class:list={{ "active-nav": isActive("/upcomming-talks") }}>
-              Upcoming talks {upcommingTalks.length > 0 && (
-                <span class="-ml-0.5 -mt-4 inline-flex items-center flex justify-center align-middle rounded-full font-bold dark:bg-red-400 bg-red-600 size-5 py-0.5 text-sm font-medium text-background">{upcommingTalks.length}</span>
-              )}
+            <a
+              href="/presentations"
+              class:list={{ "active-nav": isActive("/presentations") }}
+            >
+              Presentations
             </a>
           </li>
           <li class="col-span-2">
-            <a href="/presentations" class:list={{ "active-nav": isActive("/presentations") }}>
-              Presentations
+            <a
+              href="/upcomming-talks"
+              class:list={{ "active-nav": isActive("/upcomming-talks") }}
+            >
+              Upcoming talks {
+                upcommingTalks.length > 0 && (
+                  <span class="-mt-4 -ml-0.5 flex inline-flex size-5 items-center justify-center rounded-full bg-red-600 py-0.5 align-middle text-sm font-bold font-medium text-background dark:bg-red-300">
+                    {upcommingTalks.length}
+                  </span>
+                )
+              }
             </a>
           </li>
           <!-- <li class="col-span-2">
@@ -96,7 +106,10 @@ const upcommingTalks = getUpcommingPresentations(presentations);
             </a>
           </li>
           <li class="col-span-2">
-            <a href="/contact" class:list={{ "active-nav": isActive("/contact") }}>
+            <a
+              href="/contact"
+              class:list={{ "active-nav": isActive("/contact") }}
+            >
               Contact
             </a>
           </li>
@@ -106,7 +119,7 @@ const upcommingTalks = getUpcommingPresentations(presentations);
                 <LinkButton
                   href="/archives"
                   class:list={[
-                    "focus-outline flex justify-center p-3 sm:p-1",
+                    "focus-outline flex justify-center p-3 md:p-1",
                     {
                       "active-nav [&>svg]:stroke-accent": isActive("/archives"),
                     },
@@ -114,8 +127,8 @@ const upcommingTalks = getUpcommingPresentations(presentations);
                   ariaLabel="archives"
                   title="Archives"
                 >
-                  <IconArchive class="hidden sm:inline-block" />
-                  <span class="sm:sr-only">Archives</span>
+                  <IconArchive class="hidden md:inline-block" />
+                  <span class="md:sr-only">Archives</span>
                 </LinkButton>
               </li>
             )
@@ -124,7 +137,7 @@ const upcommingTalks = getUpcommingPresentations(presentations);
             <LinkButton
               href="/search"
               class:list={[
-                "focus-outline flex p-3 sm:p-1",
+                "focus-outline flex p-3 md:p-1",
                 { "[&>svg]:stroke-accent": isActive("/search") },
               ]}
               ariaLabel="search"
@@ -139,7 +152,7 @@ const upcommingTalks = getUpcommingPresentations(presentations);
               <li class="col-span-1 flex items-center justify-center">
                 <button
                   id="theme-btn"
-                  class="focus-outline relative size-12 p-4 sm:size-8 hover:[&>svg]:stroke-accent"
+                  class="focus-outline relative size-12 p-4 md:size-8 hover:[&>svg]:stroke-accent"
                   title="Toggles light & dark"
                   aria-label="auto"
                   aria-live="polite"

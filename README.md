@@ -10,6 +10,9 @@ A collection of talks exploring web accessibility, frontend development, and the
 - **[Stuck in a Focustrap: Keyboard Accessibility & Focus](https://talks.timdamen.io/presentations/oredev-25-stuck-in-a-focustrap-keyboard-accessibility-focus)**  
   *Øredev* | November 6, 2025 | Malmö, Sweden
 
+- **[Diving into the Toplayer: Where Dialogs, Popovers, and Modals Live](https://talks.timdamen.io/presentations/jsnation-25-diving-into-the-toplayer-where-dialogs-popovers-and-modals-live)**  
+  *JSNation US* | November 20, 2025 | New York, United States (Remote/Online talk)
+
 - **[Accessible Forms for Every Users: A Semantic Approach to Forms on the Web](https://talks.timdamen.io/presentations/devdays-26-accessible-forms-for-every-users-a-semantic-approach-to-forms-on-the-web)**  
   *DevDays Europe* | May 20, 2026 | Vilnius, Lithuania
 

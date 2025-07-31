@@ -9,6 +9,7 @@ conferenceLocation: Amsterdam, Netherlands
 conferenceLat: 52.3676
 conferenceLong: 4.9041
 conferenceURL: https://www.abnamro.com/
+conferenceLogo: ../../assets/logos/abnamro.svg
 conferenceVideo: https://www.youtube.com/embed/Ruv9vKGHupA?si=ZoCapjP8Ku1Y3vvs
 conferenceSlides: ../../assets/slides/devcon-25.pdf
 googleDrivePresentationsLink: https://drive.google.com/file/d/16zdqR7aM-l4SKOVvP-76NE9upp3-fwpK/view?usp=sharing

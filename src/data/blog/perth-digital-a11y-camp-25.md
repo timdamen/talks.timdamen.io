@@ -6,6 +6,7 @@ conference: Perth Web A11y Camp
 conferenceDate: 2025-02-18T16:00:00Z
 conferenceVenue: VisAbility Conference Hall
 conferenceLocation: Victoria Park WA, Australia
+conferenceLogo: ../../assets/logos/perth.webp
 conferenceLat: -31.969
 conferenceLong: 115.896
 conferenceURL: https://events.humanitix.com/perth-web-accessibility-camp-2025

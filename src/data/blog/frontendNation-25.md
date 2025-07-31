@@ -6,7 +6,7 @@ conference: Frontend Nation
 conferenceDate: 2025-06-04T18:10:00Z
 conferenceLocation: Online
 conferenceURL: https://frontendnation.com/
-conferenceLogo: ../../assets/logos/frontendNation.svg
+# conferenceLogo: ../../assets/logos/frontendNation.svg
 conferenceVideo: https://www.youtube.com/embed/Ruv9vKGHupA?si=ZoCapjP8Ku1Y3vvs
 conferenceSlides: ../../assets/slides/frontendNation-25.pdf
 googleDrivePresentationsLink: https://drive.google.com/file/d/1Re88GYNoWjWnNCpnzQk6Fx-X7rIOrAZ_/view?usp=sharing

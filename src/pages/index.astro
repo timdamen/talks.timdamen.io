@@ -18,6 +18,7 @@ import { SOCIALS } from "@/constants";
 import CardImage from "@/components/CardImage.astro";
 import CardVideo from "@/components/CardVideo.astro";
 import MapLibre from "@/components/MapLibre.astro";
+import Logos from "@/components/Logos.astro";
 import Image from "astro/components/Image.astro";
 
 const presentations = await getCollection("blog");
@@ -50,17 +51,18 @@ const conferences = sortedPresentations2
 
 // also add upcomingPresentations to conferences const
 conferences.push(
-  ...upcomingPresentations.map(({ data }) => {
-    if (data.conferenceLat && data.conferenceLong) {
-      return {
-        latitude: data.conferenceLat,
-        longitude: data.conferenceLong,
-        popupContent: `${data.title} @ ${data.conference} (${data.conferenceLocation})`,
-      };
-    }
-    return null;
-  })
-  .filter(Boolean)
+  ...upcomingPresentations
+    .map(({ data }) => {
+      if (data.conferenceLat && data.conferenceLong) {
+        return {
+          latitude: data.conferenceLat,
+          longitude: data.conferenceLong,
+          popupContent: `${data.title} @ ${data.conference} (${data.conferenceLocation})`,
+        };
+      }
+      return null;
+    })
+    .filter(Boolean)
 );
 ---
 
@@ -260,6 +262,13 @@ conferences.push(
       mapstyle="https://demotiles.maplibre.org/style.json"
       containerstyle="width:100vw; height: 500px"
     />
+
+    <section class="mt-8 mb-8">
+      <h2 class="pb-6 text-3xl font-semibold tracking-wide">
+        Events I've been a part of
+      </h2>
+      <Logos />
+    </section>
   </main>
   <Footer />
 </Layout>

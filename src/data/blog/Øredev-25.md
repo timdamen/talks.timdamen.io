@@ -10,8 +10,10 @@ conferenceLat: 55.5774
 conferenceLong: 13.0034
 conferenceURL: https://oredev.org/
 conferenceLogo: ../../assets/logos/oredev.svg
+conferenceLogoBackground: 'dark'
 ogImage: ../../assets/images/oredev-25-og.webp
 slug: oredev-25-stuck-in-a-focustrap-keyboard-accessibility-focus
+
 featured: false
 draft: false
 tags:

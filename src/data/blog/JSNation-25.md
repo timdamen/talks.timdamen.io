@@ -10,6 +10,7 @@ conferenceLat: 40.703693
 conferenceLong:  -74.052315
 conferenceURL: https://jsnation.us/
 conferenceLogo: ../../assets/logos/JSNation.svg
+conferenceLogoBackground: dark
 # ogImage: ../../assets/images/UtahJS-25-og.webp
 slug: jsnation-25-diving-into-the-toplayer-where-dialogs-popovers-and-modals-live
 featured: false

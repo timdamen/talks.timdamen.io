@@ -1,0 +1,38 @@
+---
+import { getCollection } from "astro:content";
+const presentations = await getCollection("blog");
+---
+
+<div class="flex flex-wrap items-center gap-4">
+  {
+    presentations.map(
+      presentation =>
+        presentation.data.conferenceURL &&
+        presentation.data.conferenceLogo && (
+          <>
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href={`${presentation.data.conferenceURL}`}
+              class="flex items-center justify-center rounded-lg bg-white p-1"
+              class:list={[
+                {
+                  "dark:bg-transparent! bg-[#212737]!":
+                    presentation.data.conferenceLogoBackground === "dark",
+                },
+                "flex items-center justify-center rounded-lg bg-white p-1",
+                
+              ]}
+              title={`${presentation.data.conference}`}
+            >
+              <img
+                src={presentation.data.conferenceLogo?.src}
+                alt={`Logo ${presentation.data.conference}`}
+                class="h-auto max-h-20 w-full max-w-36 object-contain"
+              />
+            </a>
+          </>
+        )
+    )
+  }
+</div>

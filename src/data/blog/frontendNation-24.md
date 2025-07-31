@@ -7,6 +7,7 @@ conferenceDate: 2024-06-06T18:10:00Z
 conferenceLocation: Online
 conferenceURL: https://frontendnation.com/
 conferenceLogo: ../../assets/logos/frontendNation.svg
+conferenceLogoBackground: dark
 conferenceVideo: https://www.youtube.com/embed/v7kFtfdoiRs?si=FGpZ5YR6oC5EJccL
 conferenceSlides: ../../assets/slides/fn-24.pdf
 googleDrivePresentationsLink: https://drive.google.com/file/d/1rYW-QeMXI-v5wZ4G0zhfUzOPpf85OTS1/view?usp=sharing

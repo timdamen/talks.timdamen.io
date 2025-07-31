@@ -5,7 +5,7 @@ pubDatetime: 2024-11-21T15:10:00Z
 conference: JSNation US
 conferenceDate: 2024-11-21T15:10:00Z
 conferenceURL: https://jsnation.us/
-conferenceLogo: ../../assets/logos/JSNation.svg
+# conferenceLogo: ../../assets/logos/JSNation.svg
 conferenceVideo: https://player.vimeo.com/video/1027568455
 conferenceVenue: The Liberty Science Center
 conferenceLocation: New York, USA

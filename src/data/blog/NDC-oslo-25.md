@@ -13,6 +13,7 @@ conferenceLogo: ../../assets/logos/ndcOslo.webp
 conferenceSlides: ../../assets/slides/NDC-oslo-25.pdf
 googleDrivePresentationsLink: https://drive.google.com/file/d/1XBVo7r13gSQFZxcHvUSSS02yiqrQtph9/view?usp=sharing
 ogImage: ../../assets/images/ndc-oslo-25-og.webp
+conferenceVideo: https://www.youtube.com/embed/t8UJ9l-IzW4?si=C6fvWHDUNVkyuSHQ?rel=0
 slug: ndc-oslo-25-accessibility-feedback-loop-continuous-a11y-improvement-in-your-development-life-cycle
 featured: true
 draft: false

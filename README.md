@@ -7,6 +7,9 @@ A collection of talks exploring web accessibility, frontend development, and the
 - **[Diving into the Toplayer: Where Dialogs, Popovers, and Modals Live](https://talks.timdamen.io/presentations/utahjs-25-diving-into-the-toplayer-where-dialogs-popovers-and-modals-live)**  
   *UtahJS* | September 12, 2025 | Salt Lake City, Utah, United States
 
+- **[Diving into the Toplayer: Where Dialogs, Popovers, and Modals Live](https://talks.timdamen.io/presentations/frontmania-25-diving-into-the-toplayer-where-dialogs-popovers-and-modals-live)**  
+  *Frontmania* | October 8, 2025 | Utrecht, Netherlands
+
 - **[Stuck in a Focustrap: Keyboard Accessibility & Focus](https://talks.timdamen.io/presentations/oredev-25-stuck-in-a-focustrap-keyboard-accessibility-focus)**  
   *Øredev* | November 6, 2025 | Malmö, Sweden
 

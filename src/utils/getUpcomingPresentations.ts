@@ -1,6 +1,6 @@
 import type { CollectionEntry } from "astro:content";
 
-const getupcomingPresentations = (presentations: CollectionEntry<"blog">[]) => {
+const getUpcomingPresentations = (presentations: CollectionEntry<"blog">[]) => {
   return presentations
     .filter(
       post =>
@@ -16,4 +16,4 @@ const getupcomingPresentations = (presentations: CollectionEntry<"blog">[]) => {
 
 
 
-export default getupcomingPresentations;
+export default getUpcomingPresentations;

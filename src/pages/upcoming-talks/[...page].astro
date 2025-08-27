@@ -6,7 +6,7 @@ import Header from "@/components/Header.astro";
 import Footer from "@/components/Footer.astro";
 import Card from "@/components/Card.astro";
 import getSortedPresentations from "@/utils/getSortedPresentations";
-import getupcomingPresentations from "@/utils/getupcomingPresentations";
+import getUpcomingPresentations from "@/utils/getUpcomingPresentations";
 import { SITE } from "@/config";
 import MapLibre from "@/components/MapLibre.astro";
 import CardImage from "@/components/CardImage.astro";
@@ -14,14 +14,14 @@ import Breadcrumb from "@/components/Breadcrumb.astro";
 
 export const getStaticPaths = (async ({ paginate }) => {
   const presentations = await getCollection("blog", ({ data }) => !data.draft);
-  return paginate(getupcomingPresentations(presentations), {
+  return paginate(getUpcomingPresentations(presentations), {
     pageSize: SITE.postPerPage,
   });
 }) satisfies GetStaticPaths;
 
 const presentations = await getCollection("blog", ({ data }) => !data.draft);
 const presentations2 = await getCollection("blog", ({ data }) => !data.draft);
-const upcomingPresentations = getupcomingPresentations(presentations);
+const upcomingPresentations = getUpcomingPresentations(presentations);
 const sortedPresentations2 = getSortedPresentations(presentations2);
 
 // get array of all conferences with lat, long, and popupContent from recentPresentations

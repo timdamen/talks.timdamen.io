@@ -6,7 +6,7 @@ import IconSearch from "@/assets/icons/IconSearch.svg";
 import IconArchive from "@/assets/icons/IconArchive.svg";
 import IconSunHigh from "@/assets/icons/IconSunHigh.svg";
 import IconMenuDeep from "@/assets/icons/IconMenuDeep.svg";
-import getupcomingPresentations from "@/utils/getupcomingPresentations";
+import getUpcomingPresentations from "@/utils/getUpcomingPresentations";
 import LinkButton from "./LinkButton.astro";
 import { SITE } from "@/config";
 import { getCollection } from "astro:content";
@@ -25,7 +25,7 @@ const isActive = (path: string) => {
 };
 
 const presentations = await getCollection("blog");
-const upcomingTalks = getupcomingPresentations(presentations);
+const upcomingTalks = getUpcomingPresentations(presentations);
 ---
 
 <header>

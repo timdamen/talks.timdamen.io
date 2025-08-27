@@ -10,7 +10,7 @@ import LinkButton from "@/components/LinkButton.astro";
 import Card from "@/components/Card.astro";
 import Hr from "@/components/Hr.astro";
 import getSortedPresentations from "@/utils/getSortedPresentations";
-import getUpcommingPresentations from "@/utils/getUpcommingPresentations";
+import getupcomingPresentations from "@/utils/getupcomingPresentations";
 import IconRss from "@/assets/icons/IconRss.svg";
 import IconArrowRight from "@/assets/icons/IconArrowRight.svg";
 import { SITE } from "@/config";
@@ -33,7 +33,7 @@ const featuredPresentations = sortedPresentations.filter(
 );
 const featuredVideos = sortedVideos.filter(({ data }) => data.featured);
 const recentPresentations = sortedPresentations;
-const upcomingPresentations = getUpcommingPresentations(presentations3);
+const upcomingPresentations = getupcomingPresentations(presentations3);
 
 // get array of all conferences with lat, long, and popupContent from recentPresentations
 const conferences = sortedPresentations2
@@ -218,7 +218,7 @@ conferences.push(
           <section id="recent-presentations" class="pt-12 pb-6">
             <div class="mb-4 flex items-center justify-between">
               <h2 class="text-3xl font-semibold tracking-wide">
-                Upcomming Talks
+                Upcoming Talks
                 {upcomingPresentations.length > 0 && (
                   <span class="-mt-4 -ml-0.5 flex inline-flex size-5 items-center justify-center rounded-full bg-red-600 py-0.5 align-middle text-sm font-bold font-medium text-background dark:bg-red-300">
                     {upcomingPresentations.length}
@@ -235,8 +235,8 @@ conferences.push(
           </section>
 
           <div class="mb-8 text-center">
-            <LinkButton href="/upcomming-talks/" class="text-base">
-              All upcomming talks
+            <LinkButton href="/upcoming-talks/" class="text-base">
+              All upcoming talks
               <IconArrowRight class="inline-block rtl:-rotate-180" />
             </LinkButton>
           </div>

@@ -2,7 +2,7 @@
 
 A collection of talks exploring web accessibility, frontend development, and the evolving landscape of inclusive web technologies.
 
-## [Upcoming presentations](https://talks.timdamen.io/upcomming-talks)
+## [Upcoming presentations](https://talks.timdamen.io/upcoming-talks)
 
 - **[Diving into the Toplayer: Where Dialogs, Popovers, and Modals Live](https://talks.timdamen.io/presentations/utahjs-25-diving-into-the-toplayer-where-dialogs-popovers-and-modals-live)**  
   *UtahJS* | September 12, 2025 | Salt Lake City, Utah, United States

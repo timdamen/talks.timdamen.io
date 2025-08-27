@@ -6,7 +6,7 @@ import IconSearch from "@/assets/icons/IconSearch.svg";
 import IconArchive from "@/assets/icons/IconArchive.svg";
 import IconSunHigh from "@/assets/icons/IconSunHigh.svg";
 import IconMenuDeep from "@/assets/icons/IconMenuDeep.svg";
-import getUpcommingPresentations from "@/utils/getUpcommingPresentations";
+import getupcomingPresentations from "@/utils/getupcomingPresentations";
 import LinkButton from "./LinkButton.astro";
 import { SITE } from "@/config";
 import { getCollection } from "astro:content";
@@ -25,7 +25,7 @@ const isActive = (path: string) => {
 };
 
 const presentations = await getCollection("blog");
-const upcommingTalks = getUpcommingPresentations(presentations);
+const upcomingTalks = getupcomingPresentations(presentations);
 ---
 
 <header>
@@ -83,13 +83,13 @@ const upcommingTalks = getUpcommingPresentations(presentations);
           </li>
           <li class="col-span-2">
             <a
-              href="/upcomming-talks"
-              class:list={{ "active-nav": isActive("/upcomming-talks") }}
+              href="/upcoming-talks"
+              class:list={{ "active-nav": isActive("/upcoming-talks") }}
             >
               Upcoming talks {
-                upcommingTalks.length > 0 && (
+                upcomingTalks.length > 0 && (
                   <span class="-mt-4 -ml-0.5 flex inline-flex size-5 items-center justify-center rounded-full bg-red-600 py-0.5 align-middle text-sm font-bold font-medium text-background dark:bg-red-300">
-                    {upcommingTalks.length}
+                    {upcomingTalks.length}
                   </span>
                 )
               }

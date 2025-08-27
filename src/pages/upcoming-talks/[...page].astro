@@ -6,21 +6,22 @@ import Header from "@/components/Header.astro";
 import Footer from "@/components/Footer.astro";
 import Card from "@/components/Card.astro";
 import getSortedPresentations from "@/utils/getSortedPresentations";
-import getUpcommingPresentations from "@/utils/getUpcommingPresentations";
+import getupcomingPresentations from "@/utils/getupcomingPresentations";
 import { SITE } from "@/config";
 import MapLibre from "@/components/MapLibre.astro";
 import CardImage from "@/components/CardImage.astro";
+import Breadcrumb from "@/components/Breadcrumb.astro";
 
 export const getStaticPaths = (async ({ paginate }) => {
   const presentations = await getCollection("blog", ({ data }) => !data.draft);
-  return paginate(getUpcommingPresentations(presentations), {
+  return paginate(getupcomingPresentations(presentations), {
     pageSize: SITE.postPerPage,
   });
 }) satisfies GetStaticPaths;
 
 const presentations = await getCollection("blog", ({ data }) => !data.draft);
 const presentations2 = await getCollection("blog", ({ data }) => !data.draft);
-const upcomingPresentations = getUpcommingPresentations(presentations);
+const upcomingPresentations = getupcomingPresentations(presentations);
 const sortedPresentations2 = getSortedPresentations(presentations2);
 
 // get array of all conferences with lat, long, and popupContent from recentPresentations
@@ -40,20 +41,30 @@ const conferences = upcomingPresentations
 const { page } = Astro.props;
 ---
 
-<Layout title={`Upcomming talks | ${SITE.title}`}>
+<Layout title={`Upcoming talks | ${SITE.title}`}>
   <Header />
   <main id="main-content" data-layout="index">
-    <section id="hero" class="pt-8 pb-6">
-      <h1 class="my-4 inline-block text-4xl font-bold sm:my-8 sm:text-5xl">
-      Upcomming talks</h1>
-    <ul>
-      {page.data.map(data => <Card {...data} />)}
-    </ul>
+<Breadcrumb />
+    <section id="hero" class="pb-6">
+      
+      <h1 class="mb-4 mt-0 inline-block text-4xl font-bold sm:mb-8 sm:text-5xl">
+        Upcoming talks
+        {
+          upcomingPresentations.length > 0 && (
+            <span class="-mt-8 -ml-1 flex inline-flex size-5 items-center justify-center rounded-full bg-red-600 py-0.5 align-middle text-base font-bold font-medium text-background dark:bg-red-300">
+              {upcomingPresentations.length}
+            </span>
+          )
+        }
+      </h1>
+      <ul>
+        {page.data.map(data => <Card {...data} />)}
+      </ul>
     </section>
 
     <section class="mt-8">
       <h2 class="pb-6 text-3xl font-semibold tracking-wide">
-        Location upcomming talks
+        Location upcoming talks
       </h2>
     </section>
 

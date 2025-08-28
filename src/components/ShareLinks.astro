@@ -2,13 +2,20 @@
 import { SHARE_LINKS } from "@/constants";
 import LinkButton from "./LinkButton.astro";
 
+export interface Props {
+  isVideo?: boolean;
+}
+
+const { isVideo = false } = Astro.props;
 const URL = Astro.url;
 ---
 
 {
   SHARE_LINKS.length > 0 && (
     <div class="flex flex-none flex-col items-center justify-center gap-1 md:items-start">
-      <span id="share" class="italic" tabindex="-1">Share this presentation on:</span>
+      <span id="share" class="italic" tabindex="-1">
+        Share this {isVideo ? 'video' : 'presentation'} on:
+      </span>
       <div class="text-center">
         {SHARE_LINKS.map(social => (
           <LinkButton

@@ -26,6 +26,17 @@ description:
   Discover how implementing an accessibility feedback loop can transform your development process. Learn about continuous WCAG evaluations, rapid feedback cycles, and accessibility integration that fits within agile methodologies. We'll explore real-world strategies and their impact on development teams.
 ---
 
+<!-- presentationImages:
+  - src: "/assets/abn-pp.webp"
+    alt: "Opening slide description"
+    caption: "Optional caption"
+  - src: "/assets/NDC-oslo-1.webp"
+    alt: "Opening slide description"
+    caption: "Optional caption"
+  - src: "/assets/stage2.webp"
+    alt: "Opening slide description"
+    caption: "Optional caption" -->
+
 ## Resources
 The following resources were mentioned in the talk, used for research, or are otherwise relevant:
 - [WebAIM’s Hierarchy for Motivating Accessibility Change](https://webaim.org/blog/motivating-accessibility-change/)

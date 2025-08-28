@@ -24,6 +24,11 @@ const blog = defineCollection({
       conferenceLogoBackground: z.string().optional(),
       conferenceVideo: z.string().optional(),
       conferenceSlides: z.string().optional(),
+      presentationImages: z.array(z.object({
+        src: z.string(),
+        alt: z.string(),
+        caption: z.string().optional(),
+      })).optional(),
       title: z.string(),
       featured: z.boolean().optional(),
       draft: z.boolean().optional(),
@@ -66,5 +71,14 @@ const videos = defineCollection({
       timezone: z.string().optional(),
     }),
 });
+
+export interface PresentationImage {
+  /** The source URL or path to the image */
+  src: string;
+  /** Alternative text describing the image content for accessibility */
+  alt: string;
+  /** Optional caption or description to display below the main image */
+  caption?: string;
+}
 
 export const collections = { blog, videos };

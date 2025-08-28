@@ -1,0 +1,364 @@
+---
+// PresentationGallery.astro
+export interface Props {
+    images: {
+        src: string;
+        alt: string;
+        caption?: string;
+    }[];
+    galleryTitle?: string;
+}
+
+const { images, galleryTitle = "Presentation Images" } = Astro.props;
+
+// Ensure we have at least one image
+if (!images || images.length === 0) {
+    throw new Error("PresentationGallery requires at least one image");
+}
+---
+
+<div class="presentation-gallery" role="region">
+    <h2 id="gallery-title" class="gallery-title">{galleryTitle}</h2>
+    
+    <div class="gallery-container">
+        <!-- Main display image -->
+        <div class="main-image-container">
+            <img 
+                id="main-image"
+                src={images[0].src}
+                alt={images[0].alt}
+                class="main-image"
+            />
+            <p id="image-counter" class="image-counter">
+                Image 1 of {images.length} <br/>
+                {images[0].caption && (
+                    <span class="image-caption">{images[0].caption}</span>
+                )}
+            </p>
+        </div>
+
+        <!-- Thumbnail navigation -->
+        <nav class="thumbnail-nav -mt-8 lg:-mt-2" aria-label="Image navigation">
+            <ul class="thumbnail-list" role="list">
+                {images.map((image, index) => (
+                    <li key={index}>
+                        <button
+                            type="button"
+                            class={`thumbnail-button ${index === 0 ? 'active' : ''}`}
+                            aria-pressed={index === 0 ? 'true' : 'false'}
+                            aria-label={`View image ${index + 1}: ${image.alt}`}
+                            data-index={index}
+                            data-src={image.src}
+                            data-alt={image.alt}
+                            data-caption={image.caption || ''}
+                        >
+                            <img 
+                                src={image.src}
+                                alt=""
+                                class="thumbnail-image"
+                                loading="lazy"
+                                role="presentation"
+                            />
+                            <span class="thumbnail-indicator" aria-hidden="true"></span>
+                        </button>
+                    </li>
+                ))}
+            </ul>
+        </nav>
+    </div>
+</div>
+
+<style>
+    /* .presentation-gallery {
+        margin: 2rem auto;
+        padding: 1rem;
+    } */
+
+    /* .gallery-title {
+        margin-bottom: 1.5rem;
+    } */
+
+    .gallery-container {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .main-image-container {
+        position: relative;
+        overflow: hidden;
+    }
+
+    .main-image {
+        object-fit: contain;
+        display: block;
+        margin-inline: none;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    .image-counter {
+        font-size: 0.875rem;
+        text-align: center;
+    }
+
+    .image-caption {
+        display: block;
+        margin-top: 0.5rem;
+        font-style: italic;
+    }
+
+    .thumbnail-nav {
+        /* No additional styles needed here */
+    }
+
+    .thumbnail-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.75rem;
+        justify-content: center;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .thumbnail-button {
+        position: relative;
+        padding: 4px;
+        border: 3px solid transparent;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: all 0.2s ease-in-out;
+        width: 100px;
+        height: 75px;
+        overflow: hidden;
+    }
+
+    .thumbnail-button:hover {
+        border-color: #cbd5e0;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .thumbnail-button.active {
+        border-color: var(--accent);
+        border-style: dashed;
+        padding: 2px;
+        box-shadow: 0 0 0 2px rgba(49, 130, 206, 0.2);
+    }
+
+    .thumbnail-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 4px;
+        margin: 0;
+    }
+
+    .active .thumbnail-indicator {
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background-color: var(--accent);
+        transition: background-color 0.2s ease-in-out;
+    }
+
+    /* Desktop layout - thumbnails on the right */
+    @media (min-width: 1024px) {
+        .gallery-container {
+            flex-direction: row;
+            align-items: flex-start;
+        }
+
+        .main-image-container {
+            flex: 1;
+        }
+
+        .thumbnail-nav {
+            width: 140px;
+            margin-left: 1.5rem;
+        }
+
+        .thumbnail-list {
+            flex-direction: column;
+            justify-content: flex-start;
+        }
+    }
+
+    /* Tablet and mobile - keep current layout */
+    @media (max-width: 1023px) {
+        .gallery-container {
+            flex-direction: column;
+        }
+    }
+
+    /* Mobile specific adjustments */
+    @media (max-width: 640px) {
+        /* .presentation-gallery {
+            margin: 1rem;
+            padding: 0.75rem;
+        } */
+
+        /* .gallery-title {
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+        } */
+
+        .main-image {
+            max-height: 300px;
+        }
+
+        .thumbnail-button {
+            width: 80px;
+            height: 60px;
+        }
+
+        .thumbnail-list {
+            gap: 0.5rem;
+        }
+    }
+
+    /* High contrast mode support */
+    @media (prefers-contrast: high) {
+        .thumbnail-button {
+            border-width: 2px;
+            border-color: #000000;
+        }
+
+        .thumbnail-button.active {
+            border-color: #000000;
+        }
+
+        .thumbnail-indicator {
+            border: 1px solid #000000;
+        }
+    }
+
+    /* Reduced motion support */
+    @media (prefers-reduced-motion: reduce) {
+        .thumbnail-button {
+            transition: none;
+        }
+
+        .thumbnail-button:hover {
+            transform: none;
+        }
+    }
+</style>
+
+<script>
+    class PresentationGallery {
+        constructor(container) {
+            this.container = container;
+            this.mainImage = container.querySelector('#main-image');
+            this.imageCounter = container.querySelector('#image-counter');
+            this.thumbnails = container.querySelectorAll('.thumbnail-button');
+            this.currentIndex = 0;
+            
+            this.init();
+        }
+
+        init() {
+            // Add click listeners to thumbnails
+            this.thumbnails.forEach((thumbnail, index) => {
+                thumbnail.addEventListener('click', () => this.selectImage(index));
+            });
+
+            // Add keyboard navigation
+            this.container.addEventListener('keydown', (e) => this.handleKeydown(e));
+        }
+
+        selectImage(index) {
+            if (index < 0 || index >= this.thumbnails.length) return;
+
+            const thumbnail = this.thumbnails[index];
+            const src = thumbnail.dataset.src;
+            const alt = thumbnail.dataset.alt;
+            const caption = thumbnail.dataset.caption;
+
+            // Update main image
+            this.mainImage.src = src;
+            this.mainImage.alt = alt;
+
+            // Update counter and caption
+            let counterText = `Image ${index + 1} of ${this.thumbnails.length}`;
+            if (caption) {
+                counterText += `\n${caption}`;
+            }
+            this.imageCounter.innerHTML = counterText.replace('\n', '</br><span class="image-caption">') + (caption ? '</span>' : '');
+
+            // Update active states
+            this.thumbnails.forEach((btn, i) => {
+                const isActive = i === index;
+                btn.classList.toggle('active', isActive);
+                btn.setAttribute('aria-pressed', isActive.toString());
+            });
+
+            this.currentIndex = index;
+
+            // Announce change to screen readers
+            const announcement = `Viewing image ${index + 1}: ${alt}`;
+            this.announceToScreenReader(announcement);
+        }
+
+        handleKeydown(e) {
+            // Only handle keyboard events when focus is on a thumbnail
+            if (!e.target.classList.contains('thumbnail-button')) return;
+
+            let newIndex = this.currentIndex;
+
+            switch (e.key) {
+                case 'ArrowLeft':
+                case 'ArrowUp':
+                    e.preventDefault();
+                    newIndex = this.currentIndex > 0 ? this.currentIndex - 1 : this.thumbnails.length - 1;
+                    break;
+                case 'ArrowRight':
+                case 'ArrowDown':
+                    e.preventDefault();
+                    newIndex = this.currentIndex < this.thumbnails.length - 1 ? this.currentIndex + 1 : 0;
+                    break;
+                case 'Home':
+                    e.preventDefault();
+                    newIndex = 0;
+                    break;
+                case 'End':
+                    e.preventDefault();
+                    newIndex = this.thumbnails.length - 1;
+                    break;
+                default:
+                    return;
+            }
+
+            this.selectImage(newIndex);
+            this.thumbnails[newIndex].focus();
+        }
+
+        announceToScreenReader(message) {
+            const announcement = document.createElement('div');
+            announcement.setAttribute('aria-live', 'polite');
+            announcement.setAttribute('aria-atomic', 'true');
+            announcement.style.position = 'absolute';
+            announcement.style.left = '-10000px';
+            announcement.style.width = '1px';
+            announcement.style.height = '1px';
+            announcement.style.overflow = 'hidden';
+            announcement.textContent = message;
+            
+            document.body.appendChild(announcement);
+            
+            setTimeout(() => {
+                document.body.removeChild(announcement);
+            }, 1000);
+        }
+    }
+
+    // Initialize all galleries on the page
+    document.addEventListener('DOMContentLoaded', () => {
+        const galleries = document.querySelectorAll('.presentation-gallery');
+        galleries.forEach(gallery => new PresentationGallery(gallery));
+    });
+</script>

@@ -18,6 +18,8 @@ import IconShare from "@/assets/icons/IconShare.svg";
 import { SITE } from "@/config";
 import PDFCarousel from "@/components/PDFCarousel.astro";
 import Image from "astro/components/Image.astro";
+import PresentationGallery from "../components/PresentationGallery.astro";
+import ConferenceInfoCard from "../components/ConferenceInfoCard.astro";
 
 export interface Props {
   post: CollectionEntry<"blog">;
@@ -40,7 +42,14 @@ const {
   conferenceSlides,
   conferenceVideo,
   conferenceLocation,
+  conferenceLogo,
+  conferenceDate,
+  conferenceVenue,
+  conferenceURL,
+  conference,
+  conferenceLogoBackground,
   googleDrivePresentationsLink,
+  presentationImages,
 } = post.data;
 
 const { Content } = await render(post);
@@ -226,7 +235,35 @@ const nextPost =
         )
       }
 
+      {
+        presentationImages && (
+          <PresentationGallery
+            images={presentationImages}
+            galleryTitle="Photos"
+          />
+        )
+      }
+
       <Content />
+
+      {
+        conferenceLogo &&
+          conference &&
+          conferenceDate &&
+          conferenceLocation &&
+          conferenceVenue &&
+          conferenceURL && (
+            <ConferenceInfoCard
+              conferenceLogo={conferenceLogo.src}
+              conferenceVenue={conferenceVenue}
+              conferenceLocation={conferenceLocation}
+              conferenceName={conference}
+              conferenceURL={conferenceURL}
+              conferenceDate={conferenceDate}
+              conferenceLogoBackground={conferenceLogoBackground}
+            />
+          )
+      }
     </article>
 
     <hr class="my-8 border-dashed" />
@@ -241,39 +278,42 @@ const nextPost =
 
     <ShareLinks />
 
-    <hr class="my-6 border-dashed" />
-
     <!-- Previous/Next Post Buttons -->
-    <div data-pagefind-ignore class="grid grid-cols-1 gap-6 sm:grid-cols-2">
-      {
-        prevPost && (
-          <a
-            href={getPath(prevPost.id, prevPost.filePath)}
-            class="flex w-full gap-1"
-          >
-            <IconChevronLeft class="inline-block flex-none rtl:rotate-180" />
-            <div>
-              <span>Previous Presentation</span>
-              <div class="text-sm text-accent">{prevPost.title}</div>
-            </div>
-          </a>
-        )
-      }
-      {
-        nextPost && (
-          <a
-            href={getPath(nextPost.id, nextPost.filePath)}
-            class="flex w-full justify-end gap-1 text-end sm:col-start-2"
-          >
-            <div>
-              <span>Next Presentation</span>
-              <div class="text-sm text-accent">{nextPost.title}</div>
-            </div>
-            <IconChevronRight class="inline-block flex-none rtl:rotate-180" />
-          </a>
-        )
-      }
-    </div>
+    {
+      !(pubDatetime && pubDatetime > new Date()) && (
+        <hr class="my-6 border-dashed" />
+        <div data-pagefind-ignore class="grid grid-cols-1 gap-6 sm:grid-cols-2">
+          {
+            prevPost && (
+              <a
+                href={getPath(prevPost.id, prevPost.filePath)}
+                class="flex w-full gap-1"
+              >
+                <IconChevronLeft class="inline-block flex-none rtl:rotate-180" />
+                <div>
+                  <span>Previous Presentation</span>
+                  <div class="text-sm text-accent">{prevPost.title}</div>
+                </div>
+              </a>
+            )
+          }
+          {
+            nextPost && (
+              <a
+                href={getPath(nextPost.id, nextPost.filePath)}
+                class="flex w-full justify-end gap-1 text-end sm:col-start-2"
+              >
+                <div>
+                  <span>Next Presentation</span>
+                  <div class="text-sm text-accent">{nextPost.title}</div>
+                </div>
+                <IconChevronRight class="inline-block flex-none rtl:rotate-180" />
+              </a>
+            )
+          }
+        </div>
+      )
+    }
   </main>
   <Footer />
 </Layout>

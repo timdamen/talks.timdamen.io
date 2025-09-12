@@ -22,7 +22,7 @@ tags:
   - In Person
   - Talk
 description:
-  In the world of web development, the top layer is where the magic happens. This talk explores the intricacies of dialogs, popovers, and modals, delving into their design, implementation, and accessibility considerations. Learn how to create seamless user experiences that elevate your web applications to new heights.
+  In the world of web development, the top layer is where the magic happens. This talk explores dialogs, popovers, and modals, looking into their design, implementation, and accessibility considerations. Learn how to create a user experience that elevates your web applications.
 ---
 
 ## Resources

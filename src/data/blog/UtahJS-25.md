@@ -10,9 +10,11 @@ conferenceLat: 40.76078
 conferenceLong:  -111.89105
 conferenceURL: https://utahjs.com/conference/
 conferenceLogo: ../../assets/logos/UtahJS-logo.webp
-ogImage: ../../assets/images/UtahJS-25-og.webp
+ogImage: ../../assets/images/utahjs-25-og.webp
 slug: utahjs-25-diving-into-the-toplayer-where-dialogs-popovers-and-modals-live
-featured: false
+conferenceSlides: ../../assets/slides/utahjs-25.pdf
+googleDrivePresentationsLink: https://drive.google.com/file/d/1fwKlN9Q2QkD4jYo8vP1XN9p6F8wd88Cw/view?usp=sharing
+featured: true
 draft: false
 tags:
   - Frontend
@@ -25,5 +27,13 @@ description:
 
 ## Resources
 The following resources were mentioned in the talk, used for research, or are otherwise relevant:
+
+- [HTML dialog element - MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/dialog)
+- [Popover API - MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/API/Popover_API)
+- [z-index - CSS - MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/CSS/z-index)
+- [Minimum and maximum value of z-index? - Stack Overflow](https://stackoverflow.com/questions/491052/minimum-and-maximum-value-of-z-index/25461690)
+- [CSS Positioned - Top Layer](https://drafts.csswg.org./css-position-4/#top-layer)
+- [HTML dialog element - MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/dialog/)
+- [CSS Positioned - ::backdrop pseudo-element](https://drafts.csswg.org/css-position-4/#selectordef-backdrop)
 
 

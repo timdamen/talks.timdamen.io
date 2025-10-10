@@ -10,6 +10,7 @@ conferenceLat: 40.76078
 conferenceLong:  -111.89105
 conferenceURL: https://utahjs.com/conference/
 conferenceLogo: ../../assets/logos/UtahJS-logo.webp
+conferenceVideo: https://www.youtube.com/embed/aYur4YmHf5E?si=1eyxVLEQAiHdaaiv
 ogImage: ../../assets/images/utahjs1-25-og.webp
 slug: utahjs-25-diving-into-the-toplayer-where-dialogs-popovers-and-modals-live
 conferenceSlides: ../../assets/slides/utahjs-25.pdf

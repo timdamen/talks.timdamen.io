@@ -19,7 +19,7 @@ export default defineConfig({
   integrations: [sitemap({
     filter: page => SITE.showArchives || !page.endsWith("/archives"),
   }), starlight({
-      title: 'My delightful docs site',
+      title: 'TD Talks',
     })],
   markdown: {
     remarkPlugins: [remarkToc, [remarkCollapse, { test: "Table of contents" }]],
@@ -58,7 +58,6 @@ export default defineConfig({
     },
   },
   experimental: {
-    responsiveImages: true,
     preserveScriptOrder: true,
   },
 });

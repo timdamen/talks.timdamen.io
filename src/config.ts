@@ -3,7 +3,7 @@ export const SITE = {
   author: "Tim Damen",
   profile: "https://timdamen.io/",
   desc: "Here you will find all of Tim Damen's talks with slides, videos, and other resources.",
-  title: "TD Talks",
+  title: "Tim Damen's talks | TD Talks",
   ogImage: "./assets/stage2.webp",
   lightAndDarkMode: true,
   postPerIndex: 10,

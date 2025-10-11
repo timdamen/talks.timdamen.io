@@ -14,7 +14,7 @@ conferenceSlides: ../../assets/slides/perth-web-a11y-camp-25.pdf
 googleDrivePresentationsLink: https://drive.google.com/file/d/10gqtrpPnrGJIG50orACBcDakRbfAtBfV/view?usp=sharing
 ogImage: ../../assets/images/perth-v-og.webp
 slug: perth-web-accessibility-camp-continuous-a11y-improvements
-featured: true
+featured: false
 draft: false
 tags:
   - Accessibility

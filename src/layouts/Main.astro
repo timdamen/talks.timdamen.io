@@ -1,6 +1,6 @@
 ---
 import Breadcrumb from "@/components/Breadcrumb.astro";
-import Analytics from '@vercel/analytics/astro'
+// import Analytics from '@vercel/analytics/astro'
 import { SITE } from "@/config";
 
 interface StringTitleProp {
@@ -20,7 +20,7 @@ const { props } = Astro;
 
 const backUrl = SITE.showBackButton ? Astro.url.pathname : "/";
 ---
-<Analytics />
+<!-- <Analytics /> -->
 <Breadcrumb />
 <main
   data-backUrl={backUrl}

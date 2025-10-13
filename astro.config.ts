@@ -42,6 +42,11 @@ export default defineConfig({
       include: ['leaflet'],
       exclude: ["@resvg/resvg-js"],
     },
+    resolve: {
+      alias: {
+        fs: "node:fs",
+      },
+    },
   },
   image: {
     // Used for all Markdown images; not configurable per-image

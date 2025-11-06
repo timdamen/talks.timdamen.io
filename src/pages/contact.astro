@@ -4,6 +4,8 @@ import Header from "@/components/Header.astro";
 import Footer from "@/components/Footer.astro";
 import { SITE } from "@/config";
 import Breadcrumb from "@/components/Breadcrumb.astro";
+import { SOCIALS } from "@/constants";
+import Socials from "@/components/Socials.astro";
 ---
 
 <Layout title={`Speaking | ${SITE.title}`}>
@@ -34,18 +36,17 @@ import Breadcrumb from "@/components/Breadcrumb.astro";
           meeting with me via <a href="https://cal.com/timdamen">cal.com/timdamen</a>.
         </p>
         <h2>Social Media</h2>
-        <ul>
-          <li>
-            <a href="https://twitter.com/timdamen_io" rel="noopener noreferrer" target="_blank">
-              @timdamen_io on X
-            </a>
-          </li>
-          <li>
-            <a href="https://www.linkedin.com/in/tim-damen-20a1b4106" rel="noopener noreferrer" target="_blank">
-              Tim Damen on LinkedIn
-            </a>
-          </li>
-        </ul>
+                  {
+            // only display if at least one social link is enabled
+            SOCIALS.length > 0 && (
+              <div class="flex flex-col sm:flex-row sm:items-center">
+                <div class="mb-1 whitespace-nowrap sm:mb-0">
+                  I'm active on:
+                </div>
+                <Socials centered />
+              </div>
+            )
+          }
         <p>Looking forward to hearing from you! ❤️</p>
     </div>
     

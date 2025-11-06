@@ -3,6 +3,7 @@ import IconMail from "@/assets/icons/IconMail.svg";
 import IconGitHub from "@/assets/icons/IconGitHub.svg";
 import IconBrandX from "@/assets/icons/IconBrandX.svg";
 import IconLinkedin from "@/assets/icons/IconLinkedin.svg";
+import IconBluesky from "@/assets/icons/IconBluesky.svg";
 import IconWhatsapp from "@/assets/icons/IconWhatsapp.svg";
 import IconFacebook from "@/assets/icons/IconFacebook.svg";
 import IconTelegram from "@/assets/icons/IconTelegram.svg";
@@ -31,12 +32,18 @@ export const SOCIALS: Social[] = [
     icon: IconBrandX,
   },
   {
+    name: "Bluesky",
+    href: "https://bsky.app/profile/timdamen.io",
+    linkTitle: `${SITE.title} on Bluesky`,
+    icon: IconBluesky,
+  },
+  {
     name: "LinkedIn",
     href: "https://www.linkedin.com/in/tim-damen-20a1b4106",
     linkTitle: `${SITE.title} on LinkedIn`,
     icon: IconLinkedin,
   },
-    {
+  {
     name: "Sessionize",
     href: "https://sessionize.com/timdamen/",
     linkTitle: `${SITE.title} on Sessionize`,

@@ -1,9 +1,9 @@
 ---
 title: 'Stuck in a Focustrap: Keyboard Accessibility & Focus'
 author: 'Tim Damen'
-pubDatetime: 2025-11-06T14:20:00Z
+pubDatetime: 2025-11-05T14:20:00Z
 conference: Øredev
-conferenceDate: 2025-11-06T14:20:00Z
+conferenceDate: 2025-11-05T14:20:00Z
 conferenceVenue: MalmöMässan
 conferenceLocation: Malmö, Sweden
 conferenceLat: 55.5774
@@ -11,6 +11,8 @@ conferenceLong: 13.0034
 conferenceURL: https://oredev.org/
 conferenceLogo: ../../assets/logos/oredev.svg
 conferenceLogoBackground: 'dark'
+conferenceSlides: ../../assets/slides/oredev-25.pdf
+googleDrivePresentationsLink: https://drive.google.com/file/d/1PLKafwpA_4l3-X-vz_1OOXgV7vOJawOw/view?usp=drive_link
 ogImage: ../../assets/images/oredev-25-og.webp
 slug: oredev-25-stuck-in-a-focustrap-keyboard-accessibility-focus
 

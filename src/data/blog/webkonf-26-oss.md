@@ -9,6 +9,7 @@ conferenceLocation: Budapest, Hungary
 conferenceLat: 47.5362
 conferenceLong: 19.0355
 conferenceURL: https://webkonf.hu/en
+conferenceLogo: ../../assets/logos/webkonf.png
 slug: webkonf-26-oss-build-together-accessed-by-all-open-source-web-accessibility
 featured: false
 draft: false

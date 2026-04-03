@@ -1,14 +1,23 @@
 ---
 import { getCollection } from "astro:content";
 const presentations = await getCollection("blog");
+const seen = new Set<string>();
 ---
 
 <div class="flex flex-wrap items-center gap-4">
   {
-    presentations.map(
-      presentation =>
-        presentation.data.conferenceURL &&
-        presentation.data.conferenceLogo && (
+    presentations.map(presentation => {
+      if (
+        !presentation.data.conferenceURL ||
+        !presentation.data.conferenceLogo
+      )
+        return null;
+      const logo = presentation.data.conferenceLogo;
+      const key = typeof logo === "string" ? logo : logo.src;
+      if (seen.has(key)) return null;
+      seen.add(key);
+      const logoSrc = typeof logo === "string" ? logo : logo.src;
+      return (
           <>
             <a
               target="_blank"
@@ -25,13 +34,13 @@ const presentations = await getCollection("blog");
               title={`${presentation.data.conference}`}
             >
               <img
-                src={presentation.data.conferenceLogo?.src}
+                src={logoSrc}
                 alt={`Logo ${presentation.data.conference}`}
                 class="h-auto max-h-20 w-full max-w-36 object-contain"
               />
             </a>
           </>
-        )
-    )
+        );
+    })
   }
 </div>

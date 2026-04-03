@@ -1,21 +1,16 @@
 ---
 title: "Diving into the Toplayer: Where Dialogs, Popovers, and Modals Live"
 author: "Tim Damen"
-pubDatetime: 2025-09-12T14:20:00Z
-conference: UtahJS
-conferenceDate: 2025-09-12T14:20:00Z
-conferenceVenue: Megaplex Theatres at Jordan Commons
-conferenceLocation: Salt lake city, Utah, USA
-conferenceLat: 40.76078
-conferenceLong: -111.89105
-conferenceURL: https://utahjs.com/conference/
-conferenceLogo: ../../assets/logos/UtahJS-logo.webp
-conferenceVideo: https://www.youtube.com/embed/aYur4YmHf5E?si=1eyxVLEQAiHdaaiv
-ogImage: ../../assets/images/utahjs-25-video.webp
-slug: utahjs-25-diving-into-the-toplayer-where-dialogs-popovers-and-modals-live
-conferenceSlides: ../../assets/slides/utahjs-25.pdf
-googleDrivePresentationsLink: https://drive.google.com/file/d/1fwKlN9Q2QkD4jYo8vP1XN9p6F8wd88Cw/view?usp=sharing
-featured: true
+pubDatetime: 2026-04-18T10:00:00Z
+conference: WebKonf
+conferenceDate: 2026-04-18T10:00:00Z
+conferenceVenue: Óbuda University
+conferenceLocation: Budapest, Hungary
+conferenceLat: 47.5362
+conferenceLong: 19.0355
+conferenceURL: https://webkonf.hu/en
+slug: webkonf-26-diving-into-the-toplayer-where-dialogs-popovers-and-modals-live
+featured: false
 draft: false
 tags:
   - Frontend

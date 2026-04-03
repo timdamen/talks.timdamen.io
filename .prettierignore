@@ -3,6 +3,8 @@
 
 # Except these files & folders
 !/src
+# prettier-plugin-astro cannot parse conditional inline scripts
+/src/components/Tabs.astro
 !/public
 !/.github
 !tsconfig.json

@@ -1,6 +1,6 @@
 ---
-title: 'Accessible Forms for Every Users: A Semantic Approach to Forms on the Web'
-author: 'Tim Damen'
+title: "Accessible Forms for Every Users: A Semantic Approach to Forms on the Web"
+author: "Tim Damen"
 pubDatetime: 2026-05-20T14:20:00Z
 conference: DevDays Europe
 conferenceDate: 2026-05-20T14:20:00Z
@@ -19,11 +19,9 @@ tags:
   - Conference
   - In Person
   - Talk
-description:
-  Accessible forms are a cornerstone of web usability, yet they often fall short in meeting the needs of all users. This talk delves into the semantic approach to forms, exploring how to create accessible and user-friendly forms that cater to diverse user needs. Learn practical techniques and best practices for building forms that are not only functional but also inclusive.
+description: Accessible forms are a cornerstone of web usability, yet they often fall short in meeting the needs of all users. This talk delves into the semantic approach to forms, exploring how to create accessible and user-friendly forms that cater to diverse user needs. Learn practical techniques and best practices for building forms that are not only functional but also inclusive.
 ---
 
 ## Resources
+
 The following resources were mentioned in the talk, used for research, or are otherwise relevant:
-
-

@@ -72,33 +72,35 @@ const {
         });
 
         map.scrollZoom.disable(); // Disable scroll zoom for better UX
-        map.addControl(new maplibregl.NavigationControl(
-          {
+        map.addControl(
+          new maplibregl.NavigationControl({
             showCompass: false, // Hide compass
             showZoom: true, // Show zoom controls
-          }
-        ), "top-right");
+          }),
+          "top-right"
+        );
         map.addControl(new maplibregl.FullscreenControl(), "top-right");
-        const conferences = JSON.parse(
-          this.dataset.conferences || "[]"
-        ) as {
+        const conferences = JSON.parse(this.dataset.conferences || "[]") as {
           latitude: number;
           longitude: number;
           popupContent: string;
         }[];
 
+        // eslint-disable-next-line no-console
         console.log("Conferences data:", conferences);
 
         conferences.forEach(({ latitude, longitude, popupContent }) => {
-          new Marker(
-            {
-              color: "red",
-              scale: 0.9, // Adjust the scale as needed
-            }
-          )
+          new Marker({
+            color: "red",
+            scale: 0.9, // Adjust the scale as needed
+          })
             .setLngLat([longitude, latitude])
-            
-            .setPopup(new Popup().setHTML(`<span style="color:black;">${popupContent}</span>`))
+
+            .setPopup(
+              new Popup().setHTML(
+                `<span style="color:black;">${popupContent}</span>`
+              )
+            )
             .addTo(map);
         });
       }

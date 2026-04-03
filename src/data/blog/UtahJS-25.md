@@ -1,13 +1,13 @@
 ---
-title: 'Diving into the Toplayer: Where Dialogs, Popovers, and Modals Live'
-author: 'Tim Damen'
+title: "Diving into the Toplayer: Where Dialogs, Popovers, and Modals Live"
+author: "Tim Damen"
 pubDatetime: 2025-09-12T14:20:00Z
 conference: UtahJS
 conferenceDate: 2025-09-12T14:20:00Z
 conferenceVenue: Megaplex Theatres at Jordan Commons
 conferenceLocation: Salt lake city, Utah, USA
 conferenceLat: 40.76078
-conferenceLong:  -111.89105
+conferenceLong: -111.89105
 conferenceURL: https://utahjs.com/conference/
 conferenceLogo: ../../assets/logos/UtahJS-logo.webp
 conferenceVideo: https://www.youtube.com/embed/aYur4YmHf5E?si=1eyxVLEQAiHdaaiv
@@ -22,11 +22,11 @@ tags:
   - Conference
   - In Person
   - Talk
-description:
-  In the world of web development, the top layer is where the magic happens. This talk explores dialogs, popovers, and modals, looking into their design, implementation, and accessibility considerations. Learn how to create a user experience that elevates your web applications.
+description: In the world of web development, the top layer is where the magic happens. This talk explores dialogs, popovers, and modals, looking into their design, implementation, and accessibility considerations. Learn how to create a user experience that elevates your web applications.
 ---
 
 ## Resources
+
 The following resources were mentioned in the talk, used for research, or are otherwise relevant:
 
 - [HTML dialog element - MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/dialog)
@@ -36,5 +36,3 @@ The following resources were mentioned in the talk, used for research, or are ot
 - [CSS Positioned - Top Layer](https://drafts.csswg.org./css-position-4/#top-layer)
 - [HTML dialog element - MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/dialog/)
 - [CSS Positioned - ::backdrop pseudo-element](https://drafts.csswg.org/css-position-4/#selectordef-backdrop)
-
-

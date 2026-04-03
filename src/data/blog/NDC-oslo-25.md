@@ -1,8 +1,8 @@
 ---
-title: 'Accessibility feedback loop: Continuous a11y improvement in your development life cycle'
-author: 'Tim Damen'
+title: "Accessibility feedback loop: Continuous a11y improvement in your development life cycle"
+author: "Tim Damen"
 pubDatetime: 2025-05-23T13:40:00Z
-conference: 'NDC Oslo'
+conference: "NDC Oslo"
 conferenceDate: 2025-05-23T13:40:00Z
 conferenceVenue: Oslo Spektrum
 conferenceLocation: Oslo, Norway
@@ -22,8 +22,7 @@ tags:
   - Conference
   - In Person
   - Talk
-description:
-  Discover how implementing an accessibility feedback loop can transform your development process. Learn about continuous WCAG evaluations, rapid feedback cycles, and accessibility integration that fits within agile methodologies. We'll explore real-world strategies and their impact on development teams.
+description: Discover how implementing an accessibility feedback loop can transform your development process. Learn about continuous WCAG evaluations, rapid feedback cycles, and accessibility integration that fits within agile methodologies. We'll explore real-world strategies and their impact on development teams.
 ---
 
 <!-- presentationImages:
@@ -38,7 +37,9 @@ description:
     caption: "Optional caption" -->
 
 ## Resources
+
 The following resources were mentioned in the talk, used for research, or are otherwise relevant:
+
 - [WebAIM’s Hierarchy for Motivating Accessibility Change](https://webaim.org/blog/motivating-accessibility-change/)
 - [Web accessibility in your organisation: roles and responsibilities](https://www.digitoegankelijk.nl/sites/default/files/2022-09/Web%20accessibility%20in%20your%20organisation.pdf)
 - [Project by Hidde de Vries: WCAG reporter](https://hidde.blog/introducing-an-eleventy-starter-project-for-wcag-reports/)

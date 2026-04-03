@@ -1,6 +1,6 @@
 ---
-title: 'Continuous a11y improvements'
-author: 'Tim Damen'
+title: "Continuous a11y improvements"
+author: "Tim Damen"
 pubDatetime: 2025-02-18T16:00:00Z
 conference: Perth Web A11y Camp
 conferenceDate: 2025-02-18T16:00:00Z
@@ -21,12 +21,13 @@ tags:
   - Conference
   - Online
   - Talk
-description:
-  Discover how implementing an accessibility feedback loop can transform your development process. Learn about continuous WCAG evaluations, rapid feedback cycles, and proactive accessibility integration that fits seamlessly within agile methodologies. We'll explore real-world implementation strategies and their impact on development teams.
+description: Discover how implementing an accessibility feedback loop can transform your development process. Learn about continuous WCAG evaluations, rapid feedback cycles, and proactive accessibility integration that fits seamlessly within agile methodologies. We'll explore real-world implementation strategies and their impact on development teams.
 ---
 
 ## Resources
+
 The following resources were mentioned in the talk, used for research, or are otherwise relevant:
+
 - [Web accessibility in your organisation: roles and responsibilities](https://www.digitoegankelijk.nl/sites/default/files/2022-09/Web%20accessibility%20in%20your%20organisation.pdf)
 - [Project by Hidde de Vries: WCAG reporter](https://hidde.blog/introducing-an-eleventy-starter-project-for-wcag-reports/)
 - [WCAG-EM: Website Accessibility Conformance Evaluation Methodology](https://www.w3.org/WAI/test-evaluate/conformance/wcag-em/)

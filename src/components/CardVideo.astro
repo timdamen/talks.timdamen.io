@@ -1,24 +1,15 @@
 ---
 import { slugifyStr } from "@/utils/slugify";
 import type { CollectionEntry } from "astro:content";
-import Location from "@/assets/icons/IconLocation.svg";
 import { getPath } from "@/utils/getPathVideo";
 import Datetime from "./Datetime.astro";
 
 export interface Props extends CollectionEntry<"blog"> {
   variant?: "h2" | "h3";
   largeImage?: boolean;
-  video?: boolean;
 }
 
-const {
-  variant = "h2",
-  largeImage = false,
-  video = false,
-  data,
-  id,
-  filePath,
-} = Astro.props;
+const { variant = "h2", largeImage = false, data, id, filePath } = Astro.props;
 
 const { title, description, pubDatetime, modDatetime, timezone, ogImage } =
   data;
@@ -38,7 +29,7 @@ const headerProps = {
     loading="lazy"
     decoding="async"
     data-href={getPath(id, filePath)}
-    class="mb-2 w-full cursor-pointer rounded border-2 border-accent object-cover aspect-video"
+    class="mb-2 aspect-video w-full cursor-pointer rounded border-2 border-accent object-cover"
   />
 
   <a

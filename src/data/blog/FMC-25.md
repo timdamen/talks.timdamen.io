@@ -1,6 +1,6 @@
 ---
-title: 'Diving into the Toplayer: Where Dialogs, Popovers, and Modals Live'
-author: 'Tim Damen'
+title: "Diving into the Toplayer: Where Dialogs, Popovers, and Modals Live"
+author: "Tim Damen"
 pubDatetime: 2025-10-08T14:20:00Z
 conference: Frontmania
 conferenceDate: 2025-10-08T14:20:00Z
@@ -21,11 +21,11 @@ tags:
   - Conference
   - In Person
   - Talk
-description:
-  In the world of web development, the top layer is where the magic happens. This talk explores the intricacies of dialogs, popovers, and modals, delving into their design, implementation, and accessibility considerations. Learn how to create seamless user experiences that elevate your web applications to new heights.
+description: In the world of web development, the top layer is where the magic happens. This talk explores the intricacies of dialogs, popovers, and modals, delving into their design, implementation, and accessibility considerations. Learn how to create seamless user experiences that elevate your web applications to new heights.
 ---
 
 ## Resources
+
 The following resources were mentioned in the talk, used for research, or are otherwise relevant:
 
 - [HTML dialog element - MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/dialog)
@@ -35,4 +35,3 @@ The following resources were mentioned in the talk, used for research, or are ot
 - [CSS Positioned - Top Layer](https://drafts.csswg.org./css-position-4/#top-layer)
 - [HTML dialog element - MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/dialog/)
 - [CSS Positioned - ::backdrop pseudo-element](https://drafts.csswg.org/css-position-4/#selectordef-backdrop)
-

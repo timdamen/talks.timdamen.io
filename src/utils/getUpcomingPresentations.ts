@@ -14,6 +14,4 @@ const getUpcomingPresentations = (presentations: CollectionEntry<"blog">[]) => {
     );
 };
 
-
-
 export default getUpcomingPresentations;

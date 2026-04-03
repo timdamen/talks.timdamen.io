@@ -1,6 +1,6 @@
 ---
-title: 'Stuck in a Focustrap: Keyboard Accessibility & Focus'
-author: 'Tim Damen'
+title: "Stuck in a Focustrap: Keyboard Accessibility & Focus"
+author: "Tim Damen"
 pubDatetime: 2025-04-01T11:10:00Z
 conference: DevCon
 conferenceDate: 2025-04-01T11:00:00Z
@@ -21,12 +21,13 @@ tags:
   - Conference
   - In Person
   - Talk
-description:
-  Keyboard navigation remains an afterthought for many developers. "Stuck in a Focustrap" explores this essential but frequently neglected side of web accessibility, offering practical techniques and thoughtful approaches to creating inclusive digital experiences.
+description: Keyboard navigation remains an afterthought for many developers. "Stuck in a Focustrap" explores this essential but frequently neglected side of web accessibility, offering practical techniques and thoughtful approaches to creating inclusive digital experiences.
 ---
 
 ## Resources
+
 The following resources were mentioned in the talk, used for research, or are otherwise relevant:
+
 - [W3C: How People with Disabilities Use the Web "Physical"](https://www.w3.org/WAI/people-use-web/abilities-barriers/physical/)
 - [The European Accessibility Act (EAA)](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32019L0882)
 - [WCAG 2.2 Understanding Success Criterion 2.4.7: Focus Visible](https://www.w3.org/WAI/WCAG22/Understanding/focus-visible.html)

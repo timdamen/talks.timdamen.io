@@ -281,10 +281,13 @@ const nextPost =
     <!-- Previous/Next Post Buttons -->
     {
       !(pubDatetime && pubDatetime > new Date()) && (
-        <hr class="my-6 border-dashed" />
-        <div data-pagefind-ignore class="grid grid-cols-1 gap-6 sm:grid-cols-2">
-          {
-            prevPost && (
+        <>
+          <hr class="my-6 border-dashed" />
+          <div
+            data-pagefind-ignore
+            class="grid grid-cols-1 gap-6 sm:grid-cols-2"
+          >
+            {prevPost && (
               <a
                 href={getPath(prevPost.id, prevPost.filePath)}
                 class="flex w-full gap-1"
@@ -295,10 +298,8 @@ const nextPost =
                   <div class="text-sm text-accent">{prevPost.title}</div>
                 </div>
               </a>
-            )
-          }
-          {
-            nextPost && (
+            )}
+            {nextPost && (
               <a
                 href={getPath(nextPost.id, nextPost.filePath)}
                 class="flex w-full justify-end gap-1 text-end sm:col-start-2"
@@ -309,9 +310,9 @@ const nextPost =
                 </div>
                 <IconChevronRight class="inline-block flex-none rtl:rotate-180" />
               </a>
-            )
-          }
-        </div>
+            )}
+          </div>
+        </>
       )
     }
   </main>

@@ -13,44 +13,46 @@ import Socials from "@/components/Socials.astro";
   <Breadcrumb />
   <main
     id="main-content"
-    class="prose text-lg dark:prose-invert mx-auto w-full max-w-6xl"
+    class="mx-auto prose w-full max-w-6xl text-lg dark:prose-invert"
   >
-  <section class="relative lg:flex">
-    <div class="lg:w-[55%]">
-      <h1 class="mb-4 inline-block text-4xl font-bold sm:mb-8 sm:text-5xl">
-        Contact
-      </h1>
-      <p>
-          I’m always open for a conversation, be it for questions, event speaking invitations, or
-          feedback on my work. Here’s how you can connect with me.
-      </p>
-    </div>
-  </section>
+    <section class="relative lg:flex">
+      <div class="lg:w-[55%]">
+        <h1 class="mb-4 inline-block text-4xl font-bold sm:mb-8 sm:text-5xl">
+          Contact
+        </h1>
+        <p>
+          I’m always open for a conversation, be it for questions, event
+          speaking invitations, or feedback on my work. Here’s how you can
+          connect with me.
+        </p>
+      </div>
+    </section>
 
-  <section>
-    <div class="prose w-[575px] max-w-full mx-0 pb-8 pt-8 dark:prose-invert xl:col-span-2">
+    <section>
+      <div
+        class="mx-0 prose w-[575px] max-w-full pt-8 pb-8 xl:col-span-2 dark:prose-invert"
+      >
         <h2 id="what-i-talk-about">Preferred Contact Method</h2>
         <p>
-          For the quickest and most detailed reponse, drop me a line at{' '}
-          <a href={`mailto:hello@timdamen.io`}>hello@timdamen.io</a>, Or directly plan a
-          meeting with me via <a href="https://cal.com/timdamen">cal.com/timdamen</a>.
+          For the quickest and most detailed reponse, drop me a line at{" "}
+          <a href={`mailto:hello@timdamen.io`}>hello@timdamen.io</a>, Or
+          directly plan a meeting with me via <a href="https://cal.com/timdamen"
+            >cal.com/timdamen</a
+          >.
         </p>
         <h2>Social Media</h2>
-                  {
-            // only display if at least one social link is enabled
-            SOCIALS.length > 0 && (
-              <div class="flex flex-col sm:flex-row sm:items-center">
-                <div class="mb-1 whitespace-nowrap sm:mb-0">
-                  I'm active on:
-                </div>
-                <Socials centered />
-              </div>
-            )
-          }
+        {
+          // only display if at least one social link is enabled
+          SOCIALS.length > 0 && (
+            <div class="flex flex-col sm:flex-row sm:items-center">
+              <div class="mb-1 whitespace-nowrap sm:mb-0">I'm active on:</div>
+              <Socials centered />
+            </div>
+          )
+        }
         <p>Looking forward to hearing from you! ❤️</p>
-    </div>
-    
-  </section>
+      </div>
+    </section>
   </main>
 
   <Footer />

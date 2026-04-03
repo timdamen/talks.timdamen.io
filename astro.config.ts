@@ -16,11 +16,14 @@ import starlight from "@astrojs/starlight";
 // https://astro.build/config
 export default defineConfig({
   site: SITE.website,
-  integrations: [sitemap({
-    filter: page => SITE.showArchives || !page.endsWith("/archives"),
-  }), starlight({
-      title: 'TD Talks',
-    })],
+  integrations: [
+    sitemap({
+      filter: page => SITE.showArchives || !page.endsWith("/archives"),
+    }),
+    starlight({
+      title: "TD Talks",
+    }),
+  ],
   markdown: {
     remarkPlugins: [remarkToc, [remarkCollapse, { test: "Table of contents" }]],
     shikiConfig: {
@@ -39,7 +42,7 @@ export default defineConfig({
   vite: {
     plugins: [tailwindcss()],
     optimizeDeps: {
-      include: ['leaflet'],
+      include: ["leaflet"],
       exclude: ["@resvg/resvg-js"],
     },
     resolve: {
@@ -51,7 +54,7 @@ export default defineConfig({
   image: {
     // Used for all Markdown images; not configurable per-image
     // Used for all `<Image />` and `<Picture />` components unless overridden with a prop
-    experimentalLayout: "constrained",
+    layout: "constrained",
   },
   env: {
     schema: {
@@ -62,8 +65,5 @@ export default defineConfig({
       }),
     },
   },
-  experimental: {
-    preserveScriptOrder: true,
-    responsiveImages: true
-  },
+  experimental: {},
 });

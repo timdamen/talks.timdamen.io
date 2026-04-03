@@ -79,12 +79,14 @@ const { pdfUrl, width = 800, height = 600, className = "" } = Astro.props;
       try {
         // Wait for PDF.js to be available
         if (typeof pdfjsLib === "undefined") {
+          // eslint-disable-next-line no-console
           console.error("PDF.js library not loaded");
           return;
         }
 
         const pdfUrl = this.container.dataset.pdfUrl;
         if (!pdfUrl) {
+          // eslint-disable-next-line no-console
           console.error("PDF URL not provided");
           return;
         }
@@ -103,6 +105,7 @@ const { pdfUrl, width = 800, height = 600, className = "" } = Astro.props;
         // Update UI
         this.updateUI();
       } catch (error) {
+        // eslint-disable-next-line no-console
         console.error("Error loading PDF:", error);
         this.showError("Failed to load PDF");
       }
@@ -155,6 +158,7 @@ const { pdfUrl, width = 800, height = 600, className = "" } = Astro.props;
         await page.render(renderContext).promise;
         this.ctx.restore();
       } catch (error) {
+        // eslint-disable-next-line no-console
         console.error("Error rendering page:", error);
         this.showError("Failed to render page");
       }
@@ -276,7 +280,7 @@ const { pdfUrl, width = 800, height = 600, className = "" } = Astro.props;
     height: auto;
   }
 
-  html[data-theme="dark"]   #pdf-canvas {
+  html[data-theme="dark"] #pdf-canvas {
     border: 3px solid #ddd;
     border-radius: 4px;
     max-width: 100%;
@@ -316,7 +320,7 @@ const { pdfUrl, width = 800, height = 600, className = "" } = Astro.props;
     transform: none;
     color: white;
   }
-    html[data-theme="dark"] .nav-btn:disabled {
+  html[data-theme="dark"] .nav-btn:disabled {
     background: #bbbbbb;
     cursor: not-allowed;
     transform: none;

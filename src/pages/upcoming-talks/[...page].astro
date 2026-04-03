@@ -1,15 +1,12 @@
 ---
 import { getCollection } from "astro:content";
-import Main from "@/layouts/Main.astro";
 import Layout from "@/layouts/Layout.astro";
 import Header from "@/components/Header.astro";
 import Footer from "@/components/Footer.astro";
 import Card from "@/components/Card.astro";
-import getSortedPresentations from "@/utils/getSortedPresentations";
 import getUpcomingPresentations from "@/utils/getUpcomingPresentations";
 import { SITE } from "@/config";
 import MapLibre from "@/components/MapLibre.astro";
-import CardImage from "@/components/CardImage.astro";
 import Breadcrumb from "@/components/Breadcrumb.astro";
 
 export const getStaticPaths = (async ({ paginate }) => {
@@ -20,10 +17,7 @@ export const getStaticPaths = (async ({ paginate }) => {
 }) satisfies GetStaticPaths;
 
 const presentations = await getCollection("blog", ({ data }) => !data.draft);
-const presentations2 = await getCollection("blog", ({ data }) => !data.draft);
 const upcomingPresentations = getUpcomingPresentations(presentations);
-const sortedPresentations2 = getSortedPresentations(presentations2);
-
 // get array of all conferences with lat, long, and popupContent from recentPresentations
 const conferences = upcomingPresentations
   .map(({ data }) => {
@@ -44,10 +38,9 @@ const { page } = Astro.props;
 <Layout title={`Upcoming talks | ${SITE.title}`}>
   <Header />
   <main id="main-content" data-layout="index">
-<Breadcrumb />
+    <Breadcrumb />
     <section id="hero" class="pb-6">
-      
-      <h1 class="mb-4 mt-0 inline-block text-4xl font-bold sm:mb-8 sm:text-5xl">
+      <h1 class="mt-0 mb-4 inline-block text-4xl font-bold sm:mb-8 sm:text-5xl">
         Upcoming talks
         {
           upcomingPresentations.length > 0 && (

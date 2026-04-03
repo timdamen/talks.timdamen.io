@@ -24,11 +24,15 @@ const blog = defineCollection({
       conferenceLogoBackground: z.string().optional(),
       conferenceVideo: z.string().optional(),
       conferenceSlides: z.string().optional(),
-      presentationImages: z.array(z.object({
-        src: z.string(),
-        alt: z.string(),
-        caption: z.string().optional(),
-      })).optional(),
+      presentationImages: z
+        .array(
+          z.object({
+            src: z.string(),
+            alt: z.string(),
+            caption: z.string().optional(),
+          })
+        )
+        .optional(),
       title: z.string(),
       featured: z.boolean().optional(),
       draft: z.boolean().optional(),

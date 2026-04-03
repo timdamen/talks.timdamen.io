@@ -149,19 +149,19 @@ const nextPost =
     >
       {
         conferenceVideo && (
-            <>
+          <>
             <h2 class="text-2xl font-semibold tracking-wide">Video</h2>
             <div class="aspect-video w-full">
               <iframe
-              class="h-full w-full"
-              src={conferenceVideo}
-              title={`${title} - Video`}
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              referrerpolicy="strict-origin-when-cross-origin"
-              allowfullscreen
+                class="h-full w-full"
+                src={conferenceVideo}
+                title={`${title} - Video`}
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen
               />
             </div>
-                 <div class="mx-auto px-5 flex items-center justify-between">
+            <div class="mx-auto flex items-center justify-between px-5">
               <div class="mt-1 flex justify-start">
                 <div>
                   <Image
@@ -169,7 +169,7 @@ const nextPost =
                     width={188}
                     height={116}
                     alt="Tim Damen close up photo"
-                    class="size-13 rounded-full shadow-lg my-3 md:my-[1.2em]"
+                    class="my-3 size-13 rounded-full shadow-lg md:my-[1.2em]"
                   />
                 </div>
                 <div class="ms-4 flex flex-col justify-center text-sm">

@@ -1,6 +1,6 @@
 ---
-title: 'Scaling Accessibility'
-author: 'Tim Damen'
+title: "Scaling Accessibility"
+author: "Tim Damen"
 pubDatetime: 2024-11-21T15:10:00Z
 conference: JSNation US
 conferenceDate: 2024-11-21T15:10:00Z
@@ -21,12 +21,13 @@ tags:
   - Accessibility
   - Conference
   - Online
-description:
-  How does a big organization become accessible? Let’s talk about a11y scaling strategies. To find out how to become accessible, and stay accessible.
+description: How does a big organization become accessible? Let’s talk about a11y scaling strategies. To find out how to become accessible, and stay accessible.
 ---
 
 ## Resources
+
 The following resources were mentioned in the talk, used for research, or are otherwise relevant:
+
 - [The WebAIM Million](https://webaim.org/projects/million/)
 - [Web Content Accessibility Guidelines (WCAG) 2.2](https://www.w3.org/TR/WCAG22/)
 - [Web accessibility in your organisation: roles and responsibilities](https://www.digitoegankelijk.nl/sites/default/files/2022-09/Web%20accessibility%20in%20your%20organisation.pdf)

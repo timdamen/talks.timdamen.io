@@ -17,11 +17,10 @@ const presentations = await getCollection("blog");
               class="flex items-center justify-center rounded-lg bg-white p-1"
               class:list={[
                 {
-                  "dark:bg-transparent! bg-[#212737]!":
+                  "bg-[#212737]! dark:bg-transparent!":
                     presentation.data.conferenceLogoBackground === "dark",
                 },
                 "flex items-center justify-center rounded-lg bg-white p-1",
-                
               ]}
               title={`${presentation.data.conference}`}
             >

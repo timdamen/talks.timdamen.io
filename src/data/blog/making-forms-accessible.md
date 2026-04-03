@@ -1,6 +1,6 @@
 ---
-title: 'Making forms accessible'
-author: 'Tim Damen'
+title: "Making forms accessible"
+author: "Tim Damen"
 pubDatetime: 2023-10-26T19:00:00Z
 conference: ABN AMRO x PP Meetup
 conferenceDate: 2023-10-26T19:00:00Z
@@ -19,8 +19,7 @@ tags:
   - Accessibility
   - Meetup
   - In Person
-description:
-  Learn how to make web forms accessible to all users by considering factors such as proper label placement, appropriate input types, and ARIA role usage. With practical tips and real-life examples, you can create fully functional and inclusive online forms that work for everyone.
+description: Learn how to make web forms accessible to all users by considering factors such as proper label placement, appropriate input types, and ARIA role usage. With practical tips and real-life examples, you can create fully functional and inclusive online forms that work for everyone.
 ---
 
 Users cannot see this post because it is in draft.

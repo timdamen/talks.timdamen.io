@@ -199,7 +199,7 @@ if (isSynced) {
 
 				// Handle keyboard input
 				tab.addEventListener('keydown', (e) => {
-					const index = this.tabs.indexOf(e.currentTarget as any);
+					const index = this.tabs.indexOf(e.currentTarget as HTMLAnchorElement);
 					// Work out which key the user is pressing and
 					// Calculate the new tab's index where appropriate
 					const nextIndex =

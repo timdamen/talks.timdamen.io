@@ -7,10 +7,7 @@ const seen = new Set<string>();
 <div class="flex flex-wrap items-center gap-4">
   {
     presentations.map(presentation => {
-      if (
-        !presentation.data.conferenceURL ||
-        !presentation.data.conferenceLogo
-      )
+      if (!presentation.data.conferenceURL || !presentation.data.conferenceLogo)
         return null;
       const logo = presentation.data.conferenceLogo;
       const key = typeof logo === "string" ? logo : logo.src;
@@ -18,29 +15,29 @@ const seen = new Set<string>();
       seen.add(key);
       const logoSrc = typeof logo === "string" ? logo : logo.src;
       return (
-          <>
-            <a
-              target="_blank"
-              rel="noopener noreferrer"
-              href={`${presentation.data.conferenceURL}`}
-              class="flex items-center justify-center rounded-lg bg-white p-1"
-              class:list={[
-                {
-                  "bg-[#212737]! dark:bg-transparent!":
-                    presentation.data.conferenceLogoBackground === "dark",
-                },
-                "flex items-center justify-center rounded-lg bg-white p-1",
-              ]}
-              title={`${presentation.data.conference}`}
-            >
-              <img
-                src={logoSrc}
-                alt={`Logo ${presentation.data.conference}`}
-                class="h-auto max-h-20 w-full max-w-36 object-contain"
-              />
-            </a>
-          </>
-        );
+        <>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href={`${presentation.data.conferenceURL}`}
+            class="flex items-center justify-center rounded-lg bg-white p-1"
+            class:list={[
+              {
+                "bg-[#212737]! dark:bg-transparent!":
+                  presentation.data.conferenceLogoBackground === "dark",
+              },
+              "flex items-center justify-center rounded-lg bg-white p-1",
+            ]}
+            title={`${presentation.data.conference}`}
+          >
+            <img
+              src={logoSrc}
+              alt={`Logo ${presentation.data.conference}`}
+              class="h-auto max-h-20 w-full max-w-36 object-contain"
+            />
+          </a>
+        </>
+      );
     })
   }
 </div>

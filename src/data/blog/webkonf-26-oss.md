@@ -10,6 +10,8 @@ conferenceLat: 47.5362
 conferenceLong: 19.0355
 conferenceURL: https://webkonf.hu/en
 conferenceLogo: ../../assets/logos/webkonf.png
+ogImage: https://slides.timdamen.io/thumbnails/webkonf-hu-26-toplayer.webp
+googleDrivePresentationsLink: https://slides.timdamen.io/presentations/webkonf-hu-26-toplayer/1
 slug: webkonf-26-oss-build-together-accessed-by-all-open-source-web-accessibility
 featured: false
 draft: false

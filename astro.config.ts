@@ -22,7 +22,12 @@ export default defineConfig({
   compressHTML: true,
   integrations: [
     sitemap({
-      filter: page => SITE.showArchives || !page.endsWith("/archives"),
+      filter: page => {
+        const path = new URL(page).pathname.replace(/\/+$/, "");
+        if (path === "/search") return false;
+        if (!SITE.showArchives && path === "/archives") return false;
+        return true;
+      },
     }),
     starlight({
       title: "TD Talks",

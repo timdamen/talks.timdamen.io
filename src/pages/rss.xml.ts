@@ -11,6 +11,11 @@ export async function GET() {
     title: SITE.title,
     description: SITE.desc,
     site: SITE.website,
+    xmlns: { atom: "http://www.w3.org/2005/Atom" },
+    customData: [
+      "<language>en</language>",
+      `<atom:link href="${new URL("rss.xml", SITE.website).href}" rel="self" type="application/rss+xml"/>`,
+    ].join(""),
     items: sortedPresentations.map(({ data, id, filePath }) => ({
       link: getPath(id, filePath),
       title: data.title,

@@ -1,35 +1,11 @@
 ---
 layout: ../layouts/AboutLayout.astro
 title: "About"
+description: "About Tim Damen: frontend developer, web accessibility specialist, and engineering manager from Amsterdam. Speaker bios and photos for event organizers."
 ---
 
-AstroPaper is a minimal, accessible and SEO-friendly blog theme built with [Astro](https://astro.build/) and [Tailwind CSS](https://tailwindcss.com/).
+Tim Damen is a frontend developer, web accessibility specialist, and engineering manager based in Amsterdam, the Netherlands. Driven by the mission to make people's lives easier, he actively advocates for and builds a web that serves everyone equally.
 
-AstroPaper provides a solid foundation for blogs, or even portfolios\_ with full markdown support, built-in dark mode, and a clean layout that works out-of-the-box.
+With over a decade of experience in the field — primarily working with major financial institutions — Tim specializes in JavaScript, HTML, CSS, developer experience (DX), web standards, accessibility, and developing robust web applications.
 
-The blog presentations in this theme also serve as guides, docs or example articles\_ making AstroPaper a flexible starting point for your next content-driven site.
-
-## Features
-
-AstroPaper comes with a set of useful features that make content publishing easy and effective:
-
-- SEO-friendly
-- Fast performance
-- Light & dark mode
-- Highly customizable
-- Organizable blog presentations
-- Responsive & accessible
-- Static search with [PageFind](https://pagefind.app/)
-- Automatic social image generation
-
-and so much more.
-
-## Show your support
-
-If you like [AstroPaper](https://github.com/satnaing/astro-paper), consider giving it a star ⭐️.
-
-Found a bug 🐛 or have an improvement ✨ in mind? Feel free to open an [issue](https://github.com/satnaing/astro-paper/issues), submit a [pull request](https://github.com/satnaing/astro-paper/pulls) or start a [discussion](https://github.com/satnaing/astro-paper/discussions).
-
-If you find this theme helpful, you can also [sponsor me on GitHub](https://github.com/sponsors/satnaing) or [buy me a coffee](https://buymeacoffee.com/satnaing) to show your support — every penny counts.
-
-Kyay zuu! 🙏🏼
+A recognized voice in the web development community, Tim has spoken at various conferences and meetups, and hosts [focustrap](https://focusring.io/podcast-focustrap), a podcast about digital accessibility.

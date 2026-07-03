@@ -2,9 +2,9 @@ export const SITE = {
   website: "https://talks.timdamen.io", // replace this with your deployed domain
   author: "Tim Damen",
   profile: "https://timdamen.io/",
-  desc: "Here you will find all of Tim Damen's talks with slides, videos, and other resources.",
+  desc: "Conference talks by Tim Damen, frontend developer, web accessibility specialist, and engineering manager from Amsterdam. Slides, videos, and resources for every talk.",
   title: "Tim Damen's talks",
-  ogImage: "./assets/stage2.webp",
+  ogImage: "", // empty string falls back to the generated /og.png (1200x630)
   lightAndDarkMode: true,
   postPerIndex: 10,
   postPerPage: 999,

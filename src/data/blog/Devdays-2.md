@@ -1,5 +1,5 @@
 ---
-title: "Accessible Forms for Every Users: A Semantic Approach to Forms on the Web"
+title: "Build Together, Accessed by All: Open Source Web Accessibility"
 author: "Tim Damen"
 pubDatetime: 2026-05-20T14:20:00Z
 conference: DevDays Europe
@@ -10,8 +10,10 @@ conferenceLat: 54.687157
 conferenceLong: 25.279652
 conferenceURL: https://devdays.lt/
 conferenceLogo: ../../assets/logos/devdays.webp
-ogImage: ../../assets/images/devdays-26-og.webp
-slug: devdays-26-accessible-forms-for-every-users-a-semantic-approach-to-forms-on-the-web
+ogImage: https://slides.timdamen.io/thumbnails/devdays-26.webp
+conferenceSlides: ../../assets/slides/devdays-26.pdf
+googleDrivePresentationsLink: https://slides.timdamen.io/presentations/devdays-26
+slug: devdays-2026-oss-build-together-accessed-by-all-open-source-web-accessibility
 featured: false
 draft: false
 tags:
@@ -25,3 +27,22 @@ description: Accessible forms are a cornerstone of web usability, yet they often
 ## Resources
 
 The following resources were mentioned in the talk, used for research, or are otherwise relevant:
+
+- [How Linux is Built - The Linux Foundation (YouTube)](https://www.youtube.com/watch?v=yVpbFMhOAwE)
+- [Linux kernel source - torvalds/linux on GitHub](https://github.com/torvalds/linux)
+- [Git](https://git-scm.com/)
+- [Vue.js](https://vuejs.org/)
+- [Vite](https://vite.dev/)
+- [Vite Plus](https://viteplus.dev/)
+- [build-your-own-x - most starred repo on GitHub](https://github.com/codecrafters-io/build-your-own-x)
+- [awesome - curated lists of awesome things](https://github.com/sindresorhus/awesome)
+- [freeCodeCamp](https://github.com/freeCodeCamp/freeCodeCamp)
+- [public-apis - free API directory](https://github.com/public-apis/public-apis)
+- [OpenClaw - fastest-growing repo in GitHub history](https://github.com/openclaw/openclaw)
+- [Star History - GitHub star growth charts](https://star-history.com/)
+- [Volkan Yazıcı on the Log4j maintainers' experience - X](https://x.com/yazicivo/status/1469349956880408583)
+- [Nuxt](https://nuxt.com/)
+- [@nuxt/a11y - accessibility module for Nuxt](https://github.com/nuxt/a11y)
+- [GitHub on the Nuxt A11y module - X](https://x.com/github/status/2040852222544687447)
+- [Daniel Roe](https://roe.dev/)
+- [ViteConf](https://viteconf.org/)

@@ -60,15 +60,33 @@ const ogImage = ogImageUrl
   ? new URL(ogImageUrl, Astro.url.origin).href
   : undefined;
 
+const videoStructuredData = {
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  name: title,
+  description,
+  ...(ogImage && { thumbnailUrl: [ogImage] }),
+  uploadDate: pubDatetime.toISOString(),
+  ...(conferenceVideo && { embedUrl: conferenceVideo }),
+  url: new URL(Astro.url.pathname, Astro.url.origin).href,
+  author: {
+    "@type": "Person",
+    name: author,
+    url: SITE.profile,
+  },
+};
+
 const layoutProps = {
-  title: `${title} | ${SITE.title}`,
+  title: `${title} (Video) | ${SITE.title}`,
   author,
   description,
   pubDatetime,
   modDatetime,
   canonicalURL,
   ogImage,
+  ogImageAlt: `Video thumbnail for the talk "${title}"`,
   scrollSmooth: true,
+  structuredData: videoStructuredData,
 };
 
 /* ========== Prev/Next Presentations ========== */

@@ -20,6 +20,7 @@ import CardVideo from "@/components/CardVideo.astro";
 import MapLibre from "@/components/MapLibre.astro";
 import Logos from "@/components/Logos.astro";
 import Image from "astro/components/Image.astro";
+import stageImage from "@/assets/images/stage2.webp";
 
 const presentations = await getCollection("blog");
 const presentations2 = await getCollection("blog");
@@ -64,9 +65,41 @@ conferences.push(
     })
     .filter(Boolean)
 );
+
+const structuredData = [
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: SITE.title,
+    url: SITE.website,
+    description: SITE.desc,
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name: SITE.author,
+    url: SITE.profile,
+    image: new URL("/assets/stage2.webp", SITE.website).href,
+    jobTitle: "Frontend Developer & Web Accessibility Specialist",
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "Amsterdam",
+      addressCountry: "NL",
+    },
+    sameAs: [
+      SITE.website,
+      ...SOCIALS.map(social => social.href).filter(href =>
+        href.startsWith("http")
+      ),
+    ],
+  },
+];
 ---
 
-<Layout>
+<Layout
+  title="Tim Damen – Talks on Web Accessibility & Frontend Development"
+  structuredData={structuredData}
+>
   <Header />
   <main id="main-content" data-layout="index">
     <section id="hero" class="pt-8 pb-6">
@@ -92,9 +125,11 @@ conferences.push(
         class="mt-4 flex flex-col items-center gap-6 sm:flex-row sm:items-start"
       >
         <Image
-          src="/assets/stage2.webp"
+          src={stageImage}
           width={288}
           height={216}
+          loading="eager"
+          fetchpriority="high"
           alt="Tim Damen speaking on stage with microphone attached to his ear"
           class="w-full max-w-xs rounded-lg shadow-lg sm:w-72 sm:max-w-none"
         />
@@ -215,7 +250,7 @@ conferences.push(
     {
       upcomingPresentations.length > 0 && (
         <>
-          <section id="recent-presentations" class="pt-12 pb-6">
+          <section id="upcoming-talks" class="pt-12 pb-6">
             <div class="mb-4 flex items-center justify-between">
               <h2 class="text-3xl font-semibold tracking-wide">
                 Upcoming Talks

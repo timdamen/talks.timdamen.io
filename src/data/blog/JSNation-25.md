@@ -11,7 +11,8 @@ conferenceLong: -74.052315
 conferenceURL: https://jsnation.us/
 conferenceLogo: ../../assets/logos/JSNation.svg
 conferenceLogoBackground: dark
-# ogImage: ../../assets/images/UtahJS-25-og.webp
+ogImage: ../../assets/images/jsnation-25.webp
+conferenceSlides: ../../assets/slides/FMC-25.pdf
 slug: jsnation-25-diving-into-the-toplayer-where-dialogs-popovers-and-modals-live
 featured: false
 draft: false
@@ -26,3 +27,11 @@ description: In the world of web development, the top layer is where the magic h
 ## Resources
 
 The following resources were mentioned in the talk, used for research, or are otherwise relevant:
+
+- [HTML dialog element - MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/dialog)
+- [Popover API - MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/API/Popover_API)
+- [z-index - CSS - MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/CSS/z-index)
+- [Minimum and maximum value of z-index? - Stack Overflow](https://stackoverflow.com/questions/491052/minimum-and-maximum-value-of-z-index/25461690)
+- [CSS Positioned - Top Layer](https://drafts.csswg.org./css-position-4/#top-layer)
+- [HTML dialog element - MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/dialog/)
+- [CSS Positioned - ::backdrop pseudo-element](https://drafts.csswg.org/css-position-4/#selectordef-backdrop)

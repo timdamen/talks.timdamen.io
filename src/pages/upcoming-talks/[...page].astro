@@ -35,7 +35,10 @@ const conferences = upcomingPresentations
 const { page } = Astro.props;
 ---
 
-<Layout title={`Upcoming talks | ${SITE.title}`}>
+<Layout
+  title={`Upcoming talks | ${SITE.title}`}
+  description="See where Tim Damen is speaking next: upcoming conference talks with dates, locations, and a map."
+>
   <Header />
   <main id="main-content" data-layout="index">
     <Breadcrumb />

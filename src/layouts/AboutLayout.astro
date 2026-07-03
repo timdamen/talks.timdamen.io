@@ -11,6 +11,7 @@ import Hr from "@/components/Hr.astro";
 import { TabItem } from "@astrojs/starlight/components";
 import Tabs from "@/components/Tabs.astro";
 import myImage from "../assets/images/NDC-oslo-1.webp";
+import stageImage from "../assets/images/stage2.webp";
 import Image from "astro/components/Image.astro";
 import Logos from "@/components/Logos.astro";
 
@@ -22,9 +23,36 @@ export interface Props {
 }
 
 const { frontmatter } = Astro.props;
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "ProfilePage",
+  mainEntity: {
+    "@type": "Person",
+    name: SITE.author,
+    url: SITE.profile,
+    image: new URL("/assets/stage2.webp", SITE.website).href,
+    jobTitle: "Frontend Developer & Web Accessibility Specialist",
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "Amsterdam",
+      addressCountry: "NL",
+    },
+    sameAs: [
+      SITE.website,
+      ...SOCIALS.map(social => social.href).filter(href =>
+        href.startsWith("http")
+      ),
+    ],
+  },
+};
 ---
 
-<Layout title={`${frontmatter.title} | ${SITE.title}`}>
+<Layout
+  title={`${frontmatter.title} | ${SITE.title}`}
+  description={frontmatter.description}
+  structuredData={structuredData}
+>
   <Header />
   <Breadcrumb />
   <main id="main-content">
@@ -53,9 +81,9 @@ const { frontmatter } = Astro.props;
         <Image
           width={300}
           height={300}
-          loading="lazy"
-          decoding="async"
-          src="/assets/stage2.webp"
+          loading="eager"
+          fetchpriority="high"
+          src={stageImage}
           alt="Tim Damen speaking on stage with microphone attached to his ear"
           class="w-full max-w-xs rounded-lg shadow-lg sm:w-72 sm:max-w-none"
         />

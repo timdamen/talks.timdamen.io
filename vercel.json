@@ -1,0 +1,16 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "trailingSlash": true,
+  "redirects": [
+    {
+      "source": "/upcoming-talks/:slug/",
+      "destination": "/presentations/:slug/",
+      "permanent": true
+    },
+    {
+      "source": "/upcoming-talks/:slug",
+      "destination": "/presentations/:slug/",
+      "permanent": true
+    }
+  ]
+}

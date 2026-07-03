@@ -41,7 +41,10 @@ const presentationsByYear = sortedYears.reduce(
 const { page } = Astro.props;
 ---
 
-<Layout title={`Presentations | ${SITE.title}`}>
+<Layout
+  title={`Presentations | ${SITE.title}`}
+  description="Browse all conference talks and presentations by Tim Damen, organized by year, with slides, videos, and resources."
+>
   <Header />
   <Main pageTitle="Presentations by Tim Damen">
     <div class="mb-6 inline-flex rounded-lg bg-muted px-4 py-2">

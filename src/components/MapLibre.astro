@@ -39,21 +39,33 @@ const {
 >
   <div id={container} style={containerstyle}></div>
 
-  <link
-    rel="stylesheet"
-    href="https://unpkg.com/maplibre-gl/dist/maplibre-gl.css"
-  />
-  {
-    /* Astro specific way to pull in MapLibre, `is:inline`:  https://docs.astro.build/en/reference/directives-reference/#isinline */
-  }
-  <script is:inline src="https://unpkg.com/maplibre-gl/dist/maplibre-gl.js"
-  ></script>
   <script>
-    import maplibregl, { Marker, Popup } from "maplibre-gl";
-
+    // The maplibre-gl bundle is ~1MB, so it is only fetched (via dynamic
+    // import → separate chunk) once the map scrolls near the viewport.
     class MapLibreMap extends HTMLElement {
-      constructor() {
-        super();
+      initialized = false;
+
+      connectedCallback() {
+        const observer = new IntersectionObserver(
+          entries => {
+            if (entries.some(entry => entry.isIntersecting)) {
+              observer.disconnect();
+              this.initMap();
+            }
+          },
+          { rootMargin: "300px" }
+        );
+        observer.observe(this);
+      }
+
+      async initMap() {
+        if (this.initialized) return;
+        this.initialized = true;
+
+        const [{ default: maplibregl }] = await Promise.all([
+          import("maplibre-gl"),
+          import("maplibre-gl/dist/maplibre-gl.css"),
+        ]);
 
         const map = new maplibregl.Map({
           // eslint-disable-next-line @typescript-eslint/ban-ts-comment
@@ -86,18 +98,14 @@ const {
           popupContent: string;
         }[];
 
-        // eslint-disable-next-line no-console
-        console.log("Conferences data:", conferences);
-
         conferences.forEach(({ latitude, longitude, popupContent }) => {
-          new Marker({
+          new maplibregl.Marker({
             color: "red",
             scale: 0.9, // Adjust the scale as needed
           })
             .setLngLat([longitude, latitude])
-
             .setPopup(
-              new Popup().setHTML(
+              new maplibregl.Popup().setHTML(
                 `<span style="color:black;">${popupContent}</span>`
               )
             )

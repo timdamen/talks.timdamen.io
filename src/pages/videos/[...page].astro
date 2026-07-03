@@ -43,9 +43,12 @@ const presentationsByYear = sortedYears.reduce(
 const { page } = Astro.props;
 ---
 
-<Layout title={`Videos | ${SITE.title}`}>
+<Layout
+  title={`Videos | ${SITE.title}`}
+  description="Watch recordings of Tim Damen's conference talks on web accessibility and frontend development, organized by year."
+>
   <Header />
-  <Main pageTitle="Recored talks by Tim Damen">
+  <Main pageTitle="Recorded talks by Tim Damen">
     <div class="mb-6 inline-flex rounded-lg bg-muted px-4 py-2">
       {
         sortedYears.map((year, index) => (

@@ -9,6 +9,9 @@ conferenceLocation: Budapest, Hungary
 conferenceLat: 47.5362
 conferenceLong: 19.0355
 conferenceURL: https://webkonf.hu/en
+conferenceSlides: ../../assets/slides/webkonf-hu-26-toplayer.pdf
+ogImage: https://slides.timdamen.io/thumbnails/webkonf-hu-26-toplayer.webp
+googleDrivePresentationsLink: https://slides.timdamen.io/presentations/webkonf-hu-26-toplayer
 conferenceLogo: ../../assets/logos/webkonf.png
 slug: webkonf-26-diving-into-the-toplayer-where-dialogs-popovers-and-modals-live
 featured: false

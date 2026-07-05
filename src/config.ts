@@ -2,7 +2,7 @@ export const SITE = {
   website: "https://talks.timdamen.io", // replace this with your deployed domain
   author: "Tim Damen",
   profile: "https://timdamen.io/",
-  desc: "Conference talks by Tim Damen, frontend developer, web accessibility specialist, and engineering manager from Amsterdam. Slides, videos, and resources for every talk.",
+  desc: "Tim Damen — frontend developer, web accessibility specialist, and co-founder of Focusring. International conference speaker and host of the focustrap podcast.",
   title: "Tim Damen's talks",
   ogImage: "", // empty string falls back to the generated /og.png (1200x630)
   lightAndDarkMode: true,

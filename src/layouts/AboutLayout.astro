@@ -8,8 +8,9 @@ import Socials from "@/components/Socials.astro";
 import IconRss from "@/assets/icons/IconRss.svg";
 import { SOCIALS } from "@/constants";
 import Hr from "@/components/Hr.astro";
-import { TabItem, Code } from "@astrojs/starlight/components";
+import { Code } from "astro-expressive-code/components";
 import Tabs from "@/components/Tabs.astro";
+import TabItem from "@/components/TabItem.astro";
 import myImage from "../assets/images/NDC-oslo-1.webp";
 import stageImage from "../assets/images/stage2.webp";
 import Image from "astro/components/Image.astro";
@@ -362,10 +363,10 @@ const structuredData = {
           />
         </a>
         <a
-          href="/assets/NDC-oslo-1.webp"
+          href={myImage.src}
           target="_blank"
           rel="noopener"
-          aria-label="open image 5 in new tab"
+          aria-label="open image 6 in new tab"
         >
           <Image
             src={myImage}

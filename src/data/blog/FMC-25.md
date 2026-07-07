@@ -9,7 +9,8 @@ conferenceLocation: Utrecht, Netherlands
 conferenceLat: 52.090736
 conferenceLong: 5.121169
 conferenceURL: https://frontmania.com/
-conferenceLogo: ../../assets/logos/FMC2025-logo.webp
+conferenceLogo: ../../assets/logos/frontmania.png
+conferenceLogoBackground: dark
 ogImage: ../../assets/images/FMC-25-og.webp
 slug: frontmania-25-diving-into-the-toplayer-where-dialogs-popovers-and-modals-live
 conferenceSlides: ../../assets/slides/FMC-25.pdf

@@ -32,6 +32,9 @@ importers:
       astro:
         specifier: ^7.0.6
         version: 7.0.6(@astrojs/markdown-remark@7.2.1)(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.2)(@types/node@24.13.2)(jiti@2.7.0)(rollup@4.60.1)(yaml@2.9.0)
+      astro-expressive-code:
+        specifier: ^0.44.0
+        version: 0.44.0(astro@7.0.6(@astrojs/markdown-remark@7.2.1)(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.2)(@types/node@24.13.2)(jiti@2.7.0)(rollup@4.60.1)(yaml@2.9.0))
       dayjs:
         specifier: ^1.11.21
         version: 1.11.21

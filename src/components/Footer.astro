@@ -1,6 +1,7 @@
 ---
 import Hr from "./Hr.astro";
 import Socials from "./Socials.astro";
+import { BUSINESS } from "@/config";
 
 const currentYear = new Date().getFullYear();
 
@@ -9,6 +10,16 @@ export interface Props {
 }
 
 const { noMarginTop = false } = Astro.props;
+
+// Plain, always-rendered text — search engines ignore anything behind a
+// disclosure widget or injected after load.
+const addressLine = [
+  BUSINESS.streetAddress,
+  `${BUSINESS.postalCode} ${BUSINESS.addressLocality}`,
+  BUSINESS.addressCountry === "NL"
+    ? "The Netherlands"
+    : BUSINESS.addressCountry,
+].join(", ");
 ---
 
 <footer class:list={["w-full", { "mt-auto": !noMarginTop }]}>
@@ -23,4 +34,33 @@ const { noMarginTop = false } = Astro.props;
       <span>All rights reserved.</span>
     </div>
   </div>
+  <address
+    class="flex flex-col items-center gap-x-2 pb-6 text-center text-sm not-italic sm:flex-row sm:flex-wrap sm:justify-center sm:pb-4"
+  >
+    <span>{BUSINESS.name}</span>
+    <span aria-hidden="true" class="hidden sm:inline">&middot;</span>
+    <span>{addressLine}</span>
+    {
+      BUSINESS.telephone && (
+        <>
+          <span aria-hidden="true" class="hidden sm:inline">
+            &middot;
+          </span>
+          <a
+            href={`tel:${BUSINESS.telephone.replace(/[^+\d]/g, "")}`}
+            class="underline-offset-4 hover:underline"
+          >
+            {BUSINESS.telephone}
+          </a>
+        </>
+      )
+    }
+    <span aria-hidden="true" class="hidden sm:inline">&middot;</span>
+    <a
+      href={`mailto:${BUSINESS.email}`}
+      class="underline-offset-4 hover:underline"
+    >
+      {BUSINESS.email}
+    </a>
+  </address>
 </footer>

@@ -2,7 +2,8 @@
 import { ClientRouter } from "astro:transitions";
 import { PUBLIC_GOOGLE_SITE_VERIFICATION } from "astro:env/client";
 import Analytics from "@vercel/analytics/astro";
-import { SITE } from "@/config";
+import { SITE, BUSINESS } from "@/config";
+import { SOCIALS } from "@/constants";
 import "@/styles/global.css";
 
 export interface Props {
@@ -71,6 +72,46 @@ const defaultStructuredData = pubDatetime
     };
 
 const jsonLd = structuredData ?? defaultStructuredData;
+
+// Ties the site to a real, locatable entity for local search. Emitted on every
+// page so the address and phone number are never more than one hop away.
+const localBusinessSchema = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "@id": `${SITE.website}/#business`,
+  name: BUSINESS.name,
+  description: SITE.desc,
+  url: SITE.website,
+  image: new URL("/og.png", SITE.website).href,
+  email: BUSINESS.email,
+  ...(BUSINESS.telephone && { telephone: BUSINESS.telephone }),
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: BUSINESS.streetAddress,
+    postalCode: BUSINESS.postalCode,
+    addressLocality: BUSINESS.addressLocality,
+    addressRegion: BUSINESS.addressRegion,
+    addressCountry: BUSINESS.addressCountry,
+  },
+  founder: {
+    "@type": "Person",
+    name: SITE.author,
+    url: SITE.profile,
+  },
+  knowsAbout: [
+    "Web accessibility",
+    "WCAG",
+    "Frontend development",
+    "HTML",
+    "CSS",
+    "JavaScript",
+    "Conference speaking",
+  ],
+  areaServed: "Worldwide",
+  sameAs: SOCIALS.filter(social => social.href.startsWith("http")).map(
+    social => social.href
+  ),
+};
 ---
 
 <!doctype html>
@@ -140,6 +181,11 @@ const jsonLd = structuredData ?? defaultStructuredData;
       type="application/ld+json"
       is:inline
       set:html={JSON.stringify(jsonLd)}
+    />
+    <script
+      type="application/ld+json"
+      is:inline
+      set:html={JSON.stringify(localBusinessSchema)}
     />
 
     <!-- Enable RSS feed auto-discovery  -->

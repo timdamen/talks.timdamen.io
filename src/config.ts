@@ -21,3 +21,21 @@ export const SITE = {
   lang: "en", // html lang code. Set this empty and default will be "en"
   timezone: "Europe/Amsterdam", // Default global timezone (IANA format) https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 } as const;
+
+/**
+ * Business/contact details. Rendered as plain text in the footer and as
+ * LocalBusiness structured data, so search engines can tie the site to a real
+ * entity. Keep this in sync with any other listing (Google Business Profile,
+ * KvK) — inconsistent NAP data hurts local ranking.
+ */
+export const BUSINESS = {
+  name: "Tim Damen",
+  streetAddress: "Ligusterweg 38",
+  postalCode: "2142 GL",
+  addressLocality: "Cruquius",
+  addressRegion: "Noord-Holland",
+  addressCountry: "NL",
+  // International format, e.g. "+31 6 12 34 56 78". Leave empty to hide.
+  telephone: "",
+  email: "hello@timdamen.io",
+} as const;

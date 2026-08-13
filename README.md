@@ -16,6 +16,9 @@ A collection of talks exploring web accessibility, frontend development, and the
 - **[Utilising the JavaScript Abstract Syntax Tree (AST) for Automated Frontend Lifecycle Management](https://talks.timdamen.io/presentations/hello-stavanger-26-utilising-the-javascript-abstract-syntax-tree-ast-for-automated-frontend-lifecycle-management)**  
   _Hello Stavanger_ | October 21, 2026 | Stavanger, Norway
 
+- **[Your Biggest New Customer Can't See Pixels](https://talks.timdamen.io/presentations/agenticdays-26-your-biggest-new-customer-cant-see-pixels)**  
+  _Agentic Engineering Days_ | November 20, 2026 | Zurich, Switzerland
+
 ## [List of all previous presentations](https://talks.timdamen.io/presentations)
 
 ### 2026

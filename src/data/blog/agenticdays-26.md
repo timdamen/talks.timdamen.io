@@ -9,6 +9,7 @@ conferenceLocation: Zurich, Switzerland
 conferenceLat: 47.382415
 conferenceLong: 8.540556
 conferenceURL: https://www.agenticdays.com/
+conferenceLogo: ../../assets/logos/agenticdays.webp
 slug: agenticdays-26-your-biggest-new-customer-cant-see-pixels
 featured: false
 draft: false

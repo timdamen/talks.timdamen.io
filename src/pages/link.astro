@@ -1,0 +1,176 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Header from "@/components/Header.astro";
+import Footer from "@/components/Footer.astro";
+import Hr from "@/components/Hr.astro";
+import { SOCIALS } from "@/constants";
+import IconGitHub from "@/assets/icons/IconGitHub.svg";
+import IconLinkOut from "@/assets/icons/IconLinkOut.svg";
+
+// Short context line per social, shown under the name
+const socialHandles: Record<string, string> = {
+  Github: "github.com/timdamen",
+  X: "@timdamen_io",
+  Bluesky: "@timdamen.io",
+  LinkedIn: "Tim Damen",
+  Sessionize: "sessionize.com/timdamen",
+  Mail: "hello@timdamen.io",
+};
+
+const openSource = [
+  {
+    name: "supaslidev",
+    href: "https://github.com/timdamen/supaslidev",
+    desc: "CLI toolkit for managing Slidev presentation monorepos",
+  },
+  {
+    name: "slidev-theme-supa11y",
+    href: "https://github.com/timdamen/supaslidev/tree/main/themes/slidev-theme-supa11y",
+    desc: "Accessibility-first Slidev theme aiming at WCAG 2.2",
+  },
+  {
+    name: "Horn",
+    href: "https://github.com/focusring/horn",
+    desc: "PDF/UA accessibility checker based on the Matterhorn Protocol",
+  },
+  {
+    name: "WCAGify",
+    href: "https://github.com/focusring/WCAGify",
+    desc: "WCAG audit tool that turns markdown into navigable accessibility reports",
+  },
+  {
+    name: "@nuxt/a11y",
+    href: "https://github.com/nuxt/a11y",
+    desc: "Nuxt module for accessibility hinting and utilities",
+  },
+];
+
+const websites = [
+  {
+    name: "timdamen.io",
+    href: "https://www.timdamen.io",
+    desc: "Personal website",
+  },
+  {
+    name: "focusring.io",
+    href: "https://focusring.io",
+    desc: "Digital accessibility consultancy — co-founder",
+  },
+];
+
+const rowClass =
+  "flex items-center gap-4 rounded-lg border border-border bg-background p-4 transition-colors hover:border-accent hover:text-accent focus-visible:border-accent";
+---
+
+<Layout
+  title="Links | Tim Damen"
+  description="All of Tim Damen's links in one place — social profiles, open source projects, and websites."
+>
+  <Header />
+  <main id="main-content" class="mx-auto w-full max-w-xl px-4 pb-12">
+    <section class="pt-8 pb-2">
+      <h1 class="my-4 inline-block text-4xl font-bold sm:my-8 sm:text-5xl">
+        Links
+      </h1>
+      <p class="max-w-2xl">
+        Everywhere to find me and everything I work on, in one place.
+      </p>
+    </section>
+
+    <Hr />
+
+    <section aria-labelledby="social-heading" class="pt-8 pb-4">
+      <h2 id="social-heading" class="pb-4 text-2xl font-semibold tracking-wide">
+        Social
+      </h2>
+      <ul class="flex flex-col gap-3">
+        {
+          SOCIALS.map(social => (
+            <li>
+              <a
+                href={social.href}
+                class={rowClass}
+                {...(social.href.startsWith("http")
+                  ? { target: "_blank", rel: "noopener" }
+                  : {})}
+              >
+                <social.icon class="size-7 shrink-0 fill-transparent stroke-current stroke-2" />
+                <span class="min-w-0">
+                  <span class="block font-medium">{social.name}</span>
+                  <span class="block truncate text-sm opacity-75">
+                    {socialHandles[social.name]}
+                  </span>
+                </span>
+                <IconLinkOut
+                  class="ms-auto size-5 shrink-0 stroke-current opacity-60"
+                  aria-hidden="true"
+                />
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </section>
+
+    <section aria-labelledby="oss-heading" class="pt-4 pb-4">
+      <h2 id="oss-heading" class="pb-4 text-2xl font-semibold tracking-wide">
+        Open source
+      </h2>
+      <p class="pb-4 text-sm opacity-75">Projects I actively work on.</p>
+      <ul class="flex flex-col gap-3">
+        {
+          openSource.map(project => (
+            <li>
+              <a
+                href={project.href}
+                class={rowClass}
+                target="_blank"
+                rel="noopener"
+              >
+                <IconGitHub class="size-7 shrink-0 fill-transparent stroke-current stroke-2" />
+                <span class="min-w-0">
+                  <span class="block font-medium">{project.name}</span>
+                  <span class="block text-sm opacity-75">{project.desc}</span>
+                </span>
+                <IconLinkOut
+                  class="ms-auto size-5 shrink-0 stroke-current opacity-60"
+                  aria-hidden="true"
+                />
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </section>
+
+    <section aria-labelledby="websites-heading" class="pt-4 pb-8">
+      <h2
+        id="websites-heading"
+        class="pb-4 text-2xl font-semibold tracking-wide"
+      >
+        Websites
+      </h2>
+      <ul class="flex flex-col gap-3">
+        {
+          websites.map(site => (
+            <li>
+              <a
+                href={site.href}
+                class={rowClass}
+                target="_blank"
+                rel="noopener"
+              >
+                <IconLinkOut class="size-7 shrink-0 stroke-current stroke-2" />
+                <span class="min-w-0">
+                  <span class="block font-medium">{site.name}</span>
+                  <span class="block text-sm opacity-75">{site.desc}</span>
+                </span>
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </section>
+  </main>
+  <Footer />
+</Layout>

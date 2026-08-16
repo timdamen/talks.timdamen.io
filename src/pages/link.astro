@@ -6,6 +6,8 @@ import Hr from "@/components/Hr.astro";
 import { SOCIALS } from "@/constants";
 import IconGitHub from "@/assets/icons/IconGitHub.svg";
 import IconLinkOut from "@/assets/icons/IconLinkOut.svg";
+import IconConference from "@/assets/icons/IconConference.svg";
+import IconRss from "@/assets/icons/IconRss.svg";
 
 // Short context line per social, shown under the name
 const socialHandles: Record<string, string> = {
@@ -16,6 +18,12 @@ const socialHandles: Record<string, string> = {
   Sessionize: "sessionize.com/timdamen",
   Mail: "hello@timdamen.io",
 };
+
+const sections = [
+  { name: "Social", href: "#social" },
+  { name: "Open source", href: "#open-source" },
+  { name: "Websites", href: "#websites" },
+];
 
 const openSource = [
   {
@@ -50,21 +58,38 @@ const websites = [
     name: "timdamen.io",
     href: "https://www.timdamen.io",
     desc: "Personal website",
+    icon: IconLinkOut,
   },
   {
     name: "focusring.io",
     href: "https://focusring.io",
     desc: "Digital accessibility consultancy — co-founder",
+    icon: IconLinkOut,
+  },
+  {
+    name: "talks.timdamen.io",
+    href: "https://talks.timdamen.io",
+    desc: "All my talks, slides and videos",
+    icon: IconConference,
+  },
+  {
+    name: "Focustrap",
+    href: "https://focusring.io/podcast-focustrap",
+    desc: "Podcast about digital accessibility",
+    icon: IconRss,
   },
 ];
 
 const rowClass =
   "flex items-center gap-4 rounded-lg border border-border bg-background p-4 transition-colors hover:border-accent hover:text-accent focus-visible:border-accent";
+const leadIconClass = "size-8 shrink-0 fill-transparent stroke-current stroke-2";
+const trailIconClass = "ms-auto size-5 shrink-0 stroke-current opacity-60";
 ---
 
 <Layout
   title="Links | Tim Damen"
   description="All of Tim Damen's links in one place — social profiles, open source projects, and websites."
+  scrollSmooth={true}
 >
   <Header />
   <main id="main-content" class="mx-auto w-full max-w-xl px-4 pb-12">
@@ -75,11 +100,27 @@ const rowClass =
       <p class="max-w-2xl">
         Everywhere to find me and everything I work on, in one place.
       </p>
+      <nav aria-label="Sections on this page" class="mt-4">
+        <ul class="list-disc ps-5">
+          {
+            sections.map(section => (
+              <li class="my-1">
+                <a
+                  href={section.href}
+                  class="underline decoration-dashed underline-offset-4 hover:text-accent"
+                >
+                  {section.name}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </nav>
     </section>
 
     <Hr />
 
-    <section aria-labelledby="social-heading" class="pt-8 pb-4">
+    <section id="social" aria-labelledby="social-heading" class="pt-8 pb-4">
       <h2 id="social-heading" class="pb-4 text-2xl font-semibold tracking-wide">
         Social
       </h2>
@@ -94,17 +135,14 @@ const rowClass =
                   ? { target: "_blank", rel: "noopener" }
                   : {})}
               >
-                <social.icon class="size-7 shrink-0 fill-transparent stroke-current stroke-2" />
+                <social.icon class={leadIconClass} style="" />
                 <span class="min-w-0">
                   <span class="block font-medium">{social.name}</span>
                   <span class="block truncate text-sm opacity-75">
                     {socialHandles[social.name]}
                   </span>
                 </span>
-                <IconLinkOut
-                  class="ms-auto size-5 shrink-0 stroke-current opacity-60"
-                  aria-hidden="true"
-                />
+                <IconLinkOut class={trailIconClass} aria-hidden="true" />
               </a>
             </li>
           ))
@@ -112,7 +150,7 @@ const rowClass =
       </ul>
     </section>
 
-    <section aria-labelledby="oss-heading" class="pt-4 pb-4">
+    <section id="open-source" aria-labelledby="oss-heading" class="pt-4 pb-4">
       <h2 id="oss-heading" class="pb-4 text-2xl font-semibold tracking-wide">
         Open source
       </h2>
@@ -127,15 +165,12 @@ const rowClass =
                 target="_blank"
                 rel="noopener"
               >
-                <IconGitHub class="size-7 shrink-0 fill-transparent stroke-current stroke-2" />
+                <IconGitHub class={leadIconClass} />
                 <span class="min-w-0">
                   <span class="block font-medium">{project.name}</span>
                   <span class="block text-sm opacity-75">{project.desc}</span>
                 </span>
-                <IconLinkOut
-                  class="ms-auto size-5 shrink-0 stroke-current opacity-60"
-                  aria-hidden="true"
-                />
+                <IconLinkOut class={trailIconClass} aria-hidden="true" />
               </a>
             </li>
           ))
@@ -143,7 +178,7 @@ const rowClass =
       </ul>
     </section>
 
-    <section aria-labelledby="websites-heading" class="pt-4 pb-8">
+    <section id="websites" aria-labelledby="websites-heading" class="pt-4 pb-8">
       <h2
         id="websites-heading"
         class="pb-4 text-2xl font-semibold tracking-wide"
@@ -160,11 +195,12 @@ const rowClass =
                 target="_blank"
                 rel="noopener"
               >
-                <IconLinkOut class="size-7 shrink-0 stroke-current stroke-2" />
+                <site.icon class={leadIconClass} />
                 <span class="min-w-0">
                   <span class="block font-medium">{site.name}</span>
                   <span class="block text-sm opacity-75">{site.desc}</span>
                 </span>
+                <IconLinkOut class={trailIconClass} aria-hidden="true" />
               </a>
             </li>
           ))

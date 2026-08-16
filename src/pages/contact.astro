@@ -2,7 +2,7 @@
 import Layout from "@/layouts/Layout.astro";
 import Header from "@/components/Header.astro";
 import Footer from "@/components/Footer.astro";
-import { SITE } from "@/config";
+import { SITE, BUSINESS } from "@/config";
 import Breadcrumb from "@/components/Breadcrumb.astro";
 import { SOCIALS } from "@/constants";
 import Socials from "@/components/Socials.astro";
@@ -53,6 +53,18 @@ import Socials from "@/components/Socials.astro";
             </div>
           )
         }
+        <h2>Business address</h2>
+        <address class="not-italic">
+          {BUSINESS.name}<br />
+          {BUSINESS.streetAddress}<br />
+          {BUSINESS.postalCode}
+          {BUSINESS.addressLocality}<br />
+          {
+            BUSINESS.addressCountry === "NL"
+              ? "The Netherlands"
+              : BUSINESS.addressCountry
+          }
+        </address>
         <p>Looking forward to hearing from you! ❤️</p>
       </div>
     </section>

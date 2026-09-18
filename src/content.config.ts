@@ -24,6 +24,7 @@ const blog = defineCollection({
       conferenceLogoBackground: z.string().optional(),
       conferenceVideo: z.string().optional(),
       conferenceSlides: z.string().optional(),
+      conferenceSlidesEmbed: z.string().url().optional(),
       presentationImages: z
         .array(
           z.object({

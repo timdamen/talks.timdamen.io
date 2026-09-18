@@ -9,6 +9,9 @@ conferenceLocation: Plano, USA
 conferenceLat: 33.0854
 conferenceLong: -96.8123
 conferenceURL: https://www.commityourcode.com/
+conferenceSlidesEmbed: https://slides.timdamen.io/presentations/cyc-26-one-change
+ogImage: https://slides.timdamen.io/thumbnails/cyc-26-one-change.webp
+googleDrivePresentationsLink: https://slides.timdamen.io/presentations/cyc-26-one-change
 conferenceLogo: ../../assets/logos/commityourcode.png
 slug: cyc-26-utilising-the-javascript-abstract-syntax-tree-ast-for-automated-frontend-lifecycle-management
 featured: false
@@ -30,3 +33,9 @@ description: This talk explores how to leverage NX's Abstract Syntax Tree (AST) 
 ## Resources
 
 The following resources were mentioned in the talk, used for research, or are otherwise relevant:
+
+- [Automate Updating Dependencies (nx migrate) - Nx](https://nx.dev/docs/features/automate-updating-dependencies)
+- [Migration Generators - Nx](https://nx.dev/docs/extending-nx/migration-generators)
+- [Using the Compiler API - TypeScript Wiki](https://github.com/microsoft/TypeScript/wiki/Using-the-Compiler-API)
+- [The ESTree Spec](https://github.com/estree/estree)
+- [AST Explorer](https://astexplorer.net/)

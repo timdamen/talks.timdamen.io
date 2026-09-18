@@ -1,0 +1,50 @@
+---
+export interface Props {
+  /** URL of the live Slidev deck, e.g. https://slides.timdamen.io/presentations/{deck} */
+  src: string;
+  /** Talk title, used for the accessible name of the iframe */
+  title: string;
+  className?: string;
+}
+
+const { src, title, className = "" } = Astro.props;
+---
+
+<div class={`slides-embed ${className}`}>
+  <iframe
+    {src}
+    title={`Slides: ${title}`}
+    loading="lazy"
+    allow="fullscreen; clipboard-write"
+    allowfullscreen
+    referrerpolicy="strict-origin-when-cross-origin"></iframe>
+  <p class="slides-embed-hint">
+    Click the slides and use the arrow keys to navigate, or
+    <a href={src} target="_blank" rel="noopener noreferrer"
+      >open the slides in a new tab</a
+    >.
+  </p>
+</div>
+
+<style>
+  .slides-embed {
+    max-width: 850px;
+    margin: 0 auto;
+  }
+
+  .slides-embed iframe {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: var(--background);
+    box-shadow: 0 4px 12px rgb(0 0 0 / 0.15);
+  }
+
+  .slides-embed-hint {
+    margin: 0.5rem 0 0;
+    font-size: 0.875rem;
+    text-align: center;
+  }
+</style>

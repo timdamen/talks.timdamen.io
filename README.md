@@ -4,12 +4,6 @@ A collection of talks exploring web accessibility, frontend development, and the
 
 ## [Upcoming presentations](https://talks.timdamen.io/upcoming-talks)
 
-- **[Utilising the JavaScript Abstract Syntax Tree (AST) for Automated Frontend Lifecycle Management](https://talks.timdamen.io/presentations/cyc-26-utilising-the-javascript-abstract-syntax-tree-ast-for-automated-frontend-lifecycle-management)**  
-  _Commit Your Code_ | September 4, 2026 | Plano Texas, USA
-
-- **[Your Biggest New Customer Can't See Pixels](https://talks.timdamen.io/presentations/utahjs-26-your-biggest-new-customer-cant-see-pixels)**  
-  _UtahJS_ | September 18, 2026 | Sandy, Utah, USA
-
 - **[Your Biggest New Customer Can't See Pixels](https://talks.timdamen.io/presentations/frontmania-26-your-biggest-new-customer-cant-see-pixels)**  
   _Frontmania_ | October 7, 2026 | Utrecht, Netherlands
 
@@ -22,6 +16,12 @@ A collection of talks exploring web accessibility, frontend development, and the
 ## [List of all previous presentations](https://talks.timdamen.io/presentations)
 
 ### 2026
+
+- **[Your Biggest New Customer Can't See Pixels](https://talks.timdamen.io/presentations/utahjs-26-your-biggest-new-customer-cant-see-pixels)**  
+  _UtahJS_ | September 18, 2026 | Sandy, Utah, USA
+
+- **[Utilising the JavaScript Abstract Syntax Tree (AST) for Automated Frontend Lifecycle Management](https://talks.timdamen.io/presentations/cyc-26-utilising-the-javascript-abstract-syntax-tree-ast-for-automated-frontend-lifecycle-management)**  
+  _Commit Your Code_ | September 4, 2026 | Plano Texas, USA
 
 - **[Accessible Forms for Every Users: A Semantic Approach to Forms on the Web](https://talks.timdamen.io/presentations/devdays-26-accessible-forms-for-every-users-a-semantic-approach-to-forms-on-the-web)**  
   _DevDays Europe_ | May 20, 2026 | Vilnius, Lithuania

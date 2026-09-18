@@ -17,6 +17,7 @@ import IconLinkOut from "@/assets/icons/IconLinkOut.svg";
 import IconShare from "@/assets/icons/IconShare.svg";
 import { SITE } from "@/config";
 import PDFCarousel from "@/components/PDFCarousel.astro";
+import SlidesEmbed from "@/components/SlidesEmbed.astro";
 import Image from "astro/components/Image.astro";
 import PresentationGallery from "../components/PresentationGallery.astro";
 import ConferenceInfoCard from "../components/ConferenceInfoCard.astro";
@@ -40,6 +41,7 @@ const {
   tags,
   hideEditPost,
   conferenceSlides,
+  conferenceSlidesEmbed,
   conferenceVideo,
   conferenceLocation,
   conferenceLogo,
@@ -53,6 +55,10 @@ const {
 } = post.data;
 
 const { Content } = await render(post);
+
+// A live Slidev embed takes precedence over the PDF carousel
+const hasSlides = !!(conferenceSlidesEmbed || conferenceSlides);
+const slidesLink = googleDrivePresentationsLink ?? conferenceSlidesEmbed;
 
 let ogImageUrl: string | undefined;
 
@@ -207,16 +213,25 @@ const nextPost =
       class="app-prose mx-auto mt-8 max-w-6xl prose-pre:bg-(--shiki-light-bg) dark:prose-pre:bg-(--shiki-dark-bg)"
     >
       {
-        conferenceSlides && (
+        hasSlides && (
           <>
             <h2 class="text-2xl font-semibold tracking-wide">Slides</h2>
-            <PDFCarousel
-              pdfUrl={conferenceSlides}
-              coverImage={ogImage}
-              width={850}
-              height={480}
-            />
-            <div class="mx-auto mt-2 flex max-w-[850px] items-center justify-between px-5 md:mt-5 md:mt-[-105px]">
+            {conferenceSlidesEmbed ? (
+              <SlidesEmbed src={conferenceSlidesEmbed} {title} />
+            ) : (
+              <PDFCarousel
+                pdfUrl={conferenceSlides!}
+                coverImage={ogImage}
+                width={850}
+                height={480}
+              />
+            )}
+            <div
+              class:list={[
+                "mx-auto mt-2 flex max-w-[850px] items-center justify-between px-5",
+                { "md:mt-5 md:mt-[-105px]": !conferenceSlidesEmbed },
+              ]}
+            >
               <div class="mt-1 flex justify-start">
                 <div>
                   <Image
@@ -244,10 +259,14 @@ const nextPost =
                   <IconShare aria-hidden="true" />
                 </a>
                 <a
-                  href={googleDrivePresentationsLink}
+                  href={slidesLink}
                   target="_blank"
                   rel="noopener noreferrer"
-                  title="Open in Google Drive"
+                  title={
+                    conferenceSlidesEmbed
+                      ? "Open slides in a new tab"
+                      : "Open in Google Drive"
+                  }
                 >
                   <IconLinkOut aria-hidden="true" />
                 </a>
@@ -257,7 +276,7 @@ const nextPost =
         )
       }
       {
-        !conferenceSlides && (
+        !hasSlides && (
           <>
             <h2 class="text-2xl font-semibold tracking-wide">Slides</h2>
             <p class="text-muted-foreground text-base">

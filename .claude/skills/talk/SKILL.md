@@ -33,8 +33,9 @@ Decide the mode from the user's request:
 | `conferenceURL` | Conference website. |
 | `conferenceLogo` | `../../assets/logos/{file}` — file must exist in `src/assets/logos/`. The ConferenceInfoCard on the talk page only renders when `conferenceLogo`, `conference`, `conferenceDate`, `conferenceLocation`, `conferenceVenue`, and `conferenceURL` are **all** present. |
 | `conferenceLogoBackground` | Optional CSS color behind the logo when it lacks contrast. |
-| `conferenceSlides` | `../../assets/slides/{deck}.pdf`. This string is used as a **browser URL** by PDFCarousel, resolving to `/assets/slides/{deck}.pdf` — so the PDF must physically live in **`public/assets/slides/`** (there is no `src/assets/slides/`). Omit until slides exist; the page then shows "No slides available". |
-| `googleDrivePresentationsLink` | External "open slides" link. Current convention: `https://slides.timdamen.io/presentations/{deck}` (older talks use Google Drive URLs). Only include together with `conferenceSlides`. |
+| `conferenceSlides` | **Legacy (PDF carousel), used by talks before Sept 2026.** `../../assets/slides/{deck}.pdf`. This string is used as a **browser URL** by PDFCarousel, resolving to `/assets/slides/{deck}.pdf` — so the PDF must physically live in **`public/assets/slides/`** (there is no `src/assets/slides/`). Omit until slides exist; the page then shows "No slides available". |
+| `conferenceSlidesEmbed` | **Current convention (since Sept 2026).** `https://slides.timdamen.io/presentations/{deck}` — the live Slidev deck, rendered in an iframe by `SlidesEmbed.astro`. Takes precedence over `conferenceSlides`; no PDF needed. Verify the deck exists on slides.timdamen.io first. |
+| `googleDrivePresentationsLink` | External "open slides" link. Current convention: `https://slides.timdamen.io/presentations/{deck}` (older talks use Google Drive URLs). Only include together with `conferenceSlidesEmbed` or `conferenceSlides`. |
 | `ogImage` | Current convention: `https://slides.timdamen.io/thumbnails/{deck}.webp`. Older talks use local `../../assets/images/{name}-og.webp`. If omitted, a satori OG image is generated automatically — omitting is fine for a brand-new talk without a deck. |
 | `conferenceVideo` | **Embed** URL only: `https://www.youtube.com/embed/{id}?rel=0` or `https://player.vimeo.com/video/{id}`. Convert watch/share URLs to embed form. Rendered as an iframe. |
 | `presentationImages` | Optional photo gallery: array of `{src, alt, caption?}` with `src` under `public/` (e.g. `/assets/stage2.webp`). Alt text must be genuinely descriptive (Tim is an a11y specialist). |
@@ -101,8 +102,10 @@ Find the file in `src/data/blog/` (grep by conference/title if the name is ambig
 ### 2. Apply the update by type
 
 **Slides ready** (deck name `{deck}`, from slides.timdamen.io tooling):
-- Confirm `public/assets/slides/{deck}.pdf` exists; if not, tell Tim to drop it there (don't invent it).
-- Add/set: `conferenceSlides: ../../assets/slides/{deck}.pdf`, `googleDrivePresentationsLink: https://slides.timdamen.io/presentations/{deck}`, `ogImage: https://slides.timdamen.io/thumbnails/{deck}.webp` (unless a custom local OG image is preferred).
+- Find the deck on https://slides.timdamen.io/ (the card's `~/{deck}` label) and confirm `https://slides.timdamen.io/presentations/{deck}` loads.
+- Add/set: `conferenceSlidesEmbed: https://slides.timdamen.io/presentations/{deck}`, `googleDrivePresentationsLink: https://slides.timdamen.io/presentations/{deck}`, `ogImage: https://slides.timdamen.io/thumbnails/{deck}.webp` (unless a custom local OG image is preferred).
+- Walk the deck's slides and collect the linked sources into the `## Resources` list.
+- Only fall back to the legacy PDF carousel (`conferenceSlides: ../../assets/slides/{deck}.pdf`, PDF in `public/assets/slides/`) when there is no live Slidev deck.
 
 **Video recording available**:
 1. Convert the URL to embed form (`youtube.com/watch?v=X` → `youtube.com/embed/X?rel=0`).

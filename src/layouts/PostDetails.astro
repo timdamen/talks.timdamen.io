@@ -46,8 +46,12 @@ const {
   conferenceLocation,
   conferenceLogo,
   conferenceDate,
+  conferenceEndDate,
   conferenceVenue,
   conferenceURL,
+  conferenceTicketURL,
+  conferenceTicketPrice,
+  conferenceTicketCurrency,
   conference,
   conferenceLogoBackground,
   googleDrivePresentationsLink,
@@ -83,6 +87,14 @@ const ogImage = ogImageUrl
 // past talks keep the default BlogPosting schema from Layout.
 const isUpcoming = !!(pubDatetime && pubDatetime > new Date());
 
+// Talks without an explicit end time are assumed to fill a 45-minute slot.
+const DEFAULT_TALK_DURATION_MS = 45 * 60 * 1000;
+const eventEndDate =
+  conferenceEndDate ??
+  (conferenceDate &&
+    new Date(conferenceDate.getTime() + DEFAULT_TALK_DURATION_MS));
+const ticketURL = conferenceTicketURL ?? conferenceURL;
+
 const eventStructuredData =
   isUpcoming && conference && conferenceDate
     ? {
@@ -91,6 +103,7 @@ const eventStructuredData =
         name: `${title} — ${conference}`,
         description,
         startDate: conferenceDate.toISOString(),
+        ...(eventEndDate && { endDate: eventEndDate.toISOString() }),
         eventStatus: "https://schema.org/EventScheduled",
         eventAttendanceMode:
           conferenceLocation === "Online"
@@ -108,6 +121,18 @@ const eventStructuredData =
                 ...(conferenceLocation && { address: conferenceLocation }),
               },
         ...(ogImage && { image: [ogImage] }),
+        ...(ticketURL && {
+          offers: {
+            "@type": "Offer",
+            url: ticketURL,
+            availability: "https://schema.org/InStock",
+            ...(conferenceTicketPrice !== undefined &&
+              conferenceTicketCurrency && {
+                price: conferenceTicketPrice,
+                priceCurrency: conferenceTicketCurrency,
+              }),
+          },
+        }),
         performer: {
           "@type": "Person",
           name: SITE.author,

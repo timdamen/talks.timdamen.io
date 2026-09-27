@@ -27,10 +27,13 @@ Decide the mode from the user's request:
 | `modDatetime` | Only set when meaningfully updating a *published* (past) talk; it becomes the sort key on `/presentations`. Usually omitted. |
 | `conference` | Conference name (quote if it contains special chars). |
 | `conferenceDate` | The actual talk slot, ISO 8601 UTC (e.g. `2026-05-20T14:20:00Z`). Future date ⇒ shown on `/upcoming-talks` + homepage upcoming section + map. Also drives year grouping on `/presentations`. |
+| `conferenceEndDate` | Optional end of the talk slot, ISO 8601 UTC. Emitted as `endDate` in the Event structured data for upcoming talks; when omitted it defaults to `conferenceDate` + 45 min. Set it when the slot is longer (e.g. workshops). |
 | `conferenceVenue` | Venue name (e.g. `Óbuda University`). |
 | `conferenceLocation` | `City, Country`. Use `Online` for remote talks (suppresses the "in {location}" text). |
 | `conferenceLat` / `conferenceLong` | Decimal coordinates of the venue for the MapLibre pin on `/upcoming-talks`. 4–6 decimals. |
-| `conferenceURL` | Conference website. |
+| `conferenceURL` | Conference website. Also the fallback ticket link for the Event `offers` structured data. |
+| `conferenceTicketURL` | Optional direct ticket-shop URL; used as `offers.url` instead of `conferenceURL`. |
+| `conferenceTicketPrice` / `conferenceTicketCurrency` | Optional ticket price (number, e.g. `499`) and ISO 4217 currency (e.g. `EUR`). Only emitted as `offers.price`/`priceCurrency` when **both** are set. Include when known — Google Search Console suggests them for Event rich results. |
 | `conferenceLogo` | `../../assets/logos/{file}` — file must exist in `src/assets/logos/`. The ConferenceInfoCard on the talk page only renders when `conferenceLogo`, `conference`, `conferenceDate`, `conferenceLocation`, `conferenceVenue`, and `conferenceURL` are **all** present. |
 | `conferenceLogoBackground` | Optional CSS color behind the logo when it lacks contrast. |
 | `conferenceSlides` | **Legacy (PDF carousel), used by talks before Sept 2026.** `../../assets/slides/{deck}.pdf`. This string is used as a **browser URL** by PDFCarousel, resolving to `/assets/slides/{deck}.pdf` — so the PDF must physically live in **`public/assets/slides/`** (there is no `src/assets/slides/`). Omit until slides exist; the page then shows "No slides available". |
@@ -55,7 +58,7 @@ Decide the mode from the user's request:
 From `$ARGUMENTS` and conversation; ask (AskUserQuestion) only for what's missing.
 
 Required: title, conference name, date+time of the slot, venue, location (City, Country / Online), conference URL.
-Optional: description (draft one from the title/topic if Tim doesn't provide it, and say you did), tags topic (`Accessibility` vs `Frontend`), in-person vs online, deck name if slides already exist, logo file.
+Optional: description (draft one from the title/topic if Tim doesn't provide it, and say you did), slot end time if longer than 45 min (`conferenceEndDate`), ticket URL/price/currency (look them up on the conference site if easy — they feed the Event structured data), tags topic (`Accessibility` vs `Frontend`), in-person vs online, deck name if slides already exist, logo file.
 
 ### 2. Coordinates & logo
 

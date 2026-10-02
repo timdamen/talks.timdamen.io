@@ -10,6 +10,9 @@ A collection of talks exploring web accessibility, frontend development, and the
 - **[Utilising the JavaScript Abstract Syntax Tree (AST) for Automated Frontend Lifecycle Management](https://talks.timdamen.io/presentations/hello-stavanger-26-utilising-the-javascript-abstract-syntax-tree-ast-for-automated-frontend-lifecycle-management)**  
   _Hello Stavanger_ | October 21, 2026 | Stavanger, Norway
 
+- **[Your Biggest New Customer Can't See Pixels](https://talks.timdamen.io/presentations/pth-26-your-biggest-new-customer-cant-see-pixels)**  
+  _Porto Tech Hub Conference_ | November 10, 2026 | Porto, Portugal
+
 - **[Your Biggest New Customer Can't See Pixels](https://talks.timdamen.io/presentations/agenticdays-26-your-biggest-new-customer-cant-see-pixels)**  
   _Agentic Engineering Days_ | November 20, 2026 | Zurich, Switzerland
 
@@ -18,7 +21,7 @@ A collection of talks exploring web accessibility, frontend development, and the
 ### 2026
 
 - **[Your Biggest New Customer Can't See Pixels](https://talks.timdamen.io/presentations/utahjs-26-your-biggest-new-customer-cant-see-pixels)**  
-  _UtahJS_ | September 18, 2026 | Sandy, Utah, USA
+  _UtahJS_ | September 18, 2026 | Sandy, Utah, USA | [Video](https://talks.timdamen.io/videos/utahjs-26-your-biggest-new-customer-cant-see-pixels)
 
 - **[Utilising the JavaScript Abstract Syntax Tree (AST) for Automated Frontend Lifecycle Management](https://talks.timdamen.io/presentations/cyc-26-utilising-the-javascript-abstract-syntax-tree-ast-for-automated-frontend-lifecycle-management)**  
   _Commit Your Code_ | September 4, 2026 | Plano Texas, USA

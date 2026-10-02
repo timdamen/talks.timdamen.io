@@ -1,14 +1,18 @@
 ---
 title: "Utilising the JavaScript Abstract Syntax Tree (AST) for Automated Frontend Lifecycle Management"
 author: "Tim Damen"
-pubDatetime: 2026-10-21T08:00:00Z
+pubDatetime: 2026-10-21T08:50:00Z
 conference: Hello Stavanger
-conferenceDate: 2026-10-21T08:00:00Z
+conferenceDate: 2026-10-21T08:50:00Z
+conferenceEndDate: 2026-10-21T09:20:00Z
 conferenceVenue: Tou Scene
 conferenceLocation: Stavanger, Norway
 conferenceLat: 58.9688
 conferenceLong: 5.7581
 conferenceURL: https://www.hellostavanger.no/
+conferenceTicketURL: https://event.checkin.no/220072/-hellostavanger-2026
+conferenceTicketPrice: 9000
+conferenceTicketCurrency: NOK
 conferenceLogo: ../../assets/logos/hellostavanger.png
 slug: hello-stavanger-26-utilising-the-javascript-abstract-syntax-tree-ast-for-automated-frontend-lifecycle-management
 featured: false

@@ -1,20 +1,20 @@
 ---
 title: "Your Biggest New Customer Can't See Pixels"
 author: "Tim Damen"
-pubDatetime: 2026-11-20T09:00:00Z
-conference: Agentic Engineering Days
-conferenceDate: 2026-11-20T09:00:00Z
-conferenceEndDate: 2026-11-20T09:25:00Z
-conferenceVenue: Zürich Marriott Hotel
-conferenceLocation: Zurich, Switzerland
-conferenceLat: 47.382415
-conferenceLong: 8.540556
-conferenceURL: https://www.agenticdays.com/
-conferenceTicketURL: https://tickets.agenticdays.com/
-conferenceTicketPrice: 442
-conferenceTicketCurrency: CHF
-conferenceLogo: ../../assets/logos/agenticdays.webp
-slug: agenticdays-26-your-biggest-new-customer-cant-see-pixels
+pubDatetime: 2026-11-10T09:00:00Z
+conference: Porto Tech Hub Conference
+conferenceDate: 2026-11-10T09:00:00Z
+conferenceEndDate: 2026-11-10T09:50:00Z
+conferenceVenue: Alfândega do Porto
+conferenceLocation: Porto, Portugal
+conferenceLat: 41.143028
+conferenceLong: -8.621694
+conferenceURL: https://portotechhub.com/conference-2026/
+conferenceTicketURL: https://www.eventbrite.com/e/porto-tech-hub-conference-2026-tickets-1989160749348
+conferenceTicketPrice: 100
+conferenceTicketCurrency: EUR
+ogImage: ../../assets/images/pth-26-og.webp
+slug: pth-26-your-biggest-new-customer-cant-see-pixels
 featured: false
 draft: false
 tags:

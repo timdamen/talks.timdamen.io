@@ -1,14 +1,18 @@
 ---
 title: "Your Biggest New Customer Can't See Pixels"
 author: "Tim Damen"
-pubDatetime: 2026-10-07T08:00:00Z
+pubDatetime: 2026-10-07T10:00:00Z
 conference: Frontmania
-conferenceDate: 2026-10-07T08:00:00Z
+conferenceDate: 2026-10-07T10:00:00Z
+conferenceEndDate: 2026-10-07T10:45:00Z
 conferenceVenue: Jaarbeurs Utrecht
 conferenceLocation: Utrecht, Netherlands
-conferenceLat: 52.090736
-conferenceLong: 5.121169
+conferenceLat: 52.08454
+conferenceLong: 5.104077
 conferenceURL: https://frontmania.com/
+conferenceTicketURL: https://iframe-wpticketsnl.sandsmedia.com/en/shop/frontmania-2026-tickets/?ticket-version=version0
+conferenceTicketPrice: 420
+conferenceTicketCurrency: EUR
 conferenceLogo: ../../assets/logos/frontmania.png
 conferenceLogoBackground: dark
 slug: frontmania-26-your-biggest-new-customer-cant-see-pixels

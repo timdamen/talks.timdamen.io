@@ -17,54 +17,32 @@ import { SITE } from "@/config";
 import { SOCIALS } from "@/constants";
 import CardImage from "@/components/CardImage.astro";
 import CardVideo from "@/components/CardVideo.astro";
+import getMapMarkers from "@/utils/getMapMarkers";
 import MapLibre from "@/components/MapLibre.astro";
 import Logos from "@/components/Logos.astro";
 import Image from "astro/components/Image.astro";
 import stageImage from "@/assets/images/stage2.webp";
 
 const presentations = await getCollection("blog");
-const presentations2 = await getCollection("blog");
 const presentations3 = await getCollection("blog");
 const videos = await getCollection("videos");
 const sortedPresentations = getSortedPresentations(presentations);
-const sortedPresentations2 = getSortedPresentations(presentations2);
 const sortedVideos = getSortedPresentations(videos);
-const featuredPresentations = sortedPresentations.filter(
-  ({ data }) => data.featured
-);
-const featuredVideos = sortedVideos.filter(({ data }) => data.featured);
+// The most recent talk/video always leads; manually featured ones follow.
+const latestThenFeatured = sorted => {
+  const [latest, ...rest] = sorted;
+  return latest ? [latest, ...rest.filter(({ data }) => data.featured)] : [];
+};
+const featuredPresentations = latestThenFeatured(sortedPresentations);
+const featuredVideos = latestThenFeatured(sortedVideos);
 const recentPresentations = sortedPresentations;
 const upcomingPresentations = getUpcomingPresentations(presentations3);
 
-// get array of all conferences with lat, long, and popupContent from recentPresentations
-const conferences = sortedPresentations2
-  .map(({ data }) => {
-    if (data.conferenceLat && data.conferenceLong) {
-      return {
-        latitude: data.conferenceLat,
-        longitude: data.conferenceLong,
-        popupContent: `${data.title} @ ${data.conference} (${data.conferenceLocation})`,
-      };
-    }
-    return null;
-  })
-  .filter(Boolean);
-
-// also add upcomingPresentations to conferences const
-conferences.push(
-  ...upcomingPresentations
-    .map(({ data }) => {
-      if (data.conferenceLat && data.conferenceLong) {
-        return {
-          latitude: data.conferenceLat,
-          longitude: data.conferenceLong,
-          popupContent: `${data.title} @ ${data.conference} (${data.conferenceLocation})`,
-        };
-      }
-      return null;
-    })
-    .filter(Boolean)
-);
+// Past and upcoming talks share one map.
+const markers = getMapMarkers([
+  ...sortedPresentations,
+  ...upcomingPresentations,
+]);
 
 const structuredData = [
   {
@@ -135,8 +113,8 @@ const structuredData = [
         />
         <div>
           <p class="max-w-2xl">
-            Tim Damen is a frontend developer, web accessibility specialist,
-            and co-founder of <a
+            Tim Damen is a frontend developer, web accessibility specialist, and
+            co-founder of <a
               target="_blank"
               rel="noopener"
               href="https://focusring.io"
@@ -295,16 +273,7 @@ const structuredData = [
       </h2>
     </section>
 
-    <MapLibre
-      container="maplibremap"
-      latitude="52.377956"
-      longitude="4.897070"
-      zoom="2"
-      interactive="true"
-      conferences={conferences}
-      mapstyle="https://demotiles.maplibre.org/style.json"
-      containerstyle="width:100vw; height: 500px"
-    />
+    <MapLibre markers={markers} label="Map of all talk locations" />
 
     <section class="mt-8 mb-8">
       <h2 class="pb-6 text-3xl font-semibold tracking-wide">

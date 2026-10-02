@@ -47,7 +47,7 @@ A collection of talks exploring web accessibility, frontend development, and the
   _Frontmania_ | October 8, 2025 | Utrecht, Netherlands
 
 - **[Diving into the Toplayer: Where Dialogs, Popovers, and Modals Live](https://talks.timdamen.io/presentations/utahjs-25-diving-into-the-toplayer-where-dialogs-popovers-and-modals-live)**  
-  _UtahJS_ | September 12, 2025 | Salt Lake City, Utah, United States
+  _UtahJS_ | September 12, 2025 | Sandy, Utah, United States
 
 - **[The Importance of Soft Skills as a Developer in the age of AI-driven Development](https://talks.timdamen.io/presentations/anwb-summit-25-the-importance-of-soft-skills-as-a-developer-in-the-age-of-ai-driven-development)**  
   _ANWB Frontend Summit_ | June 19, 2025

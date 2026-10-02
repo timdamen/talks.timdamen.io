@@ -1,119 +1,295 @@
 ---
+import type { MapMarker } from "@/utils/getMapMarkers";
+// Imported here, not lazily with the JS: Astro's ClientRouter replaces <head> on
+// navigation and drops stylesheets the next page doesn't list, which left the
+// markers unstyled (and outside the visible map) until a full reload.
+import "maplibre-gl/dist/maplibre-gl.css";
+
 export interface Props {
-  latitude: number;
-  longitude: number;
-  zoom: number;
-  mapstyle: string;
-  container: string;
-  conferences: {
-    latitude: number;
-    longitude: number;
-    popupContent: string;
-  }[];
-  /** If `false`, the map will not respond to interaction.  This is a static map built with the full web map rendering API. */
-  interactive?: boolean;
-  containerstyle?: string;
+  markers: MapMarker[];
+  /** Accessible name of the map. */
+  label: string;
+  height?: string;
 }
 
-const {
-  latitude,
-  longitude,
-  zoom,
-  mapstyle,
-  container,
-  interactive,
-  conferences,
-  containerstyle = "height: 61.8vh",
-} = Astro.props;
+const { markers, label, height = "500px" } = Astro.props;
+
+const formatDate = (iso: string) =>
+  new Date(iso).toLocaleDateString("en-US", {
+    day: "numeric",
+    month: "short",
+    year: "numeric",
+    timeZone: "UTC",
+  });
 ---
 
-<maplibre-map
-  data-latitude={latitude}
-  data-longitude={longitude}
-  data-zoom={zoom}
-  data-mapstyle={mapstyle}
-  data-container={container}
-  data-interactive={interactive}
-  data-containerstyle={containerstyle}
-  data-conferences={JSON.stringify(conferences)}
->
-  <div id={container} style={containerstyle}></div>
+<maplibre-map class="block w-full" data-label={label}>
+  <div
+    data-map-container
+    class="w-full overflow-hidden bg-muted/40"
+    style={`height: ${height}`}
+  >
+  </div>
+  <p data-map-error hidden class="mt-2 px-4">
+    The map could not be loaded. Use the list of locations below instead.
+  </p>
+
+  {/* Text alternative for the map; marker popups reuse these entries. */}
+  <details class="map-locations mt-3 px-4">
+    <summary>Show talk locations as a list ({markers.length})</summary>
+    <ul class="mt-2">
+      {
+        markers.map(({ latitude, longitude, location, talks }) => (
+          <li
+            class="map-popup"
+            data-map-marker
+            data-latitude={latitude}
+            data-longitude={longitude}
+            data-location={location}
+            data-count={talks.length}
+          >
+            <p class="map-popup-location">{location}</p>
+            <ul>
+              {talks.map(({ title, conference, date, href, upcoming }) => (
+                <li>
+                  <a href={href}>{title}</a>
+                  <span>
+                    {[conference, formatDate(date), upcoming && "upcoming"]
+                      .filter(Boolean)
+                      .join(" · ")}
+                  </span>
+                </li>
+              ))}
+            </ul>
+          </li>
+        ))
+      }
+    </ul>
+  </details>
 
   <script>
+    import type { Map as MapLibreGLMap } from "maplibre-gl";
+
+    // Free, keyless vector tiles that are meant for production use. Its
+    // colours are replaced below, so one style serves both themes.
+    const STYLE = "https://tiles.openfreemap.org/styles/positron";
+
+    // Contrast-checked against WCAG 2.2: water and borders ≥ 3:1 against
+    // land (1.4.11), labels black/white on a solid halo (21:1, 1.4.6).
+    const PALETTES = {
+      light: {
+        land: "#f5f5f2",
+        water: "#5b8db8",
+        border: "#6b6b6b",
+        road: "#8f8f8f",
+        text: "#000000",
+        halo: "#ffffff",
+      },
+      dark: {
+        land: "#1f232b",
+        water: "#4f77a0",
+        border: "#8a8f99",
+        road: "#6b7280",
+        text: "#ffffff",
+        halo: "#000000",
+      },
+    };
+
+    const currentPalette = () =>
+      document.documentElement.dataset.theme === "dark"
+        ? PALETTES.dark
+        : PALETTES.light;
+
+    const applyPalette = (
+      map: MapLibreGLMap,
+      palette: typeof PALETTES.light
+    ) => {
+      map.getStyle().layers.forEach(layer => {
+        const { id, type } = layer;
+        const isWater = id.startsWith("water");
+        if (type === "background") {
+          map.setPaintProperty(id, "background-color", palette.land);
+        } else if (type === "fill") {
+          // Parks, landuse, buildings etc. are flattened into the land colour.
+          map.setPaintProperty(
+            id,
+            "fill-color",
+            isWater ? palette.water : palette.land
+          );
+          map.setPaintProperty(id, "fill-opacity", 1);
+        } else if (type === "line") {
+          const color = isWater
+            ? palette.water
+            : id.startsWith("boundary")
+              ? palette.border
+              : id.endsWith("dashline") || id === "road_pier"
+                ? palette.land
+                : palette.road;
+          map.setPaintProperty(id, "line-color", color);
+          map.setPaintProperty(id, "line-opacity", 1);
+        } else if (
+          type === "symbol" &&
+          !id.includes("shield") &&
+          layer.layout?.["text-field"]
+        ) {
+          map.setPaintProperty(id, "text-color", palette.text);
+          map.setPaintProperty(id, "text-halo-color", palette.halo);
+          map.setPaintProperty(id, "text-halo-width", 2);
+          map.setPaintProperty(id, "text-halo-blur", 0);
+        }
+      });
+    };
+
+    // Accent fill with a ring in the opposite tone: the pin keeps ≥ 3:1
+    // against both land and water in either theme.
+    const PIN_SVG = `<svg viewBox="0 0 28 42" width="28" height="42" aria-hidden="true" focusable="false">
+      <path d="M14 1.5C7.1 1.5 1.5 7 1.5 13.9 1.5 23.2 14 40 14 40s12.5-16.8 12.5-26.1C26.5 7 20.9 1.5 14 1.5z"/>
+      <circle cx="14" cy="14" r="4.5"/>
+    </svg>`;
+
     // The maplibre-gl bundle is ~1MB, so it is only fetched (via dynamic
     // import → separate chunk) once the map scrolls near the viewport.
     class MapLibreMap extends HTMLElement {
-      initialized = false;
+      map?: MapLibreGLMap;
+      viewportObserver?: IntersectionObserver;
+      themeObserver?: MutationObserver;
 
       connectedCallback() {
-        const observer = new IntersectionObserver(
+        this.viewportObserver = new IntersectionObserver(
           entries => {
             if (entries.some(entry => entry.isIntersecting)) {
-              observer.disconnect();
-              this.initMap();
+              this.viewportObserver?.disconnect();
+              this.initMap().catch(() => this.showError());
             }
           },
           { rootMargin: "300px" }
         );
-        observer.observe(this);
+        this.viewportObserver.observe(this);
+      }
+
+      // The site uses Astro's ClientRouter, so pages are swapped without a reload.
+      // Without this, every visit leaks a WebGL context until the browser's limit
+      // is hit and maps start rendering blank.
+      disconnectedCallback() {
+        this.viewportObserver?.disconnect();
+        this.themeObserver?.disconnect();
+        this.map?.remove();
+        this.map = undefined;
+      }
+
+      showError() {
+        this.querySelector<HTMLElement>("[data-map-error]")?.removeAttribute(
+          "hidden"
+        );
+        this.querySelector("details")?.setAttribute("open", "");
       }
 
       async initMap() {
-        if (this.initialized) return;
-        this.initialized = true;
+        const { default: maplibregl } = await import("maplibre-gl");
+        // Navigated away while the bundle was loading.
+        if (!this.isConnected || this.map) return;
 
-        const [{ default: maplibregl }] = await Promise.all([
-          import("maplibre-gl"),
-          import("maplibre-gl/dist/maplibre-gl.css"),
-        ]);
+        const container = this.querySelector<HTMLElement>(
+          "[data-map-container]"
+        )!;
+        const entries = [
+          ...this.querySelectorAll<HTMLElement>("[data-map-marker]"),
+        ];
+
+        const bounds = new maplibregl.LngLatBounds();
+        entries.forEach(({ dataset }) =>
+          bounds.extend([Number(dataset.longitude), Number(dataset.latitude)])
+        );
 
         const map = new maplibregl.Map({
-          // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-          // @ts-ignore
-          container: this.dataset.container,
-          // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-          // @ts-ignore
-          interactive: JSON.parse(this.dataset.interactive),
-          // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-          // @ts-ignore
-          center: [this.dataset.longitude, this.dataset.latitude],
-          // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-          // @ts-ignore
-          zoom: this.dataset.zoom,
-          style: this.dataset.mapstyle,
+          container,
+          style: STYLE,
+          ...(entries.length > 0
+            ? {
+                bounds,
+                // Pins point down from their coordinate, so leave extra room
+                // at the top; the bottom clears the attribution bar.
+                fitBoundsOptions: {
+                  padding: { top: 64, bottom: 48, left: 40, right: 56 },
+                  maxZoom: 5,
+                },
+              }
+            : { center: [4.89707, 52.377956], zoom: 2 }),
+          // Page scrolls normally; ctrl/⌘ + scroll or two fingers move the map.
+          cooperativeGestures: true,
+          locale: { "Map.Title": this.dataset.label ?? "Map" },
+          attributionControl: { compact: true },
+        });
+        this.map = map;
+
+        let styleReady = false;
+        map.on("style.load", () => {
+          styleReady = true;
+          applyPalette(map, currentPalette());
         });
 
-        map.scrollZoom.disable(); // Disable scroll zoom for better UX
         map.addControl(
-          new maplibregl.NavigationControl({
-            showCompass: false, // Hide compass
-            showZoom: true, // Show zoom controls
-          }),
+          new maplibregl.NavigationControl({ showCompass: false }),
           "top-right"
         );
         map.addControl(new maplibregl.FullscreenControl(), "top-right");
-        const conferences = JSON.parse(this.dataset.conferences || "[]") as {
-          latitude: number;
-          longitude: number;
-          popupContent: string;
-        }[];
 
-        conferences.forEach(({ latitude, longitude, popupContent }) => {
-          new maplibregl.Marker({
-            color: "red",
-            scale: 0.9, // Adjust the scale as needed
-          })
-            .setLngLat([longitude, latitude])
-            .setPopup(
-              new maplibregl.Popup().setHTML(
-                `<span style="color:black;">${popupContent}</span>`
-              )
-            )
+        // Entries are sorted west → east, so tab order follows the map.
+        entries.forEach(entry => {
+          const { latitude, longitude, location, count } = entry.dataset;
+          const pin = document.createElement("div");
+          pin.className = "map-pin";
+          pin.innerHTML = PIN_SVG;
+          pin.setAttribute(
+            "aria-label",
+            `${location}: ${count} ${count === "1" ? "talk" : "talks"}`
+          );
+
+          // Reuse the list entry's contents (an <li> needs a list parent).
+          const content = document.createElement("div");
+          content.className = "map-popup";
+          content.append(...entry.cloneNode(true).childNodes);
+          const popup = new maplibregl.Popup({ maxWidth: "300px" });
+          popup.setDOMContent(content);
+          // MapLibre moves focus into the popup on open but has no Escape
+          // handling and does not return focus to the pin.
+          popup.on("open", () =>
+            popup.getElement()?.addEventListener("keydown", event => {
+              if (event.key === "Escape") popup.remove();
+            })
+          );
+          popup.on("close", () => {
+            if (
+              !document.activeElement ||
+              document.activeElement === document.body
+            ) {
+              pin.focus();
+            }
+          });
+
+          pin.addEventListener("keydown", event => {
+            if (event.key === "Escape" && popup.isOpen()) popup.remove();
+          });
+
+          new maplibregl.Marker({ element: pin, anchor: "bottom" })
+            .setLngLat([Number(longitude), Number(latitude)])
+            .setPopup(popup)
             .addTo(map);
+        });
+
+        // Follow the site's light/dark toggle.
+        this.themeObserver = new MutationObserver(() => {
+          if (styleReady) applyPalette(map, currentPalette());
+        });
+        this.themeObserver.observe(document.documentElement, {
+          attributes: true,
+          attributeFilter: ["data-theme"],
         });
       }
     }
 
-    window.customElements.define("maplibre-map", MapLibreMap);
-  </script></maplibre-map
->
+    if (!customElements.get("maplibre-map")) {
+      customElements.define("maplibre-map", MapLibreMap);
+    }
+  </script>
+</maplibre-map>

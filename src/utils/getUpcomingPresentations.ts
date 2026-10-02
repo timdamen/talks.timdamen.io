@@ -4,6 +4,7 @@ const getUpcomingPresentations = (presentations: CollectionEntry<"blog">[]) => {
   return presentations
     .filter(
       post =>
+        !post.data.draft &&
         post.data.conferenceDate &&
         new Date(post.data.conferenceDate).getTime() > Date.now()
     )

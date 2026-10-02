@@ -6,8 +6,8 @@ conference: Frontmania
 conferenceDate: 2025-10-08T14:20:00Z
 conferenceVenue: Jaarbeurs Utrecht
 conferenceLocation: Utrecht, Netherlands
-conferenceLat: 52.090736
-conferenceLong: 5.121169
+conferenceLat: 52.08454
+conferenceLong: 5.104077
 conferenceURL: https://frontmania.com/
 conferenceLogo: ../../assets/logos/frontmania.png
 conferenceLogoBackground: dark

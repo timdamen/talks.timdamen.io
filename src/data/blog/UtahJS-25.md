@@ -5,9 +5,9 @@ pubDatetime: 2025-09-12T14:20:00Z
 conference: UtahJS
 conferenceDate: 2025-09-12T14:20:00Z
 conferenceVenue: Megaplex Theatres at Jordan Commons
-conferenceLocation: Salt lake city, Utah, USA
-conferenceLat: 40.76078
-conferenceLong: -111.89105
+conferenceLocation: Sandy, Utah, USA
+conferenceLat: 40.581916
+conferenceLong: -111.888652
 conferenceURL: https://utahjs.com/conference/
 conferenceLogo: ../../assets/logos/UtahJS-logo.webp
 conferenceVideo: https://www.youtube.com/embed/aYur4YmHf5E?si=1eyxVLEQAiHdaaiv

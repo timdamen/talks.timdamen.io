@@ -4,10 +4,10 @@ author: "Tim Damen"
 pubDatetime: 2025-04-01T11:10:00Z
 conference: DevCon
 conferenceDate: 2025-04-01T11:00:00Z
-conferenceVenue: Head Office ABN ARMO
+conferenceVenue: Head Office ABN AMRO
 conferenceLocation: Amsterdam, Netherlands
-conferenceLat: 52.3676
-conferenceLong: 4.9041
+conferenceLat: 52.336996
+conferenceLong: 4.874885
 conferenceURL: https://www.abnamro.com/
 conferenceVideo: https://www.youtube.com/embed/Ruv9vKGHupA?si=ZoCapjP8Ku1Y3vvs
 conferenceSlides: ../../assets/slides/devcon-25.pdf

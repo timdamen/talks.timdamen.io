@@ -4,10 +4,10 @@ author: "Tim Damen"
 pubDatetime: 2023-10-26T19:00:00Z
 conference: ABN AMRO x PP Meetup
 conferenceDate: 2023-10-26T19:00:00Z
-conferenceVenue: Head Office ABN ARMO
+conferenceVenue: Head Office ABN AMRO
 conferenceLocation: Amsterdam, Netherlands
-conferenceLat: 52.3676
-conferenceLong: 4.9041
+conferenceLat: 52.336996
+conferenceLong: 4.874885
 conferenceURL: https://www.meetup.com/frontend-developer-meetup-amsterdam/events/294224306/
 conferenceSlides: ../../assets/slides/abnxpp.pdf
 googleDrivePresentationsLink: https://drive.google.com/file/d/1e8GF1Gxlgjfop0cMse_Q8wR7Eh1HvuCC/view?usp=sharing

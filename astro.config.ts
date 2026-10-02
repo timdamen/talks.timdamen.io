@@ -58,7 +58,6 @@ export default defineConfig({
   vite: {
     plugins: [tailwindcss()],
     optimizeDeps: {
-      include: ["leaflet"],
       exclude: ["@resvg/resvg-js"],
     },
     resolve: {

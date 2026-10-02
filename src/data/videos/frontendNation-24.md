@@ -12,7 +12,7 @@ conferenceSlides: ../../assets/slides/fn-v-24.pdf
 googleDrivePresentationsLink: https://drive.google.com/file/d/1rYW-QeMXI-v5wZ4G0zhfUzOPpf85OTS1/view?usp=sharing
 ogImage: ../../assets/images/fn-24-v-og.webp
 slug: frontend-nation-24-web-accessibility-in-practice-more-than-just-wcag
-featured: true
+featured: false
 draft: false
 tags:
   - Accessibility

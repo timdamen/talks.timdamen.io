@@ -1,0 +1,16 @@
+# The site is static: upcoming/past talks, the homepage highlight and the RSS
+# feed are decided at build time. Rebuilding on a schedule lets a talk move
+# from "upcoming" to "presented" on its own, without a push.
+name: Scheduled rebuild
+
+on:
+  schedule:
+    - cron: "0 */6 * * *"
+  workflow_dispatch:
+
+jobs:
+  rebuild:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger Vercel deploy hook
+        run: curl -fsS -X POST "${{ secrets.VERCEL_DEPLOY_HOOK_URL }}"

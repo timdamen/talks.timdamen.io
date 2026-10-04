@@ -15,7 +15,7 @@ ogImage: https://slides.timdamen.io/thumbnails/cyc-26-one-change.webp
 googleDrivePresentationsLink: https://slides.timdamen.io/presentations/cyc-26-one-change
 conferenceLogo: ../../assets/logos/commityourcode.png
 slug: cyc-26-utilising-the-javascript-abstract-syntax-tree-ast-for-automated-frontend-lifecycle-management
-featured: false
+featured: true
 draft: false
 tags:
   - Frontend

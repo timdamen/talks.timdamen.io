@@ -24,7 +24,7 @@ A collection of talks exploring web accessibility, frontend development, and the
   _UtahJS_ | September 18, 2026 | Sandy, Utah, USA | [Video](https://talks.timdamen.io/videos/utahjs-26-your-biggest-new-customer-cant-see-pixels)
 
 - **[Utilising the JavaScript Abstract Syntax Tree (AST) for Automated Frontend Lifecycle Management](https://talks.timdamen.io/presentations/cyc-26-utilising-the-javascript-abstract-syntax-tree-ast-for-automated-frontend-lifecycle-management)**  
-  _Commit Your Code_ | September 4, 2026 | Plano Texas, USA
+  _Commit Your Code_ | September 4, 2026 | Plano Texas, USA | [Video](https://talks.timdamen.io/videos/cyc-26-utilising-the-javascript-abstract-syntax-tree-ast-for-automated-frontend-lifecycle-management)
 
 - **[Accessible Forms for Every Users: A Semantic Approach to Forms on the Web](https://talks.timdamen.io/presentations/devdays-26-accessible-forms-for-every-users-a-semantic-approach-to-forms-on-the-web)**  
   _DevDays Europe_ | May 20, 2026 | Vilnius, Lithuania

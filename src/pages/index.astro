@@ -28,12 +28,15 @@ const presentations3 = await getCollection("blog");
 const videos = await getCollection("videos");
 const sortedPresentations = getSortedPresentations(presentations);
 const sortedVideos = getSortedPresentations(videos);
-// The most recent talk/video always leads; manually featured ones follow.
+// The most recent video always leads; manually featured ones follow.
 const latestThenFeatured = sorted => {
   const [latest, ...rest] = sorted;
   return latest ? [latest, ...rest.filter(({ data }) => data.featured)] : [];
 };
-const featuredPresentations = latestThenFeatured(sortedPresentations);
+// Presentations are hand-picked only: a new talk does not push its way in.
+const featuredPresentations = sortedPresentations.filter(
+  ({ data }) => data.featured
+);
 const featuredVideos = latestThenFeatured(sortedVideos);
 const recentPresentations = sortedPresentations;
 const upcomingPresentations = getUpcomingPresentations(presentations3);

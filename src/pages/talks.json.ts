@@ -56,6 +56,8 @@ export const GET: APIRoute = async () => {
         videoUrl: video
           ? absolute(getVideoPath(video.id, video.filePath))
           : null,
+        // Same check as PostDetails.astro, which shows the slides on the page.
+        hasSlides: Boolean(data.conferenceSlidesEmbed || data.conferenceSlides),
         tags: data.tags,
       };
     });

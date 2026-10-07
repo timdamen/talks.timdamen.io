@@ -9,7 +9,10 @@ conferenceLocation: Sandy, Utah, USA
 conferenceLat: 40.581916
 conferenceLong: -111.888652
 conferenceURL: https://utahjs.com/conference/
+conferenceSlidesEmbed: https://slides.timdamen.io/presentations/utahjs-26-your-biggest-new-customer-cant-see-pixels
 conferenceVideo: https://www.youtube.com/embed/0p6WcsRK4uI?rel=0
+ogImage: https://slides.timdamen.io/thumbnails/utahjs-26-your-biggest-new-customer-cant-see-pixels.webp
+googleDrivePresentationsLink: https://slides.timdamen.io/presentations/utahjs-26-your-biggest-new-customer-cant-see-pixels
 conferenceLogo: ../../assets/logos/UtahJS-logo.webp
 slug: utahjs-26-your-biggest-new-customer-cant-see-pixels
 featured: true

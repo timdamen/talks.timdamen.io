@@ -13,6 +13,9 @@ conferenceURL: https://frontmania.com/
 conferenceTicketURL: https://iframe-wpticketsnl.sandsmedia.com/en/shop/frontmania-2026-tickets/?ticket-version=version0
 conferenceTicketPrice: 420
 conferenceTicketCurrency: EUR
+conferenceSlidesEmbed: https://slides.timdamen.io/presentations/frontmania-2026-cant-see-pixels
+ogImage: https://slides.timdamen.io/thumbnails/frontmania-2026-cant-see-pixels.webp
+googleDrivePresentationsLink: https://slides.timdamen.io/presentations/frontmania-2026-cant-see-pixels
 conferenceLogo: ../../assets/logos/frontmania.png
 conferenceLogoBackground: dark
 slug: frontmania-26-your-biggest-new-customer-cant-see-pixels

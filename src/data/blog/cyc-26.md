@@ -9,7 +9,10 @@ conferenceLocation: Plano, USA
 conferenceLat: 33.0854
 conferenceLong: -96.8123
 conferenceURL: https://www.commityourcode.com/
+conferenceSlidesEmbed: https://slides.timdamen.io/presentations/cyc-26-one-change
 conferenceVideo: https://www.youtube.com/embed/MAjXR7IrT2Q?rel=0
+ogImage: https://slides.timdamen.io/thumbnails/cyc-26-one-change.webp
+googleDrivePresentationsLink: https://slides.timdamen.io/presentations/cyc-26-one-change
 conferenceLogo: ../../assets/logos/commityourcode.png
 slug: cyc-26-utilising-the-javascript-abstract-syntax-tree-ast-for-automated-frontend-lifecycle-management
 featured: false

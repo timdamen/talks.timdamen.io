@@ -8,7 +8,6 @@ import IconGitHub from "@/assets/icons/IconGitHub.svg";
 import IconLinkOut from "@/assets/icons/IconLinkOut.svg";
 import IconRss from "@/assets/icons/IconRss.svg";
 import FavTimdamen from "@/assets/favicons/timdamen.svg";
-import FavFocusring from "@/assets/favicons/focusring.svg";
 import FavTalks from "@/assets/favicons/talks.svg";
 import LogoSupaslidev from "@/assets/favicons/supaslidev.svg";
 import LogoHorn from "@/assets/favicons/horn.svg";
@@ -77,8 +76,8 @@ const leadIconClass = "size-8 shrink-0 fill-transparent stroke-current stroke-2"
 const trailIconClass = "ms-auto size-5 shrink-0 stroke-current opacity-60";
 
 // Website rows show the site's own favicon. The monogram favicons carry no
-// fill color, so they follow text color; the focusring ring keeps its brand
-// blue. Focustrap is a podcast, so it keeps the RSS mark.
+// fill color, so they follow text color. Focustrap is a podcast, so it keeps
+// the RSS mark.
 const websites = [
   {
     name: "timdamen.io",
@@ -86,13 +85,6 @@ const websites = [
     desc: "Personal website",
     icon: FavTimdamen,
     iconProps: { class: "size-8 shrink-0", fill: "currentColor" },
-  },
-  {
-    name: "focusring.io",
-    href: "https://focusring.io",
-    desc: "Digital accessibility consultancy — co-founder",
-    icon: FavFocusring,
-    iconProps: { class: "size-8 shrink-0" },
   },
   {
     name: "talks.timdamen.io",

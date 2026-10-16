@@ -28,38 +28,41 @@ const { posters, title = "Promotion material" } = Astro.props;
       {title}
     </h2>
   </summary>
-  <ul
-    role="list"
-    class="not-prose mt-4 grid list-none grid-cols-1 items-start gap-6 p-0 sm:grid-cols-2"
-  >
-    {
-      posters.map(poster => (
-        <li>
-          <figure class="m-0">
-            <a
-              href={poster.src.src}
-              target="_blank"
-              rel="noopener noreferrer"
-              class="block"
-            >
-              <Image
-                src={poster.src}
-                alt={poster.alt}
-                widths={[400, 800]}
-                sizes="(min-width: 640px) 50vw, 100vw"
-                class="h-auto w-full rounded-md border border-border"
-                loading="lazy"
-              />
-              <span class="sr-only">(opens full size in a new tab)</span>
-            </a>
-            {poster.caption && (
-              <figcaption class="mt-2 text-sm text-foreground/80">
-                {poster.caption}
-              </figcaption>
-            )}
-          </figure>
-        </li>
-      ))
-    }
-  </ul>
+  {/* Padding, not list margin, so the summary's focus ring clears the images */}
+  <div class="pt-4">
+    <ul
+      role="list"
+      class="not-prose m-0 grid list-none grid-cols-1 items-start gap-6 p-0 sm:grid-cols-2"
+    >
+      {
+        posters.map(poster => (
+          <li>
+            <figure class="m-0">
+              <a
+                href={poster.src.src}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="block"
+              >
+                <Image
+                  src={poster.src}
+                  alt={poster.alt}
+                  widths={[400, 800]}
+                  sizes="(min-width: 640px) 50vw, 100vw"
+                  class="h-auto w-full rounded-md border border-border"
+                  loading="lazy"
+                />
+                <span class="sr-only">(opens full size in a new tab)</span>
+              </a>
+              {poster.caption && (
+                <figcaption class="mt-2 text-sm text-foreground/80">
+                  {poster.caption}
+                </figcaption>
+              )}
+            </figure>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
 </details>

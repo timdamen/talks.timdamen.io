@@ -1,5 +1,5 @@
 {
-  "lastPostDate": null,
+  "lastPostDate": "2026-10-16",
   "events": {
     "agenticdays-26-your-biggest-new-customer-cant-see-pixels#upcoming": {
       "status": "seeded"
@@ -27,6 +27,14 @@
     },
     "pth-26-your-biggest-new-customer-cant-see-pixels#upcoming": {
       "status": "seeded"
+    },
+    "react-day-berlin-26-your-biggest-new-customer-cant-see-pixels#upcoming": {
+      "status": "pending",
+      "attempts": 1,
+      "posts": {
+        "bluesky": "https://bsky.app/profile/timdamen.io/post/3mxxzycwlai27"
+      },
+      "lastError": "X: HTTP 403 {\"client_id\":\"31798505\",\"detail\":\"When authenticating requests to the X API v2 endpoints, you must use keys and tokens from a developer App that is attached to a Project. You can create a project via the developer portal.\",\"reason\":\"client-not-enrolled\",\"registration_url\":\"https://developer.x.com/en/docs/projects/overview\",\"required_enrollment\":\"Appropriate Level of API Access\",\"title\":\"Client Forbidden\",\"type\":\"https://api.x.com/2/problems/client-forbidden\"}"
     },
     "utahjs-26-your-biggest-new-customer-cant-see-pixels#slides": {
       "status": "seeded"

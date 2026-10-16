@@ -4,9 +4,6 @@ A collection of talks exploring web accessibility, frontend development, and the
 
 ## [Upcoming presentations](https://talks.timdamen.io/upcoming-talks)
 
-- **[Your Biggest New Customer Can't See Pixels](https://talks.timdamen.io/presentations/abnamro-dev-26-your-biggest-new-customer-cant-see-pixels)**  
-  _ABN AMRO Developer: The Goodbye Meetup_ | October 15, 2026 | Amsterdam, Netherlands
-
 - **[Utilising the JavaScript Abstract Syntax Tree (AST) for Automated Frontend Lifecycle Management](https://talks.timdamen.io/presentations/hello-stavanger-26-utilising-the-javascript-abstract-syntax-tree-ast-for-automated-frontend-lifecycle-management)**  
   _Hello Stavanger_ | October 21, 2026 | Stavanger, Norway
 
@@ -16,9 +13,15 @@ A collection of talks exploring web accessibility, frontend development, and the
 - **[Your Biggest New Customer Can't See Pixels](https://talks.timdamen.io/presentations/agenticdays-26-your-biggest-new-customer-cant-see-pixels)**  
   _Agentic Engineering Days_ | November 20, 2026 | Zurich, Switzerland
 
+- **[Your Biggest New Customer Can't See Pixels](https://talks.timdamen.io/presentations/react-day-berlin-26-your-biggest-new-customer-cant-see-pixels)**  
+  _React Day Berlin_ | December 4, 2026 | Berlin, Germany
+
 ## [List of all previous presentations](https://talks.timdamen.io/presentations)
 
 ### 2026
+
+- **[Your Biggest New Customer Can't See Pixels](https://talks.timdamen.io/presentations/abnamro-dev-26-your-biggest-new-customer-cant-see-pixels)**  
+  _ABN AMRO Developer: The Goodbye Meetup_ | October 15, 2026 | Amsterdam, Netherlands
 
 - **[Your Biggest New Customer Can't See Pixels](https://talks.timdamen.io/presentations/frontmania-26-your-biggest-new-customer-cant-see-pixels)**  
   _Frontmania_ | October 7, 2026 | Utrecht, Netherlands

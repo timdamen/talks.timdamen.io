@@ -1,0 +1,72 @@
+# Announces talk updates on Bluesky, X and LinkedIn: a new upcoming talk,
+# slides added after a talk, or a recording. At most one post per working day,
+# at a random minute between 09:00 and 17:00 Amsterdam time.
+# See scripts/social/README.md for the secrets it needs.
+name: Social posts
+
+on:
+  schedule:
+    # Hourly on weekdays, covering 09:00–17:00 Amsterdam time in both winter
+    # and summer time. The script picks the day's random slot and only posts
+    # from the run that reaches it.
+    - cron: "23 6-15 * * 1-5"
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "dry-run shows what would be posted; post-now posts the next announcement immediately"
+        type: choice
+        options:
+          - dry-run
+          - post-now
+        default: dry-run
+
+permissions:
+  contents: write
+
+# Never let two runs post at once; a queued run sees the ledger the
+# previous one pushed.
+concurrency:
+  group: social-posts
+  cancel-in-progress: false
+
+jobs:
+  announce:
+    runs-on: ubuntu-latest
+    # A run may wait up to an hour for the day's slot.
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Announce talk updates
+        run: node scripts/social/announce.mjs --mode "$MODE"
+        env:
+          MODE: ${{ inputs.mode || 'auto' }}
+          BLUESKY_HANDLE: ${{ secrets.BLUESKY_HANDLE }}
+          BLUESKY_APP_PASSWORD: ${{ secrets.BLUESKY_APP_PASSWORD }}
+          X_API_KEY: ${{ secrets.X_API_KEY }}
+          X_API_SECRET: ${{ secrets.X_API_SECRET }}
+          X_ACCESS_TOKEN: ${{ secrets.X_ACCESS_TOKEN }}
+          X_ACCESS_TOKEN_SECRET: ${{ secrets.X_ACCESS_TOKEN_SECRET }}
+          LINKEDIN_ACCESS_TOKEN: ${{ secrets.LINKEDIN_ACCESS_TOKEN }}
+          LINKEDIN_AUTHOR_URN: ${{ secrets.LINKEDIN_AUTHOR_URN }}
+          LINKEDIN_API_VERSION: ${{ vars.LINKEDIN_API_VERSION }}
+
+      # Also after a failed post, so successful platforms aren't posted twice.
+      - name: Save ledger
+        if: always()
+        run: |
+          git diff --quiet -- scripts/social/ledger.json && exit 0
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "chore(social): record announcement" -- scripts/social/ledger.json
+          for attempt in 1 2 3 4; do
+            git pull --rebase origin main && git push origin HEAD:main && exit 0
+            sleep $((attempt * 5))
+          done
+          exit 1

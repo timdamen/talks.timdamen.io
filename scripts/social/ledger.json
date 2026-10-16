@@ -1,0 +1,44 @@
+{
+  "lastPostDate": null,
+  "events": {
+    "agenticdays-26-your-biggest-new-customer-cant-see-pixels#upcoming": {
+      "status": "seeded"
+    },
+    "cyc-26-utilising-the-javascript-abstract-syntax-tree-ast-for-automated-frontend-lifecycle-management#slides": {
+      "status": "seeded"
+    },
+    "cyc-26-utilising-the-javascript-abstract-syntax-tree-ast-for-automated-frontend-lifecycle-management#video": {
+      "status": "seeded"
+    },
+    "devdays-2026-oss-build-together-accessed-by-all-open-source-web-accessibility#slides": {
+      "status": "seeded"
+    },
+    "frontmania-26-your-biggest-new-customer-cant-see-pixels#slides": {
+      "status": "seeded"
+    },
+    "hello-stavanger-26-utilising-the-javascript-abstract-syntax-tree-ast-for-automated-frontend-lifecycle-management#upcoming": {
+      "status": "seeded"
+    },
+    "jsnation-25-diving-into-the-toplayer-where-dialogs-popovers-and-modals-live#slides": {
+      "status": "seeded"
+    },
+    "oredev-25-stuck-in-a-focustrap-keyboard-accessibility-focus#slides": {
+      "status": "seeded"
+    },
+    "pth-26-your-biggest-new-customer-cant-see-pixels#upcoming": {
+      "status": "seeded"
+    },
+    "utahjs-26-your-biggest-new-customer-cant-see-pixels#slides": {
+      "status": "seeded"
+    },
+    "utahjs-26-your-biggest-new-customer-cant-see-pixels#video": {
+      "status": "seeded"
+    },
+    "webkonf-26-diving-into-the-toplayer-where-dialogs-popovers-and-modals-live#slides": {
+      "status": "seeded"
+    },
+    "webkonf-26-oss-build-together-accessed-by-all-open-source-web-accessibility#slides": {
+      "status": "seeded"
+    }
+  }
+}

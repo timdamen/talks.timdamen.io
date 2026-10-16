@@ -132,3 +132,7 @@ Find the file in `src/data/blog/` (grep by conference/title if the name is ambig
 2. Run `pnpm astro sync` — must exit clean. Beware: the `.astro` content cache can mask YAML errors; if something looks stale, delete the `.astro` directory and re-run. (`pnpm` is canonical here, not npm; `astro check` has ~134 pre-existing errors and is not a gate.)
 3. Offer to preview with `pnpm dev`: check `/upcoming-talks` (map pin + card) for future talks, or the talk/video detail page for updates.
 4. Summarize: file(s) touched, live URL(s) (`https://talks.timdamen.io/presentations/{slug}`, `/videos/{slug}`), README change, and anything still missing (logo, slides, OG image, resources).
+
+## Social posts
+
+Once a change is deployed, `.github/workflows/social-posts.yml` announces it on Bluesky, X and LinkedIn by itself: a new upcoming talk, slides on a talk that has taken place, or a new video. At most one post per working day, at a random time between 09:00 and 17:00 Amsterdam time. Nothing to do here; but if Tim doesn't want a change announced, add `"{slug}#{upcoming|slides|video}": { "status": "skipped" }` to `scripts/social/ledger.json` in the same commit. Details in `scripts/social/README.md`.

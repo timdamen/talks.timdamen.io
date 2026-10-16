@@ -32,6 +32,10 @@ Add these under **GitHub → Settings → Secrets and variables → Actions →
 New repository secret**. A platform is skipped until its secrets exist; if
 none are set, nothing is posted and announcements stay pending.
 
+`scripts/social/setup-secrets.sh` walks through the steps below, opens each
+page, and saves what you paste straight to GitHub with `gh secret set`. Re-run
+it and pick only LinkedIn to renew the token.
+
 ### Bluesky
 
 | Secret                 | Value                                                                   |
@@ -61,19 +65,28 @@ account, depending on X's current pricing.
 
 ### LinkedIn
 
-1. [Create an app](https://www.linkedin.com/developers/apps/new). LinkedIn
-   requires associating it with a LinkedIn Page you admin.
-2. On the app's **Products** tab, add **Share on LinkedIn** and **Sign In
-   with LinkedIn using OpenID Connect**.
-3. Open the
-   [OAuth token generator](https://www.linkedin.com/developers/tools/oauth/token-generator),
-   pick the app, select the scopes `openid`, `profile` and `w_member_social`,
-   and generate a token.
+Posts go out as the
+[talks.timdamen.io Page](https://www.linkedin.com/company/146695529/), which
+needs LinkedIn's **Community Management API**. LinkedIn only grants that
+product to an app that has no other products, so it gets an app of its own.
 
-| Secret                  | Value                                                               |
-| ----------------------- | ------------------------------------------------------------------- |
-| `LINKEDIN_ACCESS_TOKEN` | The generated token                                                 |
-| `LINKEDIN_AUTHOR_URN`   | Optional: `urn:li:person:…`. Looked up from the token when not set. |
+1. [Create an app](https://www.linkedin.com/developers/apps/new) linked to the
+   talks.timdamen.io Page. Don't add any other product to it.
+2. On the app's **Products** tab, request **Community Management API** and fill
+   in LinkedIn's access request form. LinkedIn reviews it and replies by email.
+3. Once approved, open the
+   [OAuth token generator](https://www.linkedin.com/developers/tools/oauth/token-generator),
+   pick the app, select the scope `w_organization_social`, and generate a
+   token. Generate it as an admin of the Page.
+
+| Secret                  | Value                                                       |
+| ----------------------- | ----------------------------------------------------------- |
+| `LINKEDIN_ACCESS_TOKEN` | The generated token                                         |
+| `LINKEDIN_AUTHOR_URN`   | `urn:li:organization:146695529`, the talks.timdamen.io Page |
+
+Without `LINKEDIN_AUTHOR_URN`, posts go to the personal profile of whoever
+generated the token (scopes `openid`, `profile`, `w_member_social`, products
+**Share on LinkedIn** and **Sign In with LinkedIn using OpenID Connect**).
 
 LinkedIn tokens **expire after 60 days**. When LinkedIn starts failing with
 HTTP 401, generate a new token and update the secret. The API version

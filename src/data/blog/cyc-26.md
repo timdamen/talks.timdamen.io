@@ -17,6 +17,10 @@ conferenceLogo: ../../assets/logos/commityourcode.png
 slug: cyc-26-utilising-the-javascript-abstract-syntax-tree-ast-for-automated-frontend-lifecycle-management
 featured: false
 draft: false
+posters:
+  - src: ../../assets/images/posters/cyc-26/cyc-26-01.jpg
+    alt: "Commit Your Code '26 speaker card: I'm speaking at Commit Your Code, Conference for Charity, September 3-4, Dallas TX, Tim Damen, Frontend Chapter Lead & Accessibility Lead, ABN AMRO."
+    caption: "Speaker card by Commit Your Code"
 tags:
   - Frontend
   - Conference

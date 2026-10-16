@@ -17,6 +17,10 @@ ogImage: ../../assets/images/pth-26-og.webp
 slug: pth-26-your-biggest-new-customer-cant-see-pixels
 featured: false
 draft: false
+posters:
+  - src: ../../assets/images/posters/pth-26/pth-26-01.jpeg
+    alt: "Porto Tech Hub Conference 2026 banner for 'Your Biggest New Customer Can't See Pixels', 10 November 2026, Porto, Portugal, with a photo of Tim Damen."
+    caption: "Speaker banner by Porto Tech Hub"
 tags:
   - Accessibility
   - Conference

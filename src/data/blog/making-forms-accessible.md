@@ -15,6 +15,10 @@ ogImage: ../../assets/images/abn-pp.webp
 slug: making-forms-accessible
 featured: false
 draft: false
+posters:
+  - src: ../../assets/images/posters/abnxpp-23/abnxpp-23-01.jpeg
+    alt: "Meetup banner for the ABN AMRO x Passionate People frontend meetup on 26 October 2023 at Gustav Mahlerlaan 10, Amsterdam."
+    caption: "Event banner by Passionate People and ABN AMRO"
 tags:
   - Accessibility
   - Meetup

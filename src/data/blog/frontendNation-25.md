@@ -14,6 +14,10 @@ ogImage: ../../assets/images/fn-25-og.webp
 slug: frontend-nation-25-stuck-in-a-focustrap-keyboard-accessibility-focu
 featured: false
 draft: false
+posters:
+  - src: ../../assets/images/posters/frontendnation-25/frontendnation-25-01.jpg
+    alt: "Frontend Nation 'Meet our speaker' banner: Tim Damen, Frontend Chapter Lead at ABN AMRO, June 3-5, frontendnation.com."
+    caption: "Speaker banner by Frontend Nation"
 tags:
   - Accessibility
   - Conference

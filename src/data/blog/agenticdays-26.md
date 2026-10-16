@@ -17,6 +17,13 @@ conferenceLogo: ../../assets/logos/agenticdays.webp
 slug: agenticdays-26-your-biggest-new-customer-cant-see-pixels
 featured: false
 draft: false
+posters:
+  - src: ../../assets/images/posters/agenticdays-26/agenticdays-26-01.jpg
+    alt: "Agentic Engineering Days Zurich 2026 card: I'm speaking at #AEDZH26, Tim Damen, Lead of Frontend Platforms & Accessibility, 20 Nov 2026."
+    caption: "Speaker card by Agentic Engineering Days"
+  - src: ../../assets/images/posters/agenticdays-26/agenticdays-26-02.jpg
+    alt: "Agentic Engineering Days Zurich 2026 'beyond the IDE' topic map linking speakers Ricardo Silveira Cabral, Andrés Marafioti, Tim Damen, Syrian Hadad and Alexander Büchel to topics like guardrails, autonomous coding and hardware."
+    caption: "Speaker lineup by Agentic Engineering Days"
 tags:
   - Accessibility
   - Conference

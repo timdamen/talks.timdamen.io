@@ -17,6 +17,16 @@ ogImage: ../../assets/images/webDevCon-25-og.webp
 slug: webdevcon-25-stuck-in-a-focustrap-keyboard-accessibility-focus
 featured: false
 draft: false
+posters:
+  - src: ../../assets/images/posters/webdevcon-25/webdevcon-25-03.png
+    alt: "WebDevCon speaker and session announcement: 'Keyboard accessibility & focus' by Tim Damen."
+    caption: "Session announcement by WebDevCon"
+  - src: ../../assets/images/posters/webdevcon-25/webdevcon-25-01.png
+    alt: "WebDevCon session card: 'Keyboard accessibility & focus' with a photo of Tim Damen."
+    caption: "Session card by WebDevCon"
+  - src: ../../assets/images/posters/webdevcon-25/webdevcon-25-02.png
+    alt: "Dutch PHP Conference session card: 'Keyboard accessibility & focus' with a photo of Tim Damen."
+    caption: "Session card by Dutch PHP Conference, co-located with WebDevCon"
 tags:
   - Accessibility
   - Conference

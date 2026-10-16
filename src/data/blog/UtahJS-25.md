@@ -17,6 +17,10 @@ conferenceSlides: ../../assets/slides/utahjs-25.pdf
 googleDrivePresentationsLink: https://drive.google.com/file/d/1fwKlN9Q2QkD4jYo8vP1XN9p6F8wd88Cw/view?usp=sharing
 featured: true
 draft: false
+posters:
+  - src: ../../assets/images/posters/utahjs-25/utahjs-25-01.jpeg
+    alt: "UtahJS 2025 banner for 'Diving into the Toplayer: Where Dialogs, Popovers, and Modals Live' with a photo of Tim Damen."
+    caption: "Speaker banner by UtahJS"
 tags:
   - Frontend
   - Conference

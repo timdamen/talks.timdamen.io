@@ -42,6 +42,7 @@ Decide the mode from the user's request:
 | `ogImage` | Current convention: `https://slides.timdamen.io/thumbnails/{deck}.webp`. Older talks use local `../../assets/images/{name}-og.webp`. If omitted, a satori OG image is generated automatically — omitting is fine for a brand-new talk without a deck. |
 | `conferenceVideo` | **Embed** URL only: `https://www.youtube.com/embed/{id}?rel=0` or `https://player.vimeo.com/video/{id}`. Convert watch/share URLs to embed form. Rendered as an iframe. |
 | `presentationImages` | Optional photo gallery: array of `{src, alt, caption?}` with `src` under `public/` (e.g. `/assets/stage2.webp`). Alt text must be genuinely descriptive (Tim is an a11y specialist). |
+| `posters` | Optional promo images (speaker cards, lineups) rendered in a collapsed "Promotion material" section: array of `{src, alt, caption?}` with `src` as `../../assets/images/posters/{event-key}/{file}` (Astro `image()`). Save files plus a `sources.json` entry in that folder and add the post to `posters/manifest.json`. Best sources: the Sessionize speaker dashboard's Banners tab and Tim's LinkedIn image posts. Caption credits the organiser, e.g. "Speaker banner by NDC Oslo"; skip plain headshots. |
 | `slug` | Overrides the entry id ⇒ the URL. Convention: `{conf-short}-{yy}-{kebab-case-title}` (e.g. `webkonf-26-diving-into-the-toplayer-...`). Never change the slug of a published talk. |
 | `featured` | Shows on homepage "Featured" sections. Passes through `postFilter`, so a **future-dated talk can never appear featured** — don't set `true` before the talk happens. |
 | `draft` | `true` hides the page entirely. Normally `false`. |
@@ -123,6 +124,8 @@ Find the file in `src/data/blog/` (grep by conference/title if the name is ambig
 **Talk has happened** (date passed, doing any update): move its README entry from *Upcoming presentations* into the correct `### {year}` section (newest first within the year), creating the year heading if needed.
 
 **Photos**: add `presentationImages` (images in `public/`), with real alt text.
+
+**Posters**: add `posters` (see field table) when a speaker card or lineup graphic exists.
 
 **Corrections** (date/venue/etc.): edit fields; keep `pubDatetime` in sync with `conferenceDate` for future talks. Never change `slug` on a published talk.
 

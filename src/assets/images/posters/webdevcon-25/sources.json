@@ -1,0 +1,26 @@
+[
+  {
+    "file": "webdevcon-25-01.png",
+    "imageUrl": "https://webdevcon.nl/wp-content/uploads/2025/07/Tim-Damen.png",
+    "pageUrl": "https://webdevcon.nl/speaker/tim-damen/",
+    "platform": "event-website",
+    "kind": "speaker-card",
+    "description": "WebDevCon speaker card: 'Keyboard accessibility & focus' with Tim's photo and name (1200x627)."
+  },
+  {
+    "file": "webdevcon-25-02.png",
+    "imageUrl": "https://phpconference.nl/wp-content/uploads/2025/07/Tim-Damen.png",
+    "pageUrl": "https://phpconference.nl/?p=5539",
+    "platform": "event-website",
+    "kind": "speaker-card",
+    "description": "Dutch PHP Conference (co-located with WebDevCon, 21 March 2025) session card: 'Keyboard accessibility & focus' with Tim's photo and name (1920x1080)."
+  },
+  {
+    "file": "webdevcon-25-03.png",
+    "imageUrl": "https://sessionize.com/app/banner-download/16719/779310",
+    "pageUrl": "https://sessionize.com/webdevcon-2025/dashboard#tab-banners",
+    "platform": "sessionize",
+    "kind": "speaker-card",
+    "description": "WebDevCon 'Speaker & Session Announcement' banner from the Sessionize speaker dashboard (login required): 'Keyboard accessibility & focus', Tim's photo and name (1920x1080)."
+  }
+]

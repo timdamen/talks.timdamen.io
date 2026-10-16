@@ -17,6 +17,10 @@ ogImage: ../../assets/images/perth-web-a11y-camp-og.webp
 slug: perth-web-accessibility-camp-continuous-a11y-improvements
 featured: false
 draft: false
+posters:
+  - src: ../../assets/images/posters/perth-web-a11y-camp-25/perth-web-a11y-camp-25-01.jpg
+    alt: "Perth Web Accessibility Camp poster: I'm speaking at PWAC 2025! Tim Damen, Frontend Chapter Lead and Accessibility Lead at ABN AMRO, Tuesday 18 February, with a QR code and photo."
+    caption: "Speaker poster by Perth Web Accessibility Camp"
 tags:
   - Accessibility
   - Conference

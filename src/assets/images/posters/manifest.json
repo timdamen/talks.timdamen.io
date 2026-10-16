@@ -1,0 +1,230 @@
+{
+  "posts": {
+    "src/data/blog/Devdays-2.md": {
+      "folder": "devdays-26",
+      "images": [
+        {
+          "file": "devdays-26/devdays-26-01.png",
+          "kind": "headshot",
+          "platform": "event-website"
+        }
+      ]
+    },
+    "src/data/blog/FMC-25.md": {
+      "folder": "frontmania-25",
+      "images": [
+        {
+          "file": "frontmania-25/frontmania-25-01.jpg",
+          "kind": "speaker-card",
+          "platform": "linkedin"
+        }
+      ]
+    },
+    "src/data/blog/JSNation-24.md": {
+      "folder": "jsnation-us-24",
+      "images": [
+        {
+          "file": "jsnation-us-24/jsnation-us-24-01.png",
+          "kind": "session-poster",
+          "platform": "other"
+        }
+      ]
+    },
+    "src/data/blog/JSNation-25.md": {
+      "folder": "jsnation-us-25",
+      "images": [
+        {
+          "file": "jsnation-us-25/jsnation-us-25-01.png",
+          "kind": "speaker-card",
+          "platform": "other"
+        }
+      ]
+    },
+    "src/data/blog/NDC-oslo-25.md": {
+      "folder": "ndc-oslo-25",
+      "images": [
+        {
+          "file": "ndc-oslo-25/ndc-oslo-25-01.jpeg",
+          "kind": "speaker-card",
+          "platform": "sessionize"
+        }
+      ]
+    },
+    "src/data/blog/UtahJS-25.md": {
+      "folder": "utahjs-25",
+      "images": [
+        {
+          "file": "utahjs-25/utahjs-25-01.jpeg",
+          "kind": "speaker-card",
+          "platform": "sessionize"
+        }
+      ]
+    },
+    "src/data/blog/UtahJS-26.md": {
+      "folder": "utahjs-26",
+      "images": [
+        {
+          "file": "utahjs-26/utahjs-26-01.webp",
+          "kind": "headshot",
+          "platform": "bluesky"
+        }
+      ]
+    },
+    "src/data/blog/abnamro-dev-26.md": {
+      "folder": "abnamro-dev-26",
+      "images": [
+        {
+          "file": "abnamro-dev-26/abnamro-dev-26-01.jpg",
+          "kind": "event-poster",
+          "platform": "linkedin"
+        }
+      ]
+    },
+    "src/data/blog/agenticdays-26.md": {
+      "folder": "agenticdays-26",
+      "images": [
+        {
+          "file": "agenticdays-26/agenticdays-26-01.jpg",
+          "kind": "speaker-card",
+          "platform": "linkedin"
+        },
+        {
+          "file": "agenticdays-26/agenticdays-26-02.jpg",
+          "kind": "lineup",
+          "platform": "linkedin"
+        }
+      ]
+    },
+    "src/data/blog/anwb-summit-25.md": {
+      "folder": "anwb-summit-25",
+      "images": []
+    },
+    "src/data/blog/cyc-26.md": {
+      "folder": "cyc-26",
+      "images": [
+        {
+          "file": "cyc-26/cyc-26-01.jpg",
+          "kind": "speaker-card",
+          "platform": "linkedin"
+        }
+      ]
+    },
+    "src/data/blog/devcon-24.md": {
+      "folder": "devcon-24",
+      "images": []
+    },
+    "src/data/blog/devcon-25.md": {
+      "folder": "devcon-25",
+      "images": []
+    },
+    "src/data/blog/frontendNation-24.md": {
+      "folder": "frontendnation-24",
+      "images": [
+        {
+          "file": "frontendnation-24/frontendnation-24-01.png",
+          "kind": "speaker-card",
+          "platform": "event-website"
+        }
+      ]
+    },
+    "src/data/blog/frontendNation-25.md": {
+      "folder": "frontendnation-25",
+      "images": [
+        {
+          "file": "frontendnation-25/frontendnation-25-01.jpg",
+          "kind": "speaker-card",
+          "platform": "linkedin"
+        }
+      ]
+    },
+    "src/data/blog/frontmania-26.md": {
+      "folder": "frontmania-26",
+      "images": []
+    },
+    "src/data/blog/hellostavanger-26.md": {
+      "folder": "hellostavanger-26",
+      "images": []
+    },
+    "src/data/blog/making-forms-accessible.md": {
+      "folder": "abnxpp-23",
+      "images": [
+        {
+          "file": "abnxpp-23/abnxpp-23-01.jpeg",
+          "kind": "event-poster",
+          "platform": "event-website"
+        }
+      ]
+    },
+    "src/data/blog/perth-digital-a11y-camp-25.md": {
+      "folder": "perth-web-a11y-camp-25",
+      "images": [
+        {
+          "file": "perth-web-a11y-camp-25/perth-web-a11y-camp-25-01.jpg",
+          "kind": "speaker-card",
+          "platform": "linkedin"
+        }
+      ]
+    },
+    "src/data/blog/pth-26.md": {
+      "folder": "pth-26",
+      "images": [
+        {
+          "file": "pth-26/pth-26-01.jpeg",
+          "kind": "speaker-card",
+          "platform": "sessionize"
+        }
+      ]
+    },
+    "src/data/blog/reactdayberlin-26.md": {
+      "folder": "reactdayberlin-26",
+      "images": []
+    },
+    "src/data/blog/webdevcon-25.md": {
+      "folder": "webdevcon-25",
+      "images": [
+        {
+          "file": "webdevcon-25/webdevcon-25-01.png",
+          "kind": "speaker-card",
+          "platform": "event-website"
+        },
+        {
+          "file": "webdevcon-25/webdevcon-25-02.png",
+          "kind": "speaker-card",
+          "platform": "event-website"
+        },
+        {
+          "file": "webdevcon-25/webdevcon-25-03.png",
+          "kind": "speaker-card",
+          "platform": "sessionize"
+        }
+      ]
+    },
+    "src/data/blog/webkonf-26-oss.md": {
+      "folder": "webkonf-26",
+      "images": []
+    },
+    "src/data/blog/webkonf-26.md": {
+      "folder": "webkonf-26",
+      "images": []
+    },
+    "src/data/blog/Øredev-25.md": {
+      "folder": "oredev-25",
+      "images": [
+        {
+          "file": "oredev-25/oredev-25-01.webp",
+          "kind": "lineup",
+          "platform": "bluesky"
+        }
+      ]
+    }
+  },
+  "unlinked": {
+    "devfest-hamburg-25": {
+      "note": "No talk post on the site for this event yet",
+      "images": [
+        "devfest-hamburg-25/devfest-hamburg-25-01.jpeg",
+        "devfest-hamburg-25/devfest-hamburg-25-02.jpeg"
+      ]
+    }
+  }
+}

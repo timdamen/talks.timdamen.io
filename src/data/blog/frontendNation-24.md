@@ -15,6 +15,10 @@ ogImage: ../../assets/images/fn-24-og.webp
 slug: frontend-nation-24-web-accessibility-in-practice-more-than-just-wcag
 featured: false
 draft: false
+posters:
+  - src: ../../assets/images/posters/frontendnation-24/frontendnation-24-01.png
+    alt: "Frontend Nation 'Q&A with Tim Damen' card with a photo of Tim."
+    caption: "Speaker Q&A card by Frontend Nation"
 tags:
   - Accessibility
   - Conference

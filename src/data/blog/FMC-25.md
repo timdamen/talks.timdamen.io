@@ -17,6 +17,10 @@ conferenceSlides: ../../assets/slides/FMC-25.pdf
 googleDrivePresentationsLink: https://drive.google.com/file/d/1A8slutChG-nLqM4g6ihUug5QQ-Py3kDx/view?usp=sharing
 featured: false
 draft: false
+posters:
+  - src: ../../assets/images/posters/frontmania-25/frontmania-25-01.jpg
+    alt: "Frontmania 2025 western-style 'Wanted' poster with a black-and-white photo of Tim Damen and the talk title 'Diving into the Toplayer: Where Dialogs, Popovers, and Modals Live'."
+    caption: "Speaker poster by Frontmania"
 tags:
   - Frontend
   - Conference

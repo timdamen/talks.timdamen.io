@@ -1,0 +1,65 @@
+---
+// Posters.astro
+import type { ImageMetadata } from "astro";
+import { Image } from "astro:assets";
+import IconChevronRight from "@/assets/icons/IconChevronRight.svg";
+
+export interface Props {
+  posters: {
+    src: ImageMetadata;
+    alt: string;
+    caption?: string;
+  }[];
+  title?: string;
+}
+
+const { posters, title = "Promotion material" } = Astro.props;
+---
+
+<details class="group my-8">
+  <summary
+    class="flex w-fit cursor-pointer list-none items-center gap-2 [&::-webkit-details-marker]:hidden"
+  >
+    <IconChevronRight
+      aria-hidden="true"
+      class="size-6 flex-none transition-transform group-open:rotate-90 rtl:rotate-180 rtl:group-open:rotate-90"
+    />
+    <h2 id="posters-title" class="my-0 text-2xl font-semibold tracking-wide">
+      {title}
+    </h2>
+  </summary>
+  <ul
+    role="list"
+    class="not-prose mt-4 grid list-none grid-cols-1 items-start gap-6 p-0 sm:grid-cols-2"
+  >
+    {
+      posters.map(poster => (
+        <li>
+          <figure class="m-0">
+            <a
+              href={poster.src.src}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="block"
+            >
+              <Image
+                src={poster.src}
+                alt={poster.alt}
+                widths={[400, 800]}
+                sizes="(min-width: 640px) 50vw, 100vw"
+                class="h-auto w-full rounded-md border border-border"
+                loading="lazy"
+              />
+              <span class="sr-only">(opens full size in a new tab)</span>
+            </a>
+            {poster.caption && (
+              <figcaption class="mt-2 text-sm text-foreground/80">
+                {poster.caption}
+              </figcaption>
+            )}
+          </figure>
+        </li>
+      ))
+    }
+  </ul>
+</details>

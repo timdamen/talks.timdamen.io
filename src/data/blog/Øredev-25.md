@@ -18,6 +18,10 @@ slug: oredev-25-stuck-in-a-focustrap-keyboard-accessibility-focus
 
 featured: false
 draft: false
+posters:
+  - src: ../../assets/images/posters/oredev-25/oredev-25-01.webp
+    alt: "Øredev Web track lineup with photos of ten speakers: Anton Gunnarsson, Courtney Yatteau, David Mellum, Edoardo Dusi, Julian Burr, Peter van Hardenberg, Robin Heggelund Hansen, Sergès Goma, Tim Damen and Trung Vo."
+    caption: "Web track lineup by Øredev"
 tags:
   - Accessibility
   - Conference

@@ -17,6 +17,10 @@ conferenceVideo: https://www.youtube.com/embed/t8UJ9l-IzW4?rel=0
 slug: ndc-oslo-25-accessibility-feedback-loop-continuous-a11y-improvement-in-your-development-life-cycle
 featured: false
 draft: false
+posters:
+  - src: ../../assets/images/posters/ndc-oslo-25/ndc-oslo-25-01.jpeg
+    alt: "NDC Oslo banner for 'Accessibility feedback loop: Continuous a11y improvement in your development life cycle', Friday 23 May 2025 13:40, with a photo of Tim Damen."
+    caption: "Speaker banner by NDC Oslo"
 tags:
   - Accessibility
   - Conference

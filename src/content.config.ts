@@ -38,6 +38,16 @@ const blog = defineCollection({
           })
         )
         .optional(),
+      // Promotional images (speaker cards, lineups) from src/assets/images/posters
+      posters: z
+        .array(
+          z.object({
+            src: image(),
+            alt: z.string(),
+            caption: z.string().optional(),
+          })
+        )
+        .optional(),
       title: z.string(),
       featured: z.boolean().optional(),
       draft: z.boolean().optional(),

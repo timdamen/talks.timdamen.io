@@ -16,6 +16,10 @@ conferenceSlides: ../../assets/slides/FMC-25.pdf
 slug: jsnation-25-diving-into-the-toplayer-where-dialogs-popovers-and-modals-live
 featured: false
 draft: false
+posters:
+  - src: ../../assets/images/posters/jsnation-us-25/jsnation-us-25-01.png
+    alt: "JSNation US 2025 talk card for 'Diving into the Toplayer: Where Dialogs, Popovers, and Modals Live' with a photo of Tim Damen, FocusRing.io and ABN AMRO."
+    caption: "Talk card by GitNation"
 tags:
   - Frontend
   - Conference

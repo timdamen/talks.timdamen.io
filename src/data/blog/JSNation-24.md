@@ -17,6 +17,10 @@ ogImage: ../../assets/images/JSNation-24-og.webp
 slug: jsnation-24-scaling-accessibility
 featured: false
 draft: false
+posters:
+  - src: ../../assets/images/posters/jsnation-us-24/jsnation-us-24-01.png
+    alt: "JSNation US 2024 talk card for 'Scaling A11y' with a photo of Tim Damen, Focusring.io and ABN AMRO."
+    caption: "Talk card by GitNation"
 tags:
   - Accessibility
   - Conference

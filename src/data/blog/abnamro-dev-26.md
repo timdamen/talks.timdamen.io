@@ -17,6 +17,10 @@ conferenceLogo: ../../assets/logos/abnamro.svg
 slug: abnamro-dev-26-your-biggest-new-customer-cant-see-pixels
 featured: false
 draft: false
+posters:
+  - src: ../../assets/images/posters/abnamro-dev-26/abnamro-dev-26-01.jpg
+    alt: "Poster for The Goodbye Meetup, ABN AMRO Developer Meetup, Thursday 15 October 2026 at Gustav Mahlerlaan 10, Amsterdam: 4 speakers, food and drinks, free entry, with a sign-up QR code."
+    caption: "Event poster by ABN AMRO Developer"
 tags:
   - Accessibility
   - Meetup

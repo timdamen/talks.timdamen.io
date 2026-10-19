@@ -1,5 +1,5 @@
 {
-  "lastPostDate": "2026-10-16",
+  "lastPostDate": "2026-10-19",
   "events": {
     "agenticdays-26-your-biggest-new-customer-cant-see-pixels#upcoming": {
       "status": "seeded"
@@ -29,8 +29,8 @@
       "status": "seeded"
     },
     "react-day-berlin-26-your-biggest-new-customer-cant-see-pixels#upcoming": {
-      "status": "pending",
-      "attempts": 2,
+      "status": "failed",
+      "attempts": 3,
       "posts": {
         "bluesky": "https://bsky.app/profile/timdamen.io/post/3mxxzycwlai27"
       },

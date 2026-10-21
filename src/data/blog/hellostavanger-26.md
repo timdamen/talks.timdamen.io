@@ -10,6 +10,9 @@ conferenceLocation: Stavanger, Norway
 conferenceLat: 58.9688
 conferenceLong: 5.7581
 conferenceURL: https://www.hellostavanger.no/
+conferenceSlidesEmbed: https://slides.timdamen.io/presentations/hello-stavanger-26-one-change
+ogImage: https://slides.timdamen.io/thumbnails/hello-stavanger-26-one-change.webp
+googleDrivePresentationsLink: https://slides.timdamen.io/presentations/hello-stavanger-26-one-change
 conferenceTicketURL: https://event.checkin.no/220072/-hellostavanger-2026
 conferenceTicketPrice: 9000
 conferenceTicketCurrency: NOK
@@ -34,3 +37,9 @@ description: This talk explores how to leverage NX's Abstract Syntax Tree (AST) 
 ## Resources
 
 The following resources were mentioned in the talk, used for research, or are otherwise relevant:
+
+- [Automate Updating Dependencies (nx migrate) - Nx](https://nx.dev/docs/features/automate-updating-dependencies)
+- [Migration Generators - Nx](https://nx.dev/docs/extending-nx/migration-generators)
+- [Using the Compiler API - TypeScript Wiki](https://github.com/microsoft/TypeScript/wiki/Using-the-Compiler-API)
+- [The ESTree Spec](https://github.com/estree/estree)
+- [AST Explorer](https://astexplorer.net/)

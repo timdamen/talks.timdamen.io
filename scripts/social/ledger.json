@@ -1,5 +1,5 @@
 {
-  "lastPostDate": "2026-10-22",
+  "lastPostDate": "2026-10-23",
   "events": {
     "abnamro-dev-26-your-biggest-new-customer-cant-see-pixels#slides": {
       "status": "pending",
@@ -25,8 +25,8 @@
       "status": "seeded"
     },
     "hello-stavanger-26-utilising-the-javascript-abstract-syntax-tree-ast-for-automated-frontend-lifecycle-management#slides": {
-      "status": "pending",
-      "attempts": 2,
+      "status": "failed",
+      "attempts": 3,
       "posts": {
         "bluesky": "https://bsky.app/profile/timdamen.io/post/3myf6mfvqmn26"
       },

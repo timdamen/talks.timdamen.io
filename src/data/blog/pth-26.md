@@ -21,6 +21,9 @@ posters:
   - src: ../../assets/images/posters/pth-26/pth-26-01.jpeg
     alt: "Porto Tech Hub Conference 2026 banner for 'Your Biggest New Customer Can't See Pixels', 10 November 2026, Porto, Portugal, with a photo of Tim Damen."
     caption: "Speaker banner by Porto Tech Hub"
+  - src: ../../assets/images/posters/pth-26/pth-26-02.png
+    alt: "Porto Tech Hub Conference 2026 speaker card. Tim Damen, Frontend Chapter Lead & Accessibility Lead @ ABN AMRO, talk: Your Biggest New Customer Can't See Pixels. Davide Passafaro, Google Developer Expert in Angular, Senior Software Engineer & GDG Roma Città Organizer, talk: Web Apps with Superpowers: Breaking the Sandbox with Project Fugu."
+    caption: "Speaker card by Porto Tech Hub"
 tags:
   - Accessibility
   - Conference

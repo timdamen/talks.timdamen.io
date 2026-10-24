@@ -6,5 +6,13 @@
     "platform": "sessionize",
     "kind": "speaker-card",
     "description": "Porto Tech Hub Conference 2026 Sessionize banner: 'Your Biggest New Customer Can't See Pixels', 10/Nov/2026 Porto, Tim's photo and name (1920x1080)."
+  },
+  {
+    "file": "pth-26-02.png",
+    "imageUrl": "",
+    "pageUrl": "Provided by Tim (Porto Tech Hub promotion, 2026-10-24)",
+    "platform": "other",
+    "kind": "speaker-card",
+    "description": "Porto Tech Hub Conference 2026 speaker card pairing Tim Damen (Frontend Chapter Lead & Accessibility Lead @ ABN AMRO, talk 'Your Biggest New Customer Can't See Pixels') with Davide Passafaro (talk 'Web Apps with Superpowers: Breaking the Sandbox with Project Fugu') (1080x1350)."
   }
 ]

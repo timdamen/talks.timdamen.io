@@ -172,6 +172,11 @@
           "file": "pth-26/pth-26-01.jpeg",
           "kind": "speaker-card",
           "platform": "sessionize"
+        },
+        {
+          "file": "pth-26/pth-26-02.png",
+          "kind": "speaker-card",
+          "platform": "other"
         }
       ]
     },

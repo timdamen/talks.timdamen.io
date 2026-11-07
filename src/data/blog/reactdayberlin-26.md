@@ -12,6 +12,10 @@ conferenceURL: https://reactday.berlin/
 slug: react-day-berlin-26-your-biggest-new-customer-cant-see-pixels
 featured: false
 draft: false
+posters:
+  - src: ../../assets/images/posters/reactdayberlin-26/reactdayberlin-26-01.jpg
+    alt: "React Day Berlin 2026 speaker card for 'Your Biggest New Customer Can't See Pixels' by Tim Damen, Accessibility Expert at ABN AMRO. Berlin & Online, December 4 & 7, 2026, with a photo of Tim Damen over a packed conference hall."
+    caption: "Speaker card by React Day Berlin"
 tags:
   - Accessibility
   - Conference

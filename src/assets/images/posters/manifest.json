@@ -182,7 +182,13 @@
     },
     "src/data/blog/reactdayberlin-26.md": {
       "folder": "reactdayberlin-26",
-      "images": []
+      "images": [
+        {
+          "file": "reactdayberlin-26/reactdayberlin-26-01.jpg",
+          "kind": "speaker-card",
+          "platform": "linkedin"
+        }
+      ]
     },
     "src/data/blog/webdevcon-25.md": {
       "folder": "webdevcon-25",

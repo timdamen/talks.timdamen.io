@@ -11,7 +11,7 @@ A collection of talks exploring web accessibility, frontend development, and the
   _Agentic Engineering Days_ | November 20, 2026 | Zurich, Switzerland
 
 - **[Your Biggest New Customer Can't See Pixels](https://talks.timdamen.io/presentations/react-day-berlin-26-your-biggest-new-customer-cant-see-pixels)**  
-  _React Day Berlin_ | December 4, 2026 | Berlin, Germany
+  _React Day Berlin_ | December 4, 2026 | Berlin, Germany (Remote/Online talk)
 
 ## [List of all previous presentations](https://talks.timdamen.io/presentations)
 

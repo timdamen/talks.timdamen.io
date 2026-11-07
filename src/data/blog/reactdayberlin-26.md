@@ -19,7 +19,7 @@ posters:
 tags:
   - Accessibility
   - Conference
-  - In Person
+  - online
   - Talk
 description: For decades we've argued that accessibility is the right thing to do. The argument just got easier, because your next customer probably isn't human. AI agents now browse, compare, and interact on behalf of users, and they consume your site through the exact same accessibility tree screen readers do. This talk covers how agents use the web, why their failures map to WCAG violations, and what web development teams should do today to improve the agent experience (AX).
 ---

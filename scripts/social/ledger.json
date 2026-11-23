@@ -1,5 +1,5 @@
 {
-  "lastPostDate": "2026-11-20",
+  "lastPostDate": "2026-11-23",
   "events": {
     "abnamro-dev-26-your-biggest-new-customer-cant-see-pixels#slides": {
       "status": "failed",
@@ -11,7 +11,7 @@
     },
     "agenticdays-26-your-biggest-new-customer-cant-see-pixels#slides": {
       "status": "pending",
-      "attempts": 1,
+      "attempts": 2,
       "posts": {
         "bluesky": "https://bsky.app/profile/timdamen.io/post/3n2qfodj4k52w"
       },
